@@ -1,6 +1,6 @@
 # কুঁড়ি (Kuri) — content
 
-The content of **Kuri**, an offline Android app that helps Bangladeshi parents follow their child's development from birth to 5 years: daily play tasks, milestone checklists, safety tips and app text, all in Bengali.
+The content of **Kuri**, an offline Android app that helps Bangladeshi parents follow their child's development from birth to 5 years: daily play tasks, milestone checklists, safety tips, research-backed facts, reflections for parents and app text, all in Bengali.
 
 The app bundles this content, so the app code and the content can be changed separately. Anyone can edit the content with the browser editor in this repository, without Android Studio.
 
@@ -35,19 +35,22 @@ Firefox and Safari can't write to the opened file, so there Save downloads a new
 
 ### What the editor does
 
-- Lists each age group's tasks, milestones and safety tips, plus the shared cards, app text, help places and labels.
+- Lists each age group's tasks, milestones, safety tips and facts, plus the parenting reflections and the shared cards, app text, help places and labels.
 - Marks items `draft` or `reviewed` and holds reviewer notes.
 - Links tasks to the milestones they support.
 - Filters by status, reviewer notes and tasks with no linked milestones; searches across all items.
-- Refuses to save if text is empty, an ID is duplicated, a link points to a missing milestone, or a `{placeholder}` was removed.
+- Refuses to save if text is empty, an ID is duplicated, a link points to a missing milestone, a fact or reflection has no reference link, or a `{placeholder}` was removed.
 - Writes JSON in a fixed format, so `git diff` shows only the lines that actually changed.
 
 ## Rules for content
 
-- **IDs never change and are never reused.** The app stores parents' answers by ID (`T04-01`, `M09-S3`, `SF04-01`). The editor creates IDs for new items and doesn't let you edit them.
+- **IDs never change and are never reused.** The app stores parents' answers by ID (`T04-01`, `M09-S3`, `SF04-01`, `F04-01`, `P01`). The editor creates IDs for new items and doesn't let you edit them.
 - **Retire, don't delete.** A retired item stays in the file with `"retired": true` and the app hides it. Only items added in the current editing session can be deleted.
 - **Keep `{placeholders}`** such as `{name}` and `{count}`. The app fills them in.
 - **Never change the meaning of a reviewed item without setting it back to `draft`.**
+- **Every fact and reflection needs a published study behind it.** Say only what the study found, in plain words. Give a DOI link where there is one, and write what the paper found in `summaryEn` so reviewers who don't read Bengali can check it.
+- **Facts should reassure, not worry.** Research results are averages; avoid wording that makes parents compare their child against a number.
+- **Reflections invite, they don't blame.** They help parents love the child as they are rather than as a source of pride: warmth over comparison, praise for effort, love without conditions, no shaming or hitting.
 - **Raise `contentVersion` by 1** (on the editor's Overview page) for each release that goes into the app.
 
 ## Using the content in the app
@@ -59,5 +62,6 @@ Copy `content/content.json` to `app/src/main/assets/content.json` in the Android
 - Milestones are adapted and translated from the CDC *Learn the Signs. Act Early.* milestone checklists (2022 revision).
 - Daily tasks follow the play-and-talk approach of the WHO/UNICEF *Care for Child Development* package, adapted to Bangladeshi households.
 - Emergency signs follow the WHO/UNICEF IMCI general danger signs.
+- Each fact and parenting reflection names its own peer-reviewed study in its `reference` field.
 
 Translations and adaptations are pending expert review.
