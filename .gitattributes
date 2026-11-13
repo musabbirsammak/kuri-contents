@@ -1,0 +1,5 @@
+# Keep line endings consistent so diffs show only real changes
+* text=auto eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.md text eol=lf

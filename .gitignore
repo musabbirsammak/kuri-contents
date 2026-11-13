@@ -1,0 +1,13 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor settings
+.idea/
+.vscode/
+*.swp
+
+# Downloaded copies from the editor (Firefox/Safari)
+content (*).json
+content-*.json
