@@ -1,0 +1,5492 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "builtFrom": "ECD content design v1 (2026-11-07)",
+  "languages": [
+    "bn"
+  ],
+  "domains": [
+    {
+      "id": "S",
+      "name": {
+        "bn": "সামাজিক ও আবেগ",
+        "en": "Social/emotional"
+      }
+    },
+    {
+      "id": "L",
+      "name": {
+        "bn": "ভাষা ও যোগাযোগ",
+        "en": "Language/communication"
+      }
+    },
+    {
+      "id": "C",
+      "name": {
+        "bn": "চিন্তা ও শেখা",
+        "en": "Thinking/learning"
+      }
+    },
+    {
+      "id": "M",
+      "name": {
+        "bn": "নড়াচড়া",
+        "en": "Movement"
+      }
+    }
+  ],
+  "routines": [
+    {
+      "id": "morning",
+      "order": 1,
+      "name": {
+        "bn": "সকাল"
+      }
+    },
+    {
+      "id": "meal",
+      "order": 2,
+      "name": {
+        "bn": "খাওয়ার সময়"
+      }
+    },
+    {
+      "id": "housework",
+      "order": 3,
+      "name": {
+        "bn": "ঘরের কাজের সময়"
+      }
+    },
+    {
+      "id": "bath",
+      "order": 4,
+      "name": {
+        "bn": "গোসলের সময়"
+      }
+    },
+    {
+      "id": "care",
+      "order": 5,
+      "name": {
+        "bn": "জামা বা কাঁথা বদলানোর সময়"
+      }
+    },
+    {
+      "id": "play",
+      "order": 6,
+      "name": {
+        "bn": "খেলার সময়"
+      }
+    },
+    {
+      "id": "outing",
+      "order": 7,
+      "name": {
+        "bn": "বাইরে যাওয়া-আসার সময়"
+      }
+    },
+    {
+      "id": "afternoon",
+      "order": 8,
+      "name": {
+        "bn": "বিকেল"
+      }
+    },
+    {
+      "id": "evening",
+      "order": 9,
+      "name": {
+        "bn": "সন্ধ্যা"
+      }
+    },
+    {
+      "id": "bedtime",
+      "order": 10,
+      "name": {
+        "bn": "ঘুমের আগে"
+      }
+    },
+    {
+      "id": "anytime",
+      "order": 11,
+      "name": {
+        "bn": "যেকোনো সময়"
+      }
+    }
+  ],
+  "ageGroups": [
+    {
+      "id": "G01",
+      "order": 1,
+      "name": {
+        "bn": "নবজাতক"
+      },
+      "startMonths": 0,
+      "endMonths": 2,
+      "checkpointMonths": 2,
+      "doctorCheckSuggestion": null,
+      "notes": [
+        {
+          "id": "N01-preterm",
+          "when": "doctor_card_preterm",
+          "text": {
+            "bn": "নিয়মিত ফলো-আপে এই তালিকাটি ডাক্তারকে দেখান।"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G02",
+      "order": 2,
+      "name": {
+        "bn": "হাসির সময়"
+      },
+      "startMonths": 2,
+      "endMonths": 4,
+      "checkpointMonths": 4,
+      "doctorCheckSuggestion": null,
+      "notes": []
+    },
+    {
+      "id": "G03",
+      "order": 3,
+      "name": {
+        "bn": "ধরতে শেখা"
+      },
+      "startMonths": 4,
+      "endMonths": 6,
+      "checkpointMonths": 6,
+      "doctorCheckSuggestion": null,
+      "notes": []
+    },
+    {
+      "id": "G04",
+      "order": 4,
+      "name": {
+        "bn": "বসতে শেখা"
+      },
+      "startMonths": 6,
+      "endMonths": 9,
+      "checkpointMonths": 9,
+      "doctorCheckSuggestion": "general",
+      "notes": [
+        {
+          "id": "N04-crawling",
+          "when": "on_request",
+          "text": {
+            "bn": "অনেক শিশু হামাগুড়ি না দিয়ে গড়িয়ে বা বসে বসে এগোয়। এটি তালিকায় নেই।"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G05",
+      "order": 5,
+      "name": {
+        "bn": "দাঁড়াতে চাওয়া"
+      },
+      "startMonths": 9,
+      "endMonths": 12,
+      "checkpointMonths": 12,
+      "doctorCheckSuggestion": null,
+      "notes": []
+    },
+    {
+      "id": "G06",
+      "order": 6,
+      "name": {
+        "bn": "প্রথম পা"
+      },
+      "startMonths": 12,
+      "endMonths": 15,
+      "checkpointMonths": 15,
+      "doctorCheckSuggestion": null,
+      "notes": []
+    },
+    {
+      "id": "G07",
+      "order": 7,
+      "name": {
+        "bn": "ছোট্ট সাহায্যকারী"
+      },
+      "startMonths": 15,
+      "endMonths": 18,
+      "checkpointMonths": 18,
+      "doctorCheckSuggestion": "general_and_autism",
+      "notes": []
+    },
+    {
+      "id": "G08",
+      "order": 8,
+      "name": {
+        "bn": "দুই শব্দ"
+      },
+      "startMonths": 18,
+      "endMonths": 24,
+      "checkpointMonths": 24,
+      "doctorCheckSuggestion": "autism",
+      "notes": []
+    },
+    {
+      "id": "G09",
+      "order": 9,
+      "name": {
+        "bn": "আমি পারি"
+      },
+      "startMonths": 24,
+      "endMonths": 30,
+      "checkpointMonths": 30,
+      "doctorCheckSuggestion": "general",
+      "notes": []
+    },
+    {
+      "id": "G10",
+      "order": 10,
+      "name": {
+        "bn": "কেন? কোথায়?"
+      },
+      "startMonths": 30,
+      "endMonths": 36,
+      "checkpointMonths": 36,
+      "doctorCheckSuggestion": null,
+      "notes": []
+    },
+    {
+      "id": "G11",
+      "order": 11,
+      "name": {
+        "bn": "গল্প ও খেলা"
+      },
+      "startMonths": 36,
+      "endMonths": 48,
+      "checkpointMonths": 48,
+      "doctorCheckSuggestion": null,
+      "notes": []
+    },
+    {
+      "id": "G12",
+      "order": 12,
+      "name": {
+        "bn": "স্কুলের পথে"
+      },
+      "startMonths": 48,
+      "endMonths": 60,
+      "checkpointMonths": 60,
+      "doctorCheckSuggestion": null,
+      "notes": [
+        {
+          "id": "N12-school",
+          "when": "doctor_card",
+          "text": {
+            "bn": "স্কুল শুরুর আগে বা পরে শিক্ষকের সাথেও কথা বলতে পারেন।"
+          }
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01-01",
+      "groupId": "G01",
+      "text": {
+        "bn": "দুধ খাওয়ানোর সময় শিশুর চোখের দিকে তাকিয়ে নরম গলায় কথা বলুন।"
+      },
+      "safety": null,
+      "domains": [
+        "S",
+        "L"
+      ],
+      "routine": "meal",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T01-02",
+      "groupId": "G01",
+      "text": {
+        "bn": "শিশু জেগে থাকলে আপনার বুকের ওপর বা শক্ত বিছানায় উপুড় করে ১–২ মিনিট রাখুন (পেটের ওপর খেলা)। দিনে কয়েকবার।"
+      },
+      "safety": {
+        "bn": "শুধু জেগে থাকলে ও আপনি পাশে থাকলে। ঘুমানোর সময় সবসময় চিত করে শোয়ান।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "care",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T01-03",
+      "groupId": "G01",
+      "text": {
+        "bn": "শিশুর মুখ থেকে এক হাত দূরে আপনার মুখ রাখুন। হাসুন, ধীরে একপাশ থেকে আরেকপাশে মাথা সরান। শিশু চোখ দিয়ে অনুসরণ করে কি না দেখুন।"
+      },
+      "safety": null,
+      "domains": [
+        "C",
+        "S"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T01-04",
+      "groupId": "G01",
+      "text": {
+        "bn": "গোসলের আগে বা পরে শিশুর হাত-পা আলতো করে বুলিয়ে দিন আর প্রতিটি অঙ্গের নাম বলুন: ‘এই যে তোমার হাত’।"
+      },
+      "safety": {
+        "bn": "নাক, কান, চোখ বা নাভিতে তেল বা কিছু দেবেন না। কোন তেল ব্যবহার করবেন তা স্বাস্থ্যকর্মী বা ডাক্তারকে জিজ্ঞেস করুন।"
+      },
+      "domains": [
+        "S",
+        "M"
+      ],
+      "routine": "bath",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T01-05",
+      "groupId": "G01",
+      "text": {
+        "bn": "শোয়ানোর সময় ঘুমপাড়ানি গান বা ছড়া গুনগুন করুন।"
+      },
+      "safety": null,
+      "domains": [
+        "L",
+        "S"
+      ],
+      "routine": "bedtime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T01-06",
+      "groupId": "G01",
+      "text": {
+        "bn": "শিশু কাঁদলে কোলে নিন, নরম স্বরে কথা বলুন। দ্রুত সাড়া দিলে শিশুর অভ্যাস খারাপ হয় না, সে নিরাপদ বোধ করে।"
+      },
+      "safety": {
+        "bn": "কখনো শিশুকে ঝাঁকাবেন না।"
+      },
+      "domains": [
+        "S"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T01-07",
+      "groupId": "G01",
+      "text": {
+        "bn": "শিশুর একপাশ থেকে নরম করে নাম ধরে ডাকুন। সে শব্দের দিকে নড়ে কি না দেখুন।"
+      },
+      "safety": {
+        "bn": "কানের কাছে জোরে শব্দ করবেন না।"
+      },
+      "domains": [
+        "L"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T01-08",
+      "groupId": "G01",
+      "text": {
+        "bn": "বাবা, দাদা-দাদি বা নানা-নানিকে দিনে একবার শিশুকে কোলে নিয়ে কথা বলতে বলুন।"
+      },
+      "safety": {
+        "bn": "কোলে নেওয়ার আগে সবাই সাবান দিয়ে হাত ধুয়ে নিন।"
+      },
+      "domains": [
+        "S"
+      ],
+      "routine": "evening",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T01-09",
+      "groupId": "G01",
+      "text": {
+        "bn": "শিশুকে খালি গায়ে আপনার বুকে রেখে উপরে কাপড় দিন (ত্বকে ত্বক / ক্যাঙ্গারু পদ্ধতি)। আগে জন্মানো বা কম ওজনের শিশুর জন্য খুব উপকারী।"
+      },
+      "safety": {
+        "bn": "আপনি ঘুমিয়ে পড়লে শিশুকে নিজের বিছানায় চিত করে শুইয়ে দিন।"
+      },
+      "domains": [
+        "S"
+      ],
+      "routine": "morning",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T02-01",
+      "groupId": "G02",
+      "text": {
+        "bn": "শিশু ‘আ-উ’ শব্দ করলে একটু থামুন, তারপর একই শব্দ করে উত্তর দিন। এটাই শিশুর প্রথম গল্প।"
+      },
+      "safety": null,
+      "domains": [
+        "L",
+        "S"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T02-02",
+      "groupId": "G02",
+      "text": {
+        "bn": "পেটের ওপর খেলার সময় সামনে রঙিন কাপড় বা আপনার মুখ রাখুন, যাতে মাথা তোলে। দিনে মোট প্রায় আধা ঘণ্টা, অল্প অল্প করে।"
+      },
+      "safety": {
+        "bn": "শুধু জেগে থাকলে ও আপনি পাশে থাকলে। ক্লান্ত হলে থামুন।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "care",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T02-03",
+      "groupId": "G02",
+      "text": {
+        "bn": "ঘরে বানানো ঝুমঝুমি: ছোট প্লাস্টিকের বোতলে কয়েকটা চাল ভরে ঢাকনা শক্ত করে লাগিয়ে টেপ দিন। শিশুর চোখের সামনে বাজিয়ে ধীরে এপাশ-ওপাশ সরান।"
+      },
+      "safety": {
+        "bn": "ঢাকনা খুলছে কি না প্রতিদিন দেখুন। চাল বা ডাল মুখে গেলে গলায় আটকাতে পারে।"
+      },
+      "domains": [
+        "C",
+        "L"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T02-04",
+      "groupId": "G02",
+      "text": {
+        "bn": "শিশুর হাতে একটা পরিষ্কার নরম জিনিস দিন (রুমাল, কাপড়ের পুতুল)। সে মুঠোয় ধরে কি না দেখুন।"
+      },
+      "safety": {
+        "bn": "এমন কিছু নয় যা পুরোটা মুখে ঢুকে যেতে পারে।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T02-05",
+      "groupId": "G02",
+      "text": {
+        "bn": "শিশু চিত হয়ে শুয়ে থাকলে পেটের ওপরে হাতের নাগালে একটা রঙিন কাপড় ধরুন, যাতে সে হাত দিয়ে বাড়ি দিতে পারে।"
+      },
+      "safety": {
+        "bn": "খেলা শেষে কাপড় সরিয়ে ফেলুন। দড়ি বা ফিতা গলার কাছে নয়।"
+      },
+      "domains": [
+        "M",
+        "C"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T02-06",
+      "groupId": "G02",
+      "text": {
+        "bn": "কাপড় ভাঁজ বা সবজি কাটার সময় শিশুকে পাশে রেখে যা করছেন তা বলুন: ‘এই যে লাউ, এখন কাটছি’।"
+      },
+      "safety": {
+        "bn": "চুলা, গরম হাঁড়ি ও বটি-ছুরি থেকে দূরে।"
+      },
+      "domains": [
+        "L"
+      ],
+      "routine": "housework",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T02-07",
+      "groupId": "G02",
+      "text": {
+        "bn": "আলতো সুড়সুড়ি বা মজার শব্দ করে হাসানোর চেষ্টা করুন। শিশু বিরক্ত হলে থামুন।"
+      },
+      "safety": null,
+      "domains": [
+        "S"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T02-08",
+      "groupId": "G02",
+      "text": {
+        "bn": "ছড়া বলতে বলতে শিশুর হাত আলতো করে তালির মতো মেলান (যেমন ‘আয় আয় চাঁদ মামা’)।"
+      },
+      "safety": {
+        "bn": "জোর করে টানবেন না।"
+      },
+      "domains": [
+        "L",
+        "S"
+      ],
+      "routine": "bath",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T02-09",
+      "groupId": "G02",
+      "text": {
+        "bn": "কোলে নিয়ে ঘরে বা উঠানে ঘুরিয়ে জিনিস দেখান ও নাম বলুন: ‘এটা গাছ’, ‘এটা মুরগি’, ‘এটা ফ্যান’।"
+      },
+      "safety": {
+        "bn": "ডিরেক্ট রোদে বেশিক্ষণ নয়।"
+      },
+      "domains": [
+        "L",
+        "C"
+      ],
+      "routine": "morning",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T03-01",
+      "groupId": "G03",
+      "text": {
+        "bn": "শিশুকে কোলে নিয়ে আয়নার সামনে দাঁড়ান। বলুন, ‘এটা কে? এটা আমাদের সোনা!’"
+      },
+      "safety": {
+        "bn": "আয়না আপনি ধরে রাখুন। ভাঙা কাচ নয়।"
+      },
+      "domains": [
+        "S"
+      ],
+      "routine": "bath",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T03-02",
+      "groupId": "G03",
+      "text": {
+        "bn": "শিশু ‘বা’, ‘মা’ বা ফুঁ দিয়ে শব্দ করলে হুবহু নকল করুন, থামুন, আবার করুন। পালা করে কথা বলার খেলা।"
+      },
+      "safety": null,
+      "domains": [
+        "L",
+        "S"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T03-03",
+      "groupId": "G03",
+      "text": {
+        "bn": "পেটের ওপর থাকার সময় হাতের একটু দূরে স্টিলের বাটি বা বড় চামচ রাখুন। ধরতে চেষ্টা করুক।"
+      },
+      "safety": null,
+      "domains": [
+        "M",
+        "C"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T03-04",
+      "groupId": "G03",
+      "text": {
+        "bn": "মেঝেতে পাটি বা কাঁথা বিছিয়ে একপাশে খেলনা দেখান, যাতে গড়িয়ে আসতে চায়।"
+      },
+      "safety": {
+        "bn": "আশেপাশে ছোট জিনিস, চুলা বা পানির বালতি নয়।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T03-05",
+      "groupId": "G03",
+      "text": {
+        "bn": "বাটি উপুড় করে চামচ দিয়ে আস্তে বাজান, তারপর শিশুর হাতে চামচ দিন।"
+      },
+      "safety": {
+        "bn": "শুধু পরিষ্কার, ভোঁতা প্রান্তের জিনিস।"
+      },
+      "domains": [
+        "C",
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T03-06",
+      "groupId": "G03",
+      "text": {
+        "bn": "শিশুকে আপনার কোলে বা বালিশ দিয়ে ঘিরে অল্প সময় বসিয়ে সামনে হাতে ভর দিতে দিন।"
+      },
+      "safety": {
+        "bn": "সবসময় হাতের কাছে থাকুন।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T03-07",
+      "groupId": "G03",
+      "text": {
+        "bn": "পরিবারের লোক এলে নাম বলে দেখান: ‘এই যে দাদু’, ‘আপু এসেছে’।"
+      },
+      "safety": null,
+      "domains": [
+        "S",
+        "L"
+      ],
+      "routine": "evening",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T03-08",
+      "groupId": "G03",
+      "text": {
+        "bn": "পরিবার খাওয়ার সময় শিশুকে কোলে রেখে খাবারের নাম বলুন: ভাত, ডাল, মাছ।"
+      },
+      "safety": {
+        "bn": "৬ মাস পূর্ণ হওয়ার আগে শিশুর মুখে খাবার দেবেন না।"
+      },
+      "domains": [
+        "L"
+      ],
+      "routine": "meal",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T03-09",
+      "groupId": "G03",
+      "text": {
+        "bn": "পুরনো ক্যালেন্ডার বা পত্রিকার বড় ছবি দেখিয়ে নাম বলুন: ‘এটা গরু’, ‘এটা নৌকা’।"
+      },
+      "safety": {
+        "bn": "কাগজ ছিঁড়ে মুখে দিচ্ছে কি না খেয়াল রাখুন।"
+      },
+      "domains": [
+        "C",
+        "L"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T04-01",
+      "groupId": "G04",
+      "text": {
+        "bn": "ওড়না বা গামছা দিয়ে মুখ ঢেকে ‘টুকি!’ বলে মুখ বের করুন।"
+      },
+      "safety": null,
+      "domains": [
+        "S",
+        "C"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T04-02",
+      "groupId": "G04",
+      "text": {
+        "bn": "শিশুর চোখের সামনে পছন্দের খেলনা কাপড়ের নিচে অর্ধেক লুকান। বলুন, ‘কোথায় গেল?’ খুঁজে পেলে হাততালি দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "C"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T04-03",
+      "groupId": "G04",
+      "text": {
+        "bn": "দুই হাতে দুটো স্টিলের বাটি বা প্লাস্টিকের কাপ দিন। ঠুকে শব্দ করা দেখিয়ে দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "C",
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T04-04",
+      "groupId": "G04",
+      "text": {
+        "bn": "বাড়তি খাবারের সময় থালায় নরম খাবারের ছোট টুকরো রাখুন। আঙুল দিয়ে টেনে নিজে ধরতে দিন।"
+      },
+      "safety": {
+        "bn": "সোজা হয়ে বসে খাবে, শুয়ে নয়। আস্ত বাদাম, আঙুর, ছোলা বা শক্ত টুকরো নয়। খাওয়ার সময় সবসময় পাশে থাকুন।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "meal",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T04-05",
+      "groupId": "G04",
+      "text": {
+        "bn": "অন্য পাশ থেকে শিশুর নাম ধরে ডাকুন। তাকালে হেসে বলুন, ‘এই তো!’"
+      },
+      "safety": null,
+      "domains": [
+        "S",
+        "L"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T04-06",
+      "groupId": "G04",
+      "text": {
+        "bn": "‘মা-মা’, ‘বা-বা’, ‘দা-দা’ ধীরে বারবার বলুন। শিশুর আওয়াজ নকল করুন।"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "bath",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T04-07",
+      "groupId": "G04",
+      "text": {
+        "bn": "কোলে নেওয়ার আগে নিজের হাত বাড়িয়ে বলুন, ‘কোলে আসবে?’ একটু অপেক্ষা করুন, সে হাত তোলে কি না দেখুন।"
+      },
+      "safety": null,
+      "domains": [
+        "L",
+        "S"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T04-08",
+      "groupId": "G04",
+      "text": {
+        "bn": "এক হাতে চামচ বা কাপড়ের বল দিন, তারপর আরেকটা বাড়িয়ে দিন, যাতে হাত বদল করতে শেখে।"
+      },
+      "safety": null,
+      "domains": [
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T04-09",
+      "groupId": "G04",
+      "text": {
+        "bn": "পাটির ওপর একটু দূরে পছন্দের জিনিস রাখুন। নিজের মতো করে (গড়িয়ে, হামাগুড়ি দিয়ে বা বসে) যেতে দিন।"
+      },
+      "safety": {
+        "bn": "আশেপাশে পানি, চুলা, সিঁড়ি বা বৈদ্যুতিক তার নয়।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T04-10",
+      "groupId": "G04",
+      "text": {
+        "bn": "বাইরে যাওয়ার সময় লুকিয়ে না গিয়ে হাত নেড়ে বলুন, ‘আমি একটু পরেই আসছি’। ফিরে এসে বলুন, ‘এই যে এসে গেছি’।"
+      },
+      "safety": {
+        "bn": "যাওয়ার আগে নিশ্চিত করুন একজন বড় মানুষ শিশুর দায়িত্বে আছেন।"
+      },
+      "domains": [
+        "S"
+      ],
+      "routine": "outing",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T05-01",
+      "groupId": "G05",
+      "text": {
+        "bn": "ছড়া বলতে বলতে শিশুর সাথে হাততালি দিন (যেমন ‘তাই তাই তাই’)। থেমে দেখুন সে আবার খেলতে চায় কি না।"
+      },
+      "safety": null,
+      "domains": [
+        "S"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T05-02",
+      "groupId": "G05",
+      "text": {
+        "bn": "কেউ বাড়ি থেকে যাওয়ার সময় শিশুর সাথে হাত নেড়ে ‘টা-টা’ বলুন।"
+      },
+      "safety": null,
+      "domains": [
+        "L",
+        "S"
+      ],
+      "routine": "outing",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T05-03",
+      "groupId": "G05",
+      "text": {
+        "bn": "একটা বাটিতে কয়েকটা বড় চামচ বা কাপড়ের বল রাখা ও বের করার খেলা খেলুন। ‘ভেতরে’, ‘বাইরে’ বলুন।"
+      },
+      "safety": {
+        "bn": "প্রতিটি জিনিস শিশুর মুখের চেয়ে বড় হতে হবে।"
+      },
+      "domains": [
+        "C",
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T05-04",
+      "groupId": "G05",
+      "text": {
+        "bn": "শিশুর চোখের সামনে খেলনা কাঁথার নিচে পুরো ঢেকে দিন। খুঁজে বের করতে দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "C"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T05-05",
+      "groupId": "G05",
+      "text": {
+        "bn": "শক্ত চৌকি বা সোফার পাশে দাঁড় করিয়ে একটু দূরে পছন্দের জিনিস রাখুন, যাতে ধরে ধরে হাঁটে।"
+      },
+      "safety": {
+        "bn": "উল্টে পড়তে পারে এমন টেবিল, ধারালো কোণ বা সিঁড়ির কাছে নয়।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T05-06",
+      "groupId": "G05",
+      "text": {
+        "bn": "পানি খাওয়ার সময় ছোট খোলা কাপ বা গ্লাস আপনি ধরে শিশুর মুখে দিন।"
+      },
+      "safety": {
+        "bn": "ফোটানো বা নিরাপদ পানি।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "meal",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T05-07",
+      "groupId": "G05",
+      "text": {
+        "bn": "খাওয়ার সময় নরম খাবারের ছোট টুকরো থালায় দিন, দুই আঙুলে তুলতে দিন।"
+      },
+      "safety": {
+        "bn": "সোজা হয়ে বসে খাবে। শক্ত বা গোল খাবার নয়। পাশে থাকুন।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "meal",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T05-08",
+      "groupId": "G05",
+      "text": {
+        "bn": "বিপজ্জনক কিছু ধরতে গেলে শান্ত কিন্তু দৃঢ় গলায় ‘না’ বলুন, সরিয়ে নিন, আর বদলে অন্য খেলনা দিন। মারবেন বা ভয় দেখাবেন না।"
+      },
+      "safety": null,
+      "domains": [
+        "L",
+        "S"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T05-09",
+      "groupId": "G05",
+      "text": {
+        "bn": "বাজার থেকে আনা সবজি দেখিয়ে নাম বলুন: আলু, বেগুন, লাউ। একটা হাতে দিয়ে ছুঁতে দিন।"
+      },
+      "safety": {
+        "bn": "বটি, ছুরি ও কাঁচা মরিচ দূরে।"
+      },
+      "domains": [
+        "L",
+        "C"
+      ],
+      "routine": "housework",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T05-10",
+      "groupId": "G05",
+      "text": {
+        "bn": "পুরনো বই বা ক্যালেন্ডারের পাতায় প্রাণীর ছবি দেখিয়ে ডাক নকল করুন: ‘গরু বলে হাম্বা’।"
+      },
+      "safety": null,
+      "domains": [
+        "L",
+        "C"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T06-01",
+      "groupId": "G06",
+      "text": {
+        "bn": "হাত বাড়িয়ে বলুন, ‘চামচটা দাও’। দিলে হেসে বলুন, ‘ধন্যবাদ!’"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "meal",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T06-02",
+      "groupId": "G06",
+      "text": {
+        "bn": "পাখি, বিড়াল বা গাড়ি দেখলে আঙুল দিয়ে দেখিয়ে নাম বলুন। শিশু আঙুল দিয়ে দেখালে সাড়া দিন: ‘হ্যাঁ, ওটা কাক!’"
+      },
+      "safety": null,
+      "domains": [
+        "L",
+        "S"
+      ],
+      "routine": "outing",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T06-03",
+      "groupId": "G06",
+      "text": {
+        "bn": "দুটো-তিনটে বাটি বা খালি ছোট বাক্স একটার ওপর আরেকটা রাখুন, তারপর শিশুকে ফেলে দিতে দিন। আবার সাজান।"
+      },
+      "safety": null,
+      "domains": [
+        "C",
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T06-04",
+      "groupId": "G06",
+      "text": {
+        "bn": "খালি কাপ দিয়ে খাওয়ার ভান করুন, বা পুরনো বন্ধ ফোন কানে ধরে বলুন ‘হ্যালো’। শিশু নকল করুক।"
+      },
+      "safety": {
+        "bn": "পুরনো ফোন বা রিমোট থেকে ব্যাটারি খুলে নিন। ছোট গোল ব্যাটারি গিললে খুব বিপদ।"
+      },
+      "domains": [
+        "C"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T06-05",
+      "groupId": "G06",
+      "text": {
+        "bn": "আপনি একটু দূরে বসে হাত বাড়িয়ে ডাকুন, ‘আমার কাছে এসো!’ কয়েক পা এলেই আনন্দ করুন।"
+      },
+      "safety": {
+        "bn": "সমতল পরিষ্কার মেঝে। পুকুর বা রাস্তার ধারে নয়।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T06-06",
+      "groupId": "G06",
+      "text": {
+        "bn": "পরিবারের খাওয়ার সময় শিশুকে নিজের ছোট থালা দিন, হাতে খেতে দিন। ছড়িয়ে ফেললে বকবেন না।"
+      },
+      "safety": {
+        "bn": "পাশে থাকুন। কাঁটাওয়ালা মাছ সাবধানে বেছে দিন।"
+      },
+      "domains": [
+        "M",
+        "S"
+      ],
+      "routine": "meal",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T06-07",
+      "groupId": "G06",
+      "text": {
+        "bn": "প্রতিবেশী বা চাচাতো-মামাতো ভাইবোনদের পাশে খেলতে দিন। সে কাউকে নকল করলে হাসুন।"
+      },
+      "safety": {
+        "bn": "একজন বড় মানুষ নজর রাখবেন।"
+      },
+      "domains": [
+        "S"
+      ],
+      "routine": "afternoon",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T06-08",
+      "groupId": "G06",
+      "text": {
+        "bn": "কাপড়ের পুতুল বা বালিশকে জড়িয়ে ধরে দেখান, বলুন, ‘তুমিও আদর করো’।"
+      },
+      "safety": null,
+      "domains": [
+        "S"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T06-09",
+      "groupId": "G06",
+      "text": {
+        "bn": "কোলে বসিয়ে ছবির বই বা বড় ভাইবোনের পুরনো বইয়ের ছবি দেখান। ‘এটা কী?’ জিজ্ঞেস করে নিজেই উত্তর দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "bedtime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T06-10",
+      "groupId": "G06",
+      "text": {
+        "bn": "খাওয়ানোর সময় মোবাইলে কার্টুনের বদলে খাবার নিয়ে গল্প করুন: ‘লাল শাক, নরম ভাত, মাছ কোথায়?’"
+      },
+      "safety": null,
+      "domains": [
+        "L",
+        "S"
+      ],
+      "routine": "meal",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T07-01",
+      "groupId": "G07",
+      "text": {
+        "bn": "ঘর ঝাড়ু বা মোছার সময় শিশুকে একটা শুকনো কাপড় দিন, যাতে সেও ‘সাহায্য’ করে। বলুন, ‘কী সুন্দর মুছছো!’"
+      },
+      "safety": {
+        "bn": "ভেজা মেঝেতে পিছলে পড়তে পারে। পরিষ্কারের তরল দূরে।"
+      },
+      "domains": [
+        "C",
+        "S"
+      ],
+      "routine": "housework",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T07-02",
+      "groupId": "G07",
+      "text": {
+        "bn": "খাওয়ার আগে একসাথে সাবান দিয়ে হাত ধুন, ধাপ বলে বলে: ‘পানি, সাবান, ঘষো, ধোও’।"
+      },
+      "safety": null,
+      "domains": [
+        "S",
+        "L"
+      ],
+      "routine": "meal",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T07-03",
+      "groupId": "G07",
+      "text": {
+        "bn": "জামা পরানোর সময় বলুন ‘হাত ঢোকাও’, ‘পা তোলো’, তারপর একটু অপেক্ষা করুন।"
+      },
+      "safety": null,
+      "domains": [
+        "S",
+        "L"
+      ],
+      "routine": "care",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T07-04",
+      "groupId": "G07",
+      "text": {
+        "bn": "ইশারা ছাড়া একটা করে সহজ কাজ দিন: ‘বলটা আনো’, ‘জুতাটা দাও’। করলে ধন্যবাদ দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T07-05",
+      "groupId": "G07",
+      "text": {
+        "bn": "পুরনো খাতায় মোটা পেন্সিল বা চক দিয়ে, বা উঠানের মাটিতে আঙুল দিয়ে আঁকিবুঁকি করতে দিন।"
+      },
+      "safety": {
+        "bn": "চক বা পেন্সিল মুখে দিচ্ছে কি না দেখুন। আঁকার পর হাত ধোয়ান।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T07-06",
+      "groupId": "G07",
+      "text": {
+        "bn": "খালি কৌটা বা বাক্স দিয়ে ঠেলাগাড়ি বানিয়ে দিন। ‘গাড়ি চলে, ভোঁ ভোঁ!’"
+      },
+      "safety": {
+        "bn": "কৌটার ধারালো কিনারা টেপ দিয়ে ঢাকুন। লম্বা দড়ি নয়, গলায় পেঁচাতে পারে।"
+      },
+      "domains": [
+        "C",
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T07-07",
+      "groupId": "G07",
+      "text": {
+        "bn": "খাওয়ার সময় শিশুর হাতে নিজের চামচ দিন। আপনি অন্য চামচে সাহায্য করুন।"
+      },
+      "safety": null,
+      "domains": [
+        "M"
+      ],
+      "routine": "meal",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T07-08",
+      "groupId": "G07",
+      "text": {
+        "bn": "শিশু একটা শব্দ বললে আপনি তার সাথে একটু যোগ করুন: সে ‘পানি’ বললে আপনি বলুন ‘পানি খাবে? এই নাও পানি’।"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T07-09",
+      "groupId": "G07",
+      "text": {
+        "bn": "একসাথে ২–৩ পাতা ছবির বই দেখুন, শিশুকে পাতা উল্টাতে দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "L",
+        "S"
+      ],
+      "routine": "bedtime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T07-10",
+      "groupId": "G07",
+      "text": {
+        "bn": "নিচু মোড়া বা পিঁড়িতে ওঠা-নামার খেলা খেলুন, আপনি পাশে থাকুন।"
+      },
+      "safety": {
+        "bn": "জানালা, বারান্দা ও খাটের কিনারা থেকে দূরে।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T08-01",
+      "groupId": "G08",
+      "text": {
+        "bn": "গোসলের সময় জিজ্ঞেস করুন: ‘নাক কোথায়? চোখ কোথায়?’ দেখালে হাততালি দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "bath",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T08-02",
+      "groupId": "G08",
+      "text": {
+        "bn": "শিশু এক শব্দ বললে দুই শব্দে ফিরিয়ে দিন: ‘দুধ’ → ‘আরো দুধ?’, ‘গরম দুধ’।"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T08-03",
+      "groupId": "G08",
+      "text": {
+        "bn": "কাপড় বা কাগজ দলা করে বল বানিয়ে লাথি দেওয়ার খেলা খেলুন।"
+      },
+      "safety": {
+        "bn": "খোলা জায়গায়, পুকুর ও রাস্তা থেকে দূরে।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "afternoon",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T08-04",
+      "groupId": "G08",
+      "text": {
+        "bn": "খালি বাটি, চামচ আর গাছের পাতা দিয়ে রান্নাবাটি খেলুন। বলুন, ‘আমাকে একটু খাওয়াও!’"
+      },
+      "safety": {
+        "bn": "আসল চুলার কাছে নয়। পাতা মুখে দিচ্ছে কি না দেখুন।"
+      },
+      "domains": [
+        "C",
+        "S"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T08-05",
+      "groupId": "G08",
+      "text": {
+        "bn": "বড় প্লাস্টিকের কৌটার ভেতরে একটা খেলনা রেখে ঢাকনা লাগিয়ে দিন। খুলতে দিন।"
+      },
+      "safety": {
+        "bn": "ওষুধের বা রাসায়নিকের কৌটা কখনো নয়।"
+      },
+      "domains": [
+        "C",
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T08-06",
+      "groupId": "G08",
+      "text": {
+        "bn": "কেউ কাঁদলে নাম দিয়ে বলুন: ‘আপু কাঁদছে, ওর মন খারাপ। চলো আদর করি।’"
+      },
+      "safety": null,
+      "domains": [
+        "S"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T08-07",
+      "groupId": "G08",
+      "text": {
+        "bn": "ছবির বই দেখিয়ে জিজ্ঞেস করুন: ‘গরু কোথায়?’ আঙুল দিয়ে দেখাতে দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "bedtime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T08-08",
+      "groupId": "G08",
+      "text": {
+        "bn": "হাত ধরে সিঁড়ি বা উঠানের ধাপ হেঁটে ওঠা-নামা করুন।"
+      },
+      "safety": {
+        "bn": "রেলিং ছাড়া সিঁড়িতে একা নয়।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "outing",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T08-09",
+      "groupId": "G08",
+      "text": {
+        "bn": "ইশারার খেলা: বিদায়ে ফ্লাইং কিস, ‘হ্যাঁ’ বলতে মাথা নাড়া, ‘না’ বলতে মাথা দোলানো।"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T08-10",
+      "groupId": "G08",
+      "text": {
+        "bn": "উঠানে বা ঘরে ‘ধরো তো আমাকে’ খেলুন।"
+      },
+      "safety": {
+        "bn": "পিছল মেঝে ও ধারালো কোণ এড়িয়ে চলুন।"
+      },
+      "domains": [
+        "M",
+        "S"
+      ],
+      "routine": "afternoon",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T09-01",
+      "groupId": "G09",
+      "text": {
+        "bn": "কাপড়ের পুতুলকে ভাত খাওয়ানো ও ঘুম পাড়ানোর ভান করুন। বলুন, ‘এবার তুমি খাওয়াও’।"
+      },
+      "safety": null,
+      "domains": [
+        "C",
+        "S"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T09-02",
+      "groupId": "G09",
+      "text": {
+        "bn": "খেলা শেষে ‘এখন গোছানোর সময়!’ বলে একসাথে খেলনা ঝুড়িতে রাখুন।"
+      },
+      "safety": null,
+      "domains": [
+        "S"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T09-03",
+      "groupId": "G09",
+      "text": {
+        "bn": "দুই ধাপের কাজ দিন: ‘জুতাটা নাও, তারপর দরজার পাশে রাখো’।"
+      },
+      "safety": null,
+      "domains": [
+        "C",
+        "L"
+      ],
+      "routine": "outing",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T09-04",
+      "groupId": "G09",
+      "text": {
+        "bn": "কাপড় ভাঁজের সময় জিজ্ঞেস করুন, ‘লাল জামাটা কোনটা?’ একবারে একটা রঙ।"
+      },
+      "safety": null,
+      "domains": [
+        "C"
+      ],
+      "routine": "housework",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T09-05",
+      "groupId": "G09",
+      "text": {
+        "bn": "মেঝেতে চক বা দড়ি দিয়ে দাগ দিন, দুই পা একসাথে করে দাগের ওপর দিয়ে লাফ দিতে বলুন।"
+      },
+      "safety": {
+        "bn": "পিছল মেঝে নয়। খেলা শেষে দড়ি তুলে রাখুন।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "afternoon",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T09-06",
+      "groupId": "G09",
+      "text": {
+        "bn": "খালি পানির বোতলের ঢাকনা খোলা ও লাগানোর খেলা খেলুন।"
+      },
+      "safety": {
+        "bn": "ওষুধ, কেরোসিন বা পরিষ্কারকের বোতল দিয়ে কখনো নয়। শিশু এখন ঢাকনা খুলতে পারে।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T09-07",
+      "groupId": "G09",
+      "text": {
+        "bn": "কাজ করতে করতে কাজের শব্দ বলুন: ‘মা কাটছে’, ‘বাবা ধুচ্ছে’, ‘তুমি লাফাচ্ছ’।"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "housework",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T09-08",
+      "groupId": "G09",
+      "text": {
+        "bn": "‘কে খাবে?’ — ‘আমি!’ ‘কার জুতা?’ — ‘আমার!’ এমন প্রশ্ন-উত্তরের খেলা খেলুন।"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "meal",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T09-09",
+      "groupId": "G09",
+      "text": {
+        "bn": "গোসলের আগে ঢিলা প্যান্ট বা জামা নিজে খুলতে দিন। দরকার হলে সাহায্য করুন।"
+      },
+      "safety": null,
+      "domains": [
+        "M"
+      ],
+      "routine": "bath",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T09-10",
+      "groupId": "G09",
+      "text": {
+        "bn": "বই পড়ার সময় শিশুকে একটা একটা করে পাতা উল্টাতে দিন, আঙুল দিয়ে জিজ্ঞেস করুন, ‘এটা কী?’"
+      },
+      "safety": null,
+      "domains": [
+        "L",
+        "M"
+      ],
+      "routine": "bedtime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T09-11",
+      "groupId": "G09",
+      "text": {
+        "bn": "অন্য শিশুদের সাথে ইট, কাঠি বা বাক্স দিয়ে ঘর বানানোর খেলা খেলতে দিন।"
+      },
+      "safety": {
+        "bn": "একজন বড় মানুষ নজর রাখবেন।"
+      },
+      "domains": [
+        "S"
+      ],
+      "routine": "afternoon",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T10-01",
+      "groupId": "G10",
+      "text": {
+        "bn": "‘আজ কী খেললে?’ জিজ্ঞেস করুন। উত্তরের পর আরেকটা প্রশ্ন করুন: ‘কার সাথে?’"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "evening",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T10-02",
+      "groupId": "G10",
+      "text": {
+        "bn": "‘কেন?’ প্রশ্নের উত্তর ধৈর্য নিয়ে দিন। জানা না থাকলে বলুন, ‘চলো একসাথে দেখি’।"
+      },
+      "safety": null,
+      "domains": [
+        "L",
+        "C"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T10-03",
+      "groupId": "G10",
+      "text": {
+        "bn": "বই বা ক্যালেন্ডারের ছবি দেখিয়ে জিজ্ঞেস করুন, ‘মেয়েটা কী করছে?’"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T10-04",
+      "groupId": "G10",
+      "text": {
+        "bn": "‘তোমার নাম কী?’, ‘আব্বুর নাম কী?’, ‘আমাদের বাড়ি কোথায়?’ খেলার ছলে জিজ্ঞেস করুন।"
+      },
+      "safety": {
+        "bn": "হারিয়ে গেলে নাম বলতে পারা নিরাপত্তার অংশ।"
+      },
+      "domains": [
+        "L"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T10-05",
+      "groupId": "G10",
+      "text": {
+        "bn": "কাগজে বা মাটিতে একটা গোল এঁকে দেখান (‘চাঁদ আঁকি’), তারপর শিশুকে আঁকতে দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "C",
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T10-06",
+      "groupId": "G10",
+      "text": {
+        "bn": "মোটা ফিতায় বড় পুঁতি, কাগজের নল বা ফুল গেঁথে মালা বানান।"
+      },
+      "safety": {
+        "bn": "পাশে থাকুন। পুঁতি মুখে, নাকে বা কানে দিচ্ছে কি না দেখুন। সুই নয়।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T10-07",
+      "groupId": "G10",
+      "text": {
+        "bn": "সকালে ঢিলা জামা বা প্যান্ট নিজে পরতে দিন। তাড়া না করে সময় দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "M"
+      ],
+      "routine": "care",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T10-08",
+      "groupId": "G10",
+      "text": {
+        "bn": "দূর থেকে চুলা দেখিয়ে বলুন, ‘চুলা গরম, ছোঁবে না’। ঠান্ডা পানির গ্লাস ছুঁয়ে বলুন, ‘ঠান্ডা’।"
+      },
+      "safety": {
+        "bn": "শেখানোর জন্য কখনো গরম জিনিস ছুঁতে দেবেন না।"
+      },
+      "domains": [
+        "C"
+      ],
+      "routine": "housework",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T10-09",
+      "groupId": "G10",
+      "text": {
+        "bn": "প্রতিবেশী শিশুদের সাথে লুকোচুরি বা হাত ধরাধরি করে গোল হয়ে ঘোরার খেলা খেলতে দিন।"
+      },
+      "safety": {
+        "bn": "পুকুর ও রাস্তার কাছে নয়। একজন বড় মানুষ নজর রাখবেন।"
+      },
+      "domains": [
+        "S"
+      ],
+      "routine": "afternoon",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T10-10",
+      "groupId": "G10",
+      "text": {
+        "bn": "দাদি, নানি বা চাচির কাছে রেখে যাওয়ার সময় বিদায় বলুন ও কখন ফিরবেন তা বলুন: ‘ভাত খাওয়ার পরে আসব’।"
+      },
+      "safety": null,
+      "domains": [
+        "S"
+      ],
+      "routine": "outing",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T11-01",
+      "groupId": "G11",
+      "text": {
+        "bn": "দোকান-দোকান বা স্কুল-স্কুল খেলুন: ‘তুমি দোকানদার, আমি কিনতে এসেছি’।"
+      },
+      "safety": null,
+      "domains": [
+        "S",
+        "C"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T11-02",
+      "groupId": "G11",
+      "text": {
+        "bn": "রাতের খাবারের সময় জিজ্ঞেস করুন, ‘আজ কী কী করলে?’ পরিবারের সবাই নিজের গল্পও বলুন।"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "evening",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T11-03",
+      "groupId": "G11",
+      "text": {
+        "bn": "পরিচিত ছড়া বলতে বলতে শেষ শব্দটা বাদ দিন, শিশুকে বলতে দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "bedtime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T11-04",
+      "groupId": "G11",
+      "text": {
+        "bn": "‘কী কাজে লাগে?’ খেলা: ছাতা, চিরুনি, বালতি, জুতা দেখিয়ে জিজ্ঞেস করুন।"
+      },
+      "safety": null,
+      "domains": [
+        "L",
+        "C"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T11-05",
+      "groupId": "G11",
+      "text": {
+        "bn": "বাজারে বা রাস্তায় জিজ্ঞেস করুন, ‘সবুজ কী কী দেখছ?’"
+      },
+      "safety": {
+        "bn": "হাত ধরে রাখুন।"
+      },
+      "domains": [
+        "C"
+      ],
+      "routine": "outing",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T11-06",
+      "groupId": "G11",
+      "text": {
+        "bn": "পরিচিত রূপকথা বা টুনটুনির গল্প বলতে বলতে মাঝপথে থেমে জিজ্ঞেস করুন, ‘এরপর কী হলো?’"
+      },
+      "safety": null,
+      "domains": [
+        "C",
+        "L"
+      ],
+      "routine": "bedtime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T11-07",
+      "groupId": "G11",
+      "text": {
+        "bn": "‘আব্বুকে আঁকো তো!’ আঁকার পর জিজ্ঞেস করুন, ‘এটা কী? এটা কী?’ সব আঁকার প্রশংসা করুন।"
+      },
+      "safety": null,
+      "domains": [
+        "C",
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T11-08",
+      "groupId": "G11",
+      "text": {
+        "bn": "কাপড় বা প্লাস্টিকের বড় বল আস্তে ছুড়ে ধরার খেলা খেলুন।"
+      },
+      "safety": {
+        "bn": "খোলা জায়গা, পুকুর ও রাস্তা থেকে দূরে।"
+      },
+      "domains": [
+        "M"
+      ],
+      "routine": "afternoon",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T11-09",
+      "groupId": "G11",
+      "text": {
+        "bn": "খাওয়ার সময় নিজের থালায় ভাত নিতে বা ছোট জগ থেকে গ্লাসে পানি ঢালতে দিন।"
+      },
+      "safety": {
+        "bn": "গরম ডাল বা তরকারি নয়। হালকা ছোট জগ। আপনি পাশে থাকুন।"
+      },
+      "domains": [
+        "M",
+        "S"
+      ],
+      "routine": "meal",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T11-10",
+      "groupId": "G11",
+      "text": {
+        "bn": "নিজের জামার বড় বোতাম নিজে খুলতে দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "M"
+      ],
+      "routine": "care",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T11-11",
+      "groupId": "G11",
+      "text": {
+        "bn": "কেউ পড়ে গেলে জিজ্ঞেস করুন, ‘ওর কেমন লাগছে? কী করলে ওর ভালো লাগবে?’"
+      },
+      "safety": null,
+      "domains": [
+        "S"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T12-01",
+      "groupId": "G12",
+      "text": {
+        "bn": "উঠানে চক বা কাঠি দিয়ে ঘর এঁকে এক্কাদোক্কা খেলুন। পালা করে খেলার নিয়ম মানতে বলুন।"
+      },
+      "safety": {
+        "bn": "সমতল জায়গা, পুকুর ও রাস্তা থেকে দূরে।"
+      },
+      "domains": [
+        "S",
+        "M"
+      ],
+      "routine": "afternoon",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T12-02",
+      "groupId": "G12",
+      "text": {
+        "bn": "খাওয়ার পর নিজের থালা রাখতে বা জুতা-মোজা জোড়া মেলাতে দিন। ধন্যবাদ দিন।"
+      },
+      "safety": {
+        "bn": "কাচের থালা বা গ্লাস নয়।"
+      },
+      "domains": [
+        "S"
+      ],
+      "routine": "meal",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T12-03",
+      "groupId": "G12",
+      "text": {
+        "bn": "‘একদিন একটা বিড়াল গাছে উঠলো, তারপর...’ বলে শুরু করুন, শিশুকে গল্প শেষ করতে দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "bedtime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T12-04",
+      "groupId": "G12",
+      "text": {
+        "bn": "গল্প বলার পর সহজ প্রশ্ন করুন: ‘টুনটুনি কীভাবে বাঁচলো?’"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "bedtime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T12-05",
+      "groupId": "G12",
+      "text": {
+        "bn": "রান্না বা বাজারের সময় একসাথে গুনুন: আলু, ডিম, সিঁড়ির ধাপ।"
+      },
+      "safety": null,
+      "domains": [
+        "C"
+      ],
+      "routine": "housework",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T12-06",
+      "groupId": "G12",
+      "text": {
+        "bn": "ক্যালেন্ডার, বাসের নম্বর বা দোকানের সাইনবোর্ডে চেনা সংখ্যা ও অক্ষর খুঁজুন।"
+      },
+      "safety": {
+        "bn": "রাস্তায় হাত ধরে রাখুন।"
+      },
+      "domains": [
+        "C"
+      ],
+      "routine": "outing",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T12-07",
+      "groupId": "G12",
+      "text": {
+        "bn": "শিশুর নামের প্রথম অক্ষর বড় করে লিখে দিন, ওপরে দাগ টানতে দিন। জোর করবেন না।"
+      },
+      "safety": null,
+      "domains": [
+        "C",
+        "M"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T12-08",
+      "groupId": "G12",
+      "text": {
+        "bn": "ছন্দের খেলা: ‘বল-জল’, ‘হাত-ভাত’। বলুন, ‘আরেকটা মিলের শব্দ বলো তো!’"
+      },
+      "safety": null,
+      "domains": [
+        "L"
+      ],
+      "routine": "anytime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T12-09",
+      "groupId": "G12",
+      "text": {
+        "bn": "ঘুমানোর আগে জিজ্ঞেস করুন, ‘আজ কী করলে? আগামীকাল কী করবে?’"
+      },
+      "safety": null,
+      "domains": [
+        "C",
+        "L"
+      ],
+      "routine": "bedtime",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T12-10",
+      "groupId": "G12",
+      "text": {
+        "bn": "পরিবারের সামনে ছড়া বা গান গাইতে, নাচতে উৎসাহ দিন। লজ্জা পেলে জোর নয়।"
+      },
+      "safety": null,
+      "domains": [
+        "S"
+      ],
+      "routine": "evening",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T12-11",
+      "groupId": "G12",
+      "text": {
+        "bn": "নিজের জামার বোতাম নিজে লাগাতে দিন।"
+      },
+      "safety": null,
+      "domains": [
+        "M"
+      ],
+      "routine": "care",
+      "milestoneIds": [],
+      "status": "draft"
+    },
+    {
+      "id": "T12-12",
+      "groupId": "G12",
+      "text": {
+        "bn": "মোবাইল বন্ধ করে ১০ মিনিট একসাথে আঁকুন, বা আটার দলা দিয়ে কিছু বানান।"
+      },
+      "safety": null,
+      "domains": [
+        "C"
+      ],
+      "routine": "play",
+      "milestoneIds": [],
+      "status": "draft"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "M02-S1",
+      "groupId": "G01",
+      "checkpointMonths": 2,
+      "domain": "S",
+      "text": {
+        "bn": "কথা বললে বা কোলে নিলে শান্ত হয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M02-S2",
+      "groupId": "G01",
+      "checkpointMonths": 2,
+      "domain": "S",
+      "text": {
+        "bn": "আপনার মুখের দিকে তাকায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M02-S3",
+      "groupId": "G01",
+      "checkpointMonths": 2,
+      "domain": "S",
+      "text": {
+        "bn": "আপনি কাছে এলে খুশি মনে হয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M02-S4",
+      "groupId": "G01",
+      "checkpointMonths": 2,
+      "domain": "S",
+      "text": {
+        "bn": "আপনি কথা বললে বা হাসলে সেও হাসে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M02-L1",
+      "groupId": "G01",
+      "checkpointMonths": 2,
+      "domain": "L",
+      "text": {
+        "bn": "কান্না ছাড়াও অন্য শব্দ করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M02-L2",
+      "groupId": "G01",
+      "checkpointMonths": 2,
+      "domain": "L",
+      "text": {
+        "bn": "জোরে শব্দ হলে প্রতিক্রিয়া দেখায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M02-C1",
+      "groupId": "G01",
+      "checkpointMonths": 2,
+      "domain": "C",
+      "text": {
+        "bn": "আপনি নড়াচড়া করলে আপনাকে চোখ দিয়ে দেখে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M02-C2",
+      "groupId": "G01",
+      "checkpointMonths": 2,
+      "domain": "C",
+      "text": {
+        "bn": "একটি খেলনার দিকে কয়েক সেকেন্ড তাকিয়ে থাকে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M02-M1",
+      "groupId": "G01",
+      "checkpointMonths": 2,
+      "domain": "M",
+      "text": {
+        "bn": "উপুড় করে রাখলে মাথা তুলে ধরে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M02-M2",
+      "groupId": "G01",
+      "checkpointMonths": 2,
+      "domain": "M",
+      "text": {
+        "bn": "দুই হাত ও দুই পা নাড়ায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M02-M3",
+      "groupId": "G01",
+      "checkpointMonths": 2,
+      "domain": "M",
+      "text": {
+        "bn": "অল্প সময়ের জন্য হাতের মুঠো খোলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M04-S1",
+      "groupId": "G02",
+      "checkpointMonths": 4,
+      "domain": "S",
+      "text": {
+        "bn": "নিজে থেকে হেসে আপনার মনোযোগ চায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M04-S2",
+      "groupId": "G02",
+      "checkpointMonths": 4,
+      "domain": "S",
+      "text": {
+        "bn": "হাসাতে চাইলে খিলখিল করে (পুরো হাসি না হলেও চলবে)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M04-S3",
+      "groupId": "G02",
+      "checkpointMonths": 4,
+      "domain": "S",
+      "text": {
+        "bn": "মনোযোগ পেতে বা ধরে রাখতে আপনার দিকে তাকায়, নড়ে বা শব্দ করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M04-L1",
+      "groupId": "G02",
+      "checkpointMonths": 4,
+      "domain": "L",
+      "text": {
+        "bn": "‘উউ’, ‘আআ’ ধরনের শব্দ করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M04-L2",
+      "groupId": "G02",
+      "checkpointMonths": 4,
+      "domain": "L",
+      "text": {
+        "bn": "আপনি কথা বললে সেও শব্দ করে উত্তর দেয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M04-L3",
+      "groupId": "G02",
+      "checkpointMonths": 4,
+      "domain": "L",
+      "text": {
+        "bn": "আপনার গলার শব্দের দিকে মাথা ঘোরায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M04-C1",
+      "groupId": "G02",
+      "checkpointMonths": 4,
+      "domain": "C",
+      "text": {
+        "bn": "ক্ষুধা লাগলে বুকের দুধ বা বোতল দেখে মুখ খোলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M04-C2",
+      "groupId": "G02",
+      "checkpointMonths": 4,
+      "domain": "C",
+      "text": {
+        "bn": "আগ্রহ নিয়ে নিজের হাত দেখে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M04-M1",
+      "groupId": "G02",
+      "checkpointMonths": 4,
+      "domain": "M",
+      "text": {
+        "bn": "কোলে ধরলে সাপোর্ট ছাড়াই মাথা স্থির রাখে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M04-M2",
+      "groupId": "G02",
+      "checkpointMonths": 4,
+      "domain": "M",
+      "text": {
+        "bn": "হাতে খেলনা দিলে ধরে রাখে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M04-M3",
+      "groupId": "G02",
+      "checkpointMonths": 4,
+      "domain": "M",
+      "text": {
+        "bn": "হাত দিয়ে খেলনার দিকে বাড়ি দেয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M04-M4",
+      "groupId": "G02",
+      "checkpointMonths": 4,
+      "domain": "M",
+      "text": {
+        "bn": "হাত মুখে নেয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M04-M5",
+      "groupId": "G02",
+      "checkpointMonths": 4,
+      "domain": "M",
+      "text": {
+        "bn": "উপুড় অবস্থায় কনুই বা বাহুর ওপর ভর দিয়ে বুক তোলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M06-S1",
+      "groupId": "G03",
+      "checkpointMonths": 6,
+      "domain": "S",
+      "text": {
+        "bn": "পরিচিত মানুষদের চেনে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M06-S2",
+      "groupId": "G03",
+      "checkpointMonths": 6,
+      "domain": "S",
+      "text": {
+        "bn": "আয়নায় নিজেকে দেখতে পছন্দ করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M06-S3",
+      "groupId": "G03",
+      "checkpointMonths": 6,
+      "domain": "S",
+      "text": {
+        "bn": "শব্দ করে হাসে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M06-L1",
+      "groupId": "G03",
+      "checkpointMonths": 6,
+      "domain": "L",
+      "text": {
+        "bn": "আপনার সাথে পালা করে শব্দ করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M06-L2",
+      "groupId": "G03",
+      "checkpointMonths": 6,
+      "domain": "L",
+      "text": {
+        "bn": "জিভ বের করে ফুঁ দিয়ে ‘ফুরর’ শব্দ করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M06-L3",
+      "groupId": "G03",
+      "checkpointMonths": 6,
+      "domain": "L",
+      "text": {
+        "bn": "আনন্দে তীক্ষ্ণ চিঁ চিঁ শব্দ করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M06-C1",
+      "groupId": "G03",
+      "checkpointMonths": 6,
+      "domain": "C",
+      "text": {
+        "bn": "জিনিস মুখে দিয়ে চেনার চেষ্টা করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M06-C2",
+      "groupId": "G03",
+      "checkpointMonths": 6,
+      "domain": "C",
+      "text": {
+        "bn": "পছন্দের খেলনা ধরতে হাত বাড়ায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M06-C3",
+      "groupId": "G03",
+      "checkpointMonths": 6,
+      "domain": "C",
+      "text": {
+        "bn": "আর খেতে না চাইলে ঠোঁট বন্ধ করে রাখে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M06-M1",
+      "groupId": "G03",
+      "checkpointMonths": 6,
+      "domain": "M",
+      "text": {
+        "bn": "উপুড় থেকে গড়িয়ে চিত হয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M06-M2",
+      "groupId": "G03",
+      "checkpointMonths": 6,
+      "domain": "M",
+      "text": {
+        "bn": "উপুড় অবস্থায় হাত সোজা করে শরীর তোলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M06-M3",
+      "groupId": "G03",
+      "checkpointMonths": 6,
+      "domain": "M",
+      "text": {
+        "bn": "বসানো অবস্থায় হাতে ভর দিয়ে নিজেকে সামলায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M09-S1",
+      "groupId": "G04",
+      "checkpointMonths": 9,
+      "domain": "S",
+      "text": {
+        "bn": "অপরিচিত মানুষের কাছে লাজুক, আঁকড়ে ধরে বা ভয় পায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M09-S2",
+      "groupId": "G04",
+      "checkpointMonths": 9,
+      "domain": "S",
+      "text": {
+        "bn": "মুখে নানা ভাব দেখায়: খুশি, দুঃখ, রাগ, অবাক"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M09-S3",
+      "groupId": "G04",
+      "checkpointMonths": 9,
+      "domain": "S",
+      "text": {
+        "bn": "নাম ধরে ডাকলে তাকায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M09-S4",
+      "groupId": "G04",
+      "checkpointMonths": 9,
+      "domain": "S",
+      "text": {
+        "bn": "আপনি চলে গেলে প্রতিক্রিয়া দেখায় (তাকায়, হাত বাড়ায় বা কাঁদে)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M09-S5",
+      "groupId": "G04",
+      "checkpointMonths": 9,
+      "domain": "S",
+      "text": {
+        "bn": "টুকি খেললে হাসে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M09-L1",
+      "groupId": "G04",
+      "checkpointMonths": 9,
+      "domain": "L",
+      "text": {
+        "bn": "‘মামামা’, ‘বাবাবা’ এর মতো নানা শব্দ করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M09-L2",
+      "groupId": "G04",
+      "checkpointMonths": 9,
+      "domain": "L",
+      "text": {
+        "bn": "কোলে উঠতে দুই হাত তোলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M09-C1",
+      "groupId": "G04",
+      "checkpointMonths": 9,
+      "domain": "C",
+      "text": {
+        "bn": "চোখের আড়ালে পড়ে গেলে জিনিস খোঁজে (যেমন চামচ বা খেলনা)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M09-C2",
+      "groupId": "G04",
+      "checkpointMonths": 9,
+      "domain": "C",
+      "text": {
+        "bn": "দুটো জিনিস ঠুকে শব্দ করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M09-M1",
+      "groupId": "G04",
+      "checkpointMonths": 9,
+      "domain": "M",
+      "text": {
+        "bn": "নিজে নিজে উঠে বসতে পারে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M09-M2",
+      "groupId": "G04",
+      "checkpointMonths": 9,
+      "domain": "M",
+      "text": {
+        "bn": "এক হাত থেকে অন্য হাতে জিনিস নেয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M09-M3",
+      "groupId": "G04",
+      "checkpointMonths": 9,
+      "domain": "M",
+      "text": {
+        "bn": "আঙুল দিয়ে খাবার নিজের দিকে টেনে আনে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M09-M4",
+      "groupId": "G04",
+      "checkpointMonths": 9,
+      "domain": "M",
+      "text": {
+        "bn": "সাপোর্ট ছাড়া বসে থাকে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M12-S1",
+      "groupId": "G05",
+      "checkpointMonths": 12,
+      "domain": "S",
+      "text": {
+        "bn": "আপনার সাথে খেলায় অংশ নেয়, যেমন হাততালির খেলা"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M12-L1",
+      "groupId": "G05",
+      "checkpointMonths": 12,
+      "domain": "L",
+      "text": {
+        "bn": "হাত নেড়ে ‘টা-টা’ দেয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M12-L2",
+      "groupId": "G05",
+      "checkpointMonths": 12,
+      "domain": "L",
+      "text": {
+        "bn": "বাবা বা মাকে ‘মা’, ‘বাবা’ বা অন্য কোনো বিশেষ নামে ডাকে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M12-L3",
+      "groupId": "G05",
+      "checkpointMonths": 12,
+      "domain": "L",
+      "text": {
+        "bn": "‘না’ বোঝে (বললে একটু থামে বা বন্ধ করে)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M12-C1",
+      "groupId": "G05",
+      "checkpointMonths": 12,
+      "domain": "C",
+      "text": {
+        "bn": "পাত্রে কিছু রাখে, যেমন কাপে একটা চামচ"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M12-C2",
+      "groupId": "G05",
+      "checkpointMonths": 12,
+      "domain": "C",
+      "text": {
+        "bn": "আপনাকে লুকাতে দেখলে জিনিস খোঁজে, যেমন কাঁথার নিচে খেলনা"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M12-M1",
+      "groupId": "G05",
+      "checkpointMonths": 12,
+      "domain": "M",
+      "text": {
+        "bn": "কিছু ধরে উঠে দাঁড়ায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M12-M2",
+      "groupId": "G05",
+      "checkpointMonths": 12,
+      "domain": "M",
+      "text": {
+        "bn": "আসবাব ধরে ধরে হাঁটে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M12-M3",
+      "groupId": "G05",
+      "checkpointMonths": 12,
+      "domain": "M",
+      "text": {
+        "bn": "আপনি ধরে রাখলে খোলা কাপ থেকে পান করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M12-M4",
+      "groupId": "G05",
+      "checkpointMonths": 12,
+      "domain": "M",
+      "text": {
+        "bn": "বুড়ো আঙুল ও তর্জনী দিয়ে ছোট জিনিস তোলে, যেমন খাবারের ছোট টুকরো"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M15-S1",
+      "groupId": "G06",
+      "checkpointMonths": 15,
+      "domain": "S",
+      "text": {
+        "bn": "খেলার সময় অন্য শিশুদের নকল করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M15-S2",
+      "groupId": "G06",
+      "checkpointMonths": 15,
+      "domain": "S",
+      "text": {
+        "bn": "পছন্দের জিনিস আপনাকে এনে দেখায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M15-S3",
+      "groupId": "G06",
+      "checkpointMonths": 15,
+      "domain": "S",
+      "text": {
+        "bn": "খুশি হলে হাততালি দেয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M15-S4",
+      "groupId": "G06",
+      "checkpointMonths": 15,
+      "domain": "S",
+      "text": {
+        "bn": "পুতুল বা খেলনা জড়িয়ে ধরে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M15-S5",
+      "groupId": "G06",
+      "checkpointMonths": 15,
+      "domain": "S",
+      "text": {
+        "bn": "আপনাকে আদর দেখায় (জড়িয়ে ধরে, গা ঘেঁষে বা চুমু দেয়)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M15-L1",
+      "groupId": "G06",
+      "checkpointMonths": 15,
+      "domain": "L",
+      "text": {
+        "bn": "‘মা’ বা ‘বাবা’ ছাড়াও এক-দুটো শব্দ বলার চেষ্টা করে, যেমন বলের জন্য ‘বা’"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M15-L2",
+      "groupId": "G06",
+      "checkpointMonths": 15,
+      "domain": "L",
+      "text": {
+        "bn": "পরিচিত জিনিসের নাম বললে সেদিকে তাকায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M15-L3",
+      "groupId": "G06",
+      "checkpointMonths": 15,
+      "domain": "L",
+      "text": {
+        "bn": "ইশারা ও কথা একসাথে দিলে নির্দেশ মানে (হাত বাড়িয়ে ‘খেলনাটা দাও’ বললে দেয়)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M15-L4",
+      "groupId": "G06",
+      "checkpointMonths": 15,
+      "domain": "L",
+      "text": {
+        "bn": "কিছু চাইতে বা সাহায্য পেতে আঙুল দিয়ে দেখায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M15-C1",
+      "groupId": "G06",
+      "checkpointMonths": 15,
+      "domain": "C",
+      "text": {
+        "bn": "জিনিস ঠিকভাবে ব্যবহারের চেষ্টা করে, যেমন ফোন, কাপ বা বই"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M15-C2",
+      "groupId": "G06",
+      "checkpointMonths": 15,
+      "domain": "C",
+      "text": {
+        "bn": "অন্তত দুটো ছোট জিনিস একটার ওপর আরেকটা রাখে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M15-M1",
+      "groupId": "G06",
+      "checkpointMonths": 15,
+      "domain": "M",
+      "text": {
+        "bn": "নিজে নিজে কয়েক পা হাঁটে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M15-M2",
+      "groupId": "G06",
+      "checkpointMonths": 15,
+      "domain": "M",
+      "text": {
+        "bn": "আঙুল দিয়ে কিছু খাবার নিজে খায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-S1",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "S",
+      "text": {
+        "bn": "আপনার কাছ থেকে দূরে যায়, কিন্তু আপনি কাছে আছেন কি না ফিরে দেখে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-S2",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "S",
+      "text": {
+        "bn": "মজার কিছু দেখাতে আঙুল দিয়ে দেখায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-S3",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "S",
+      "text": {
+        "bn": "হাত ধোয়াতে হাত বাড়িয়ে দেয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-S4",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "S",
+      "text": {
+        "bn": "আপনার সাথে বইয়ের কয়েকটা পাতা দেখে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-S5",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "S",
+      "text": {
+        "bn": "জামা পরাতে সাহায্য করে (হাতায় হাত ঢোকায় বা পা তোলে)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-L1",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "L",
+      "text": {
+        "bn": "‘মা’ বা ‘বাবা’ ছাড়া তিন বা তার বেশি শব্দ বলার চেষ্টা করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-L2",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "L",
+      "text": {
+        "bn": "ইশারা ছাড়াই এক ধাপের নির্দেশ মানে, যেমন ‘আমাকে দাও’ বললে খেলনা দেয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-C1",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "C",
+      "text": {
+        "bn": "আপনার ঘরের কাজ নকল করে, যেমন ঝাড়ু দেওয়া"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-C2",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "C",
+      "text": {
+        "bn": "সহজভাবে খেলনা নিয়ে খেলে, যেমন খেলনা গাড়ি ঠেলা"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-M1",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "M",
+      "text": {
+        "bn": "কাউকে বা কিছু না ধরে হাঁটে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-M2",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "M",
+      "text": {
+        "bn": "আঁকিবুঁকি করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-M3",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "M",
+      "text": {
+        "bn": "খোলা কাপ থেকে পান করে, মাঝে মাঝে পড়ে যেতে পারে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-M4",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "M",
+      "text": {
+        "bn": "আঙুল দিয়ে নিজে খায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-M5",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "M",
+      "text": {
+        "bn": "চামচ ব্যবহারের চেষ্টা করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M18-M6",
+      "groupId": "G07",
+      "checkpointMonths": 18,
+      "domain": "M",
+      "text": {
+        "bn": "সোফা বা চেয়ারে সাহায্য ছাড়া ওঠে-নামে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M24-S1",
+      "groupId": "G08",
+      "checkpointMonths": 24,
+      "domain": "S",
+      "text": {
+        "bn": "অন্য কেউ ব্যথা পেলে বা মন খারাপ করলে খেয়াল করে (কেউ কাঁদলে থেমে যায় বা মন খারাপ দেখায়)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M24-S2",
+      "groupId": "G08",
+      "checkpointMonths": 24,
+      "domain": "S",
+      "text": {
+        "bn": "নতুন পরিস্থিতিতে কী করবে বুঝতে আপনার মুখের দিকে তাকায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M24-L1",
+      "groupId": "G08",
+      "checkpointMonths": 24,
+      "domain": "L",
+      "text": {
+        "bn": "বইয়ে জিজ্ঞেস করলে জিনিস দেখায়, যেমন ‘ভালুক কোথায়?’"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M24-L2",
+      "groupId": "G08",
+      "checkpointMonths": 24,
+      "domain": "L",
+      "text": {
+        "bn": "অন্তত দুটো শব্দ একসাথে বলে, যেমন ‘আরো দুধ’"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M24-L3",
+      "groupId": "G08",
+      "checkpointMonths": 24,
+      "domain": "L",
+      "text": {
+        "bn": "জিজ্ঞেস করলে শরীরের অন্তত দুটো অংশ দেখায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M24-L4",
+      "groupId": "G08",
+      "checkpointMonths": 24,
+      "domain": "L",
+      "text": {
+        "bn": "হাত নাড়া ও আঙুল দেখানো ছাড়াও অন্য ইশারা করে, যেমন ফ্লাইং কিস বা মাথা নেড়ে ‘হ্যাঁ’"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M24-C1",
+      "groupId": "G08",
+      "checkpointMonths": 24,
+      "domain": "C",
+      "text": {
+        "bn": "খেলনার সুইচ, নব বা বোতাম চাপার চেষ্টা করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M24-C2",
+      "groupId": "G08",
+      "checkpointMonths": 24,
+      "domain": "C",
+      "text": {
+        "bn": "একসাথে একাধিক খেলনা নিয়ে খেলে, যেমন খেলনা থালায় খেলনা খাবার রাখা"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M24-C3",
+      "groupId": "G08",
+      "checkpointMonths": 24,
+      "domain": "C",
+      "text": {
+        "bn": "এক হাতে কিছু ধরে অন্য হাত দিয়ে কাজ করে, যেমন কৌটা ধরে ঢাকনা খোলা"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M24-M1",
+      "groupId": "G08",
+      "checkpointMonths": 24,
+      "domain": "M",
+      "text": {
+        "bn": "বলে লাথি দেয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M24-M2",
+      "groupId": "G08",
+      "checkpointMonths": 24,
+      "domain": "M",
+      "text": {
+        "bn": "দৌড়ায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M24-M3",
+      "groupId": "G08",
+      "checkpointMonths": 24,
+      "domain": "M",
+      "text": {
+        "bn": "কয়েকটা সিঁড়ি হেঁটে ওঠে (হামাগুড়ি দিয়ে নয়), সাহায্যসহ বা ছাড়া"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M24-M4",
+      "groupId": "G08",
+      "checkpointMonths": 24,
+      "domain": "M",
+      "text": {
+        "bn": "চামচ দিয়ে খায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-S1",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "S",
+      "text": {
+        "bn": "অন্য শিশুদের পাশে খেলে এবং মাঝে মাঝে তাদের সাথে খেলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-S2",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "S",
+      "text": {
+        "bn": "‘দেখো আমাকে!’ বলে যা পারে তা দেখায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-S3",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "S",
+      "text": {
+        "bn": "বললে সহজ রুটিন মানে, যেমন ‘এখন গোছানোর সময়’ বললে খেলনা গোছাতে সাহায্য করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-L1",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "L",
+      "text": {
+        "bn": "প্রায় ৫০টি শব্দ বলে (যেকোনো ভাষা বা আঞ্চলিক ভাষা মিলিয়ে)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-L2",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "L",
+      "text": {
+        "bn": "দুই বা তার বেশি শব্দ একসাথে বলে, যার একটি কাজের শব্দ, যেমন ‘কুকুর দৌড়ায়’"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-L3",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "L",
+      "text": {
+        "bn": "বইয়ে আঙুল দিয়ে ‘এটা কী?’ জিজ্ঞেস করলে নাম বলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-L4",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "L",
+      "text": {
+        "bn": "‘আমি’, ‘আমাকে’, ‘আমরা’ এর মতো শব্দ বলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-C1",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "C",
+      "text": {
+        "bn": "ভান করে খেলায় জিনিস ব্যবহার করে, যেমন পুতুলকে একটা ইটের টুকরো খাওয়ায় যেন খাবার"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-C2",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "C",
+      "text": {
+        "bn": "সহজ সমস্যার সমাধান করে, যেমন কিছু নাগাল পেতে ছোট মোড়ায় দাঁড়ায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-C3",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "C",
+      "text": {
+        "bn": "দুই ধাপের নির্দেশ মানে, যেমন ‘খেলনাটা রাখো আর দরজাটা বন্ধ করো’"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-C4",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "C",
+      "text": {
+        "bn": "অন্তত একটি রঙ চেনে, যেমন ‘লালটা কোনটা?’ জিজ্ঞেস করলে লাল পেন্সিল দেখায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-M1",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "M",
+      "text": {
+        "bn": "হাত দিয়ে মোচড়ানোর কাজ করে, যেমন দরজার হাতল ঘোরানো বা ঢাকনা খোলা"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-M2",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "M",
+      "text": {
+        "bn": "নিজে কিছু কাপড় খোলে, যেমন ঢিলা প্যান্ট বা খোলা জামা"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-M3",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "M",
+      "text": {
+        "bn": "দুই পায়ে লাফ দেয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M30-M4",
+      "groupId": "G09",
+      "checkpointMonths": 30,
+      "domain": "M",
+      "text": {
+        "bn": "বই পড়ার সময় একটা একটা করে পাতা উল্টায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M36-S1",
+      "groupId": "G10",
+      "checkpointMonths": 36,
+      "domain": "S",
+      "text": {
+        "bn": "আপনি চলে যাওয়ার ১০ মিনিটের মধ্যে শান্ত হয়, যেমন কারও কাছে রেখে গেলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M36-S2",
+      "groupId": "G10",
+      "checkpointMonths": 36,
+      "domain": "S",
+      "text": {
+        "bn": "অন্য শিশুদের খেয়াল করে এবং তাদের খেলায় যোগ দেয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M36-L1",
+      "groupId": "G10",
+      "checkpointMonths": 36,
+      "domain": "L",
+      "text": {
+        "bn": "অন্তত দুবার আসা-যাওয়া করে আপনার সাথে কথা চালিয়ে যায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M36-L2",
+      "groupId": "G10",
+      "checkpointMonths": 36,
+      "domain": "L",
+      "text": {
+        "bn": "‘কে’, ‘কী’, ‘কোথায়’ বা ‘কেন’ প্রশ্ন করে, যেমন ‘আম্মু কোথায়?’"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M36-L3",
+      "groupId": "G10",
+      "checkpointMonths": 36,
+      "domain": "L",
+      "text": {
+        "bn": "ছবিতে কী কাজ হচ্ছে জিজ্ঞেস করলে বলে, যেমন ‘দৌড়াচ্ছে’, ‘খাচ্ছে’"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M36-L4",
+      "groupId": "G10",
+      "checkpointMonths": 36,
+      "domain": "L",
+      "text": {
+        "bn": "জিজ্ঞেস করলে নিজের নাম বলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M36-L5",
+      "groupId": "G10",
+      "checkpointMonths": 36,
+      "domain": "L",
+      "text": {
+        "bn": "বেশিরভাগ সময় অন্যরা বুঝতে পারে এমনভাবে কথা বলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M36-C1",
+      "groupId": "G10",
+      "checkpointMonths": 36,
+      "domain": "C",
+      "text": {
+        "bn": "দেখিয়ে দিলে একটা গোল আঁকে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M36-C2",
+      "groupId": "G10",
+      "checkpointMonths": 36,
+      "domain": "C",
+      "text": {
+        "bn": "সাবধান করলে গরম জিনিস, যেমন চুলা, ছোঁয় না"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M36-M1",
+      "groupId": "G10",
+      "checkpointMonths": 36,
+      "domain": "M",
+      "text": {
+        "bn": "জিনিস সুতায় গাঁথে, যেমন বড় পুঁতি বা ম্যাকারনি"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M36-M2",
+      "groupId": "G10",
+      "checkpointMonths": 36,
+      "domain": "M",
+      "text": {
+        "bn": "নিজে কিছু কাপড় পরে, যেমন ঢিলা প্যান্ট বা জামা"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M36-M3",
+      "groupId": "G10",
+      "checkpointMonths": 36,
+      "domain": "M",
+      "text": {
+        "bn": "কাঁটাচামচ ব্যবহার করে"
+      },
+      "allowNotApplicable": true,
+      "source": "CDC 2022",
+      "status": "draft",
+      "reviewerNote": "allow “প্রযোজ্য নয়”; reviewer to decide whether to offer a hand-eating alternative"
+    },
+    {
+      "id": "M48-S1",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "S",
+      "text": {
+        "bn": "খেলার সময় অন্য কিছু হওয়ার ভান করে (শিক্ষক, বীর, কুকুর)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-S2",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "S",
+      "text": {
+        "bn": "আশেপাশে কেউ না থাকলে অন্য শিশুদের সাথে খেলতে যেতে চায়, যেমন ‘আমি কি রিয়ার সাথে খেলতে যাব?’"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-S3",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "S",
+      "text": {
+        "bn": "কেউ ব্যথা পেলে বা মন খারাপ করলে সান্ত্বনা দেয়, যেমন কাঁদতে থাকা বন্ধুকে জড়িয়ে ধরা"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-S4",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "S",
+      "text": {
+        "bn": "বিপদ এড়িয়ে চলে, যেমন উঁচু জায়গা থেকে লাফ না দেওয়া"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-S5",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "S",
+      "text": {
+        "bn": "‘সাহায্যকারী’ হতে পছন্দ করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-S6",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "S",
+      "text": {
+        "bn": "জায়গা অনুযায়ী আচরণ বদলায় (উপাসনালয়, বিয়েবাড়ি, খেলার মাঠ)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-L1",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "L",
+      "text": {
+        "bn": "চার বা তার বেশি শব্দের বাক্য বলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-L2",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "L",
+      "text": {
+        "bn": "গান, গল্প বা ছড়ার কিছু শব্দ বলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-L3",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "L",
+      "text": {
+        "bn": "দিনে কী হয়েছে তার অন্তত একটা কথা বলে, যেমন ‘আমি বল খেলেছি’"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-L4",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "L",
+      "text": {
+        "bn": "সহজ প্রশ্নের উত্তর দেয়, যেমন ‘জামা কী কাজে লাগে?’"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-C1",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "C",
+      "text": {
+        "bn": "কয়েকটা জিনিসের রঙের নাম বলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-C2",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "C",
+      "text": {
+        "bn": "পরিচিত গল্পে এরপর কী হবে বলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-C3",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "C",
+      "text": {
+        "bn": "তিন বা তার বেশি অংশসহ একজন মানুষ আঁকে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-M1",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "M",
+      "text": {
+        "bn": "বড় বল বেশিরভাগ সময় ধরতে পারে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-M2",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "M",
+      "text": {
+        "bn": "বড়দের নজরে নিজে খাবার নেয় বা পানি ঢালে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-M3",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "M",
+      "text": {
+        "bn": "কিছু বোতাম খোলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M48-M4",
+      "groupId": "G11",
+      "checkpointMonths": 48,
+      "domain": "M",
+      "text": {
+        "bn": "পেন্সিল বা রঙ পেন্সিল মুঠোয় নয়, আঙুল ও বুড়ো আঙুল দিয়ে ধরে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-S1",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "S",
+      "text": {
+        "bn": "অন্য শিশুদের সাথে খেলায় নিয়ম মানে বা পালা নেয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-S2",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "S",
+      "text": {
+        "bn": "আপনার জন্য গান গায়, নাচে বা অভিনয় করে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-S3",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "S",
+      "text": {
+        "bn": "বাড়ির সহজ কাজ করে, যেমন মোজা মেলানো বা খাওয়ার পর থালা সরানো"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-L1",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "L",
+      "text": {
+        "bn": "অন্তত দুটো ঘটনা দিয়ে শোনা বা বানানো গল্প বলে (যেমন: একটা বিড়াল গাছে আটকে গিয়েছিল, একজন দমকলকর্মী তাকে বাঁচালেন)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-L2",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "L",
+      "text": {
+        "bn": "বই পড়ে বা গল্প শুনিয়ে পরে সহজ প্রশ্নের উত্তর দেয়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-L3",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "L",
+      "text": {
+        "bn": "তিনবারের বেশি আসা-যাওয়া করে কথা চালিয়ে যায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-L4",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "L",
+      "text": {
+        "bn": "সহজ ছন্দ বলে বা চেনে (বল-জল, হাত-ভাত)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-C1",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "C",
+      "text": {
+        "bn": "১০ পর্যন্ত গুনতে পারে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-C2",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "C",
+      "text": {
+        "bn": "১ থেকে ৫ এর মধ্যে কিছু সংখ্যা দেখালে নাম বলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-C3",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "C",
+      "text": {
+        "bn": "সময়ের শব্দ ব্যবহার করে, যেমন ‘গতকাল’, ‘আগামীকাল’, ‘সকাল’, ‘রাত’"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-C4",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "C",
+      "text": {
+        "bn": "৫ থেকে ১০ মিনিট একটা কাজে মনোযোগ দেয়, যেমন গল্প শোনা বা আঁকা (মোবাইল বা টিভি দেখা গণ্য নয়)"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-C5",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "C",
+      "text": {
+        "bn": "নিজের নামের কিছু অক্ষর লেখে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-C6",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "C",
+      "text": {
+        "bn": "দেখালে কিছু অক্ষরের নাম বলে"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-M1",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "M",
+      "text": {
+        "bn": "কিছু বোতাম লাগায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    },
+    {
+      "id": "M60-M2",
+      "groupId": "G12",
+      "checkpointMonths": 60,
+      "domain": "M",
+      "text": {
+        "bn": "এক পায়ে লাফায়"
+      },
+      "allowNotApplicable": false,
+      "source": "CDC 2022",
+      "status": "draft"
+    }
+  ],
+  "safetyTips": [
+    {
+      "id": "SF01-01",
+      "groupId": "G01",
+      "text": {
+        "bn": "ঘুম: সবসময় চিত করে, শক্ত সমতল বিছানায়। মুখের কাছে বালিশ, ভারী কাঁথা বা খেলনা নয়। মশারি টানিয়ে দিন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF01-02",
+      "groupId": "G01",
+      "text": {
+        "bn": "খাবার: প্রথম ৬ মাস শুধু মায়ের দুধ। পানি, মধু, মিছরি-পানি, চিনি-পানি বা গরুর দুধ নয়, যদি না ডাক্তার অন্যভাবে বলেন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF01-03",
+      "groupId": "G01",
+      "text": {
+        "bn": "খাট বা চৌকিতে শিশুকে একা রেখে যাবেন না।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF01-04",
+      "groupId": "G01",
+      "text": {
+        "bn": "শিশুর কাছে ধূমপান নয়। রান্নার চুলার ধোঁয়া থেকে দূরে রাখুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF01-05",
+      "groupId": "G01",
+      "text": {
+        "bn": "চোখে কাজল বা সুরমা দেওয়ার আগে ডাক্তারকে জিজ্ঞেস করুন।"
+      },
+      "status": "draft",
+      "reviewerNote": "Reviewer to confirm wording; some kohl products contain lead."
+    },
+    {
+      "id": "SF02-01",
+      "groupId": "G02",
+      "text": {
+        "bn": "শিশু যেকোনো দিন গড়াতে শিখবে। খাট বা চৌকিতে এক মুহূর্তও একা রাখবেন না। দরকার হলে মেঝেতে পাটি বিছিয়ে রাখুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF02-02",
+      "groupId": "G02",
+      "text": {
+        "bn": "গোসলের পানি কনুই ডুবিয়ে পরীক্ষা করুন। গোসলের সময় এক হাত সবসময় শিশুর গায়ে।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF02-03",
+      "groupId": "G02",
+      "text": {
+        "bn": "ছোট ভাই-বোনের কোলে শিশুকে বড়রা পাশে না থাকলে দেবেন না।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF02-04",
+      "groupId": "G02",
+      "text": {
+        "bn": "প্রথম ৬ মাস শুধু মায়ের দুধ, আগের মতোই।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF03-01",
+      "groupId": "G03",
+      "text": {
+        "bn": "শিশু এখন সব কিছু মুখে দেবে। বোতাম, পয়সা, ছোট ব্যাটারি, ওষুধ, সেফটিপিন, মার্বেল নাগালের বাইরে রাখুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF03-02",
+      "groupId": "G03",
+      "text": {
+        "bn": "মশার কয়েল, কেরোসিন, কীটনাশক ও পরিষ্কারের জিনিস উঁচু তাকে বা তালাবন্ধ জায়গায়।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF03-03",
+      "groupId": "G03",
+      "text": {
+        "bn": "৬ মাস পূর্ণ হলে বাড়তি খাবার শুরু করার বিষয়ে স্বাস্থ্যকর্মী বা ডাক্তারের পরামর্শ নিন।"
+      },
+      "status": "draft",
+      "reviewerNote": "The app gives no recipes or amounts."
+    },
+    {
+      "id": "SF04-01",
+      "groupId": "G04",
+      "text": {
+        "bn": "পানি: বালতি, গামলা, ড্রাম খালি করুন বা ঢাকনা দিয়ে রাখুন। অল্প পানিতেও শিশু ডুবে যেতে পারে, কোনো শব্দ ছাড়াই।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF04-02",
+      "groupId": "G04",
+      "text": {
+        "bn": "পুকুর, ডোবা বা খালের কাছে শিশুকে কখনো একা রাখবেন না। সকালে ঘরের কাজের সময় পরিবারের একজনকে শিশুর দায়িত্ব দিন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF04-03",
+      "groupId": "G04",
+      "text": {
+        "bn": "চুলা, গরম ডাল-ভাতের হাঁড়ি ও গরম ইস্ত্রি নাগালের বাইরে। বৈদ্যুতিক সকেট ঢেকে রাখুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF05-01",
+      "groupId": "G05",
+      "text": {
+        "bn": "পানি: এখন থেকে ৪ বছর পর্যন্ত সবচেয়ে বেশি ঝুঁকি। পুকুর বা ডোবা থাকলে উঠানে বেড়া বা দরজায় আটকানোর ব্যবস্থা ভাবুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF05-02",
+      "groupId": "G05",
+      "text": {
+        "bn": "কেরোসিন বা কীটনাশক কখনো কোমল পানীয় বা পানির বোতলে রাখবেন না।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF05-03",
+      "groupId": "G05",
+      "text": {
+        "bn": "টেবিলের কাপড় টানলে গরম চা বা ডাল গায়ে পড়তে পারে। গরম জিনিস টেবিলের মাঝখানে রাখুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF05-04",
+      "groupId": "G05",
+      "text": {
+        "bn": "সিঁড়ি, ছাদ ও বারান্দার খোলা অংশে বাধা দিন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF06-01",
+      "groupId": "G06",
+      "text": {
+        "bn": "পানি: হাঁটতে শেখা শিশু কয়েক মিনিটে পুকুরে পৌঁছাতে পারে। দরজায় উঁচু ছিটকিনি বা উঠানে বেড়া কাজে দেয়।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF06-02",
+      "groupId": "G06",
+      "text": {
+        "bn": "মেঝেতে মাটির চুলা বা গ্যাসের চুলা থাকলে রান্নার সময় শিশুকে দূরে রাখুন। গরম ভাতের মাড় বা পানিতে পোড়া খুব সাধারণ।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF06-03",
+      "groupId": "G06",
+      "text": {
+        "bn": "ওষুধ, কেরোসিন ও ব্লিচিং পাউডার তালাবন্ধ বা উঁচু জায়গায়।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF07-01",
+      "groupId": "G07",
+      "text": {
+        "bn": "পানি: গোসলখানার বালতি ও কলসি খালি বা ঢাকা রাখুন। গোসলখানার দরজা বন্ধ রাখুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF07-02",
+      "groupId": "G07",
+      "text": {
+        "bn": "শিশু এখন উঁচুতে উঠতে পারে। ওষুধ ও রাসায়নিক তাকে নয়, তালাবন্ধ জায়গায় রাখুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF07-03",
+      "groupId": "G07",
+      "text": {
+        "bn": "রাস্তার ধারে সবসময় হাত ধরে রাখুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF08-01",
+      "groupId": "G08",
+      "text": {
+        "bn": "পানি: ২ বছরের শিশু সবচেয়ে বেশি ডুবে যায়, বেশিরভাগ সময় বাড়ির কাছেই। শিশু কোথায় আছে তা সবসময় জানুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF08-02",
+      "groupId": "G08",
+      "text": {
+        "bn": "স্ক্রিন: ২ বছরে দিনে ১ ঘণ্টার বেশি নয়, কম হলে আরও ভালো। দেখলে পাশে বসে কথা বলুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF08-03",
+      "groupId": "G08",
+      "text": {
+        "bn": "মার্বেল, বাদাম, জলপাইয়ের বিচি ও চকলেটের মতো ছোট শক্ত জিনিস গলায় আটকাতে পারে।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF09-01",
+      "groupId": "G09",
+      "text": {
+        "bn": "শিশু এখন মোড়ায় উঠে উঁচু তাক নাগাল পায় ও ঢাকনা খুলতে পারে। ওষুধ ও রাসায়নিক তালাবন্ধ করুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF09-02",
+      "groupId": "G09",
+      "text": {
+        "bn": "মোড়া বা টুল চুলা, জানালা বা বারান্দার কাছে রাখবেন না।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF09-03",
+      "groupId": "G09",
+      "text": {
+        "bn": "পানি: বড় ভাইবোন নয়, একজন বড় মানুষ পাহারা দেবেন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF10-01",
+      "groupId": "G10",
+      "text": {
+        "bn": "সাঁতার শেখানো বা ডে-কেয়ার/শিশু যত্নকেন্দ্র থাকলে তার খোঁজ নিন। সাঁতার জানলেও শিশুকে পানির কাছে একা ছাড়বেন না।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF10-02",
+      "groupId": "G10",
+      "text": {
+        "bn": "শিশুকে শিখিয়ে দিন কোন অঙ্গ তার নিজের, কেউ অস্বস্তিকরভাবে ছুঁলে আপনাকে জানাতে বলুন।"
+      },
+      "status": "draft",
+      "reviewerNote": "Reviewer to confirm wording."
+    },
+    {
+      "id": "SF10-03",
+      "groupId": "G10",
+      "text": {
+        "bn": "গাড়ি, রিকশা ও অটোর রাস্তায় সবসময় হাত ধরে রাখুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF11-01",
+      "groupId": "G11",
+      "text": {
+        "bn": "পানি: ৪ বছর বা তার বেশি বয়সী শিশুদের জন্য নিরাপদ সাঁতার প্রশিক্ষণের খোঁজ নিন।"
+      },
+      "status": "draft",
+      "reviewerNote": "Bangladesh's SwimSafe programme reported about 90% fewer drowning deaths among children 4+ who took part."
+    },
+    {
+      "id": "SF11-02",
+      "groupId": "G11",
+      "text": {
+        "bn": "অপরিচিত কারও সাথে কোথাও যাবে না, আর হারিয়ে গেলে কী করবে তা শিখিয়ে দিন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF11-03",
+      "groupId": "G11",
+      "text": {
+        "bn": "রাস্তা পার হওয়া শিশু একা করবে না।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF12-01",
+      "groupId": "G12",
+      "text": {
+        "bn": "পানি: সাঁতার শিখলেও পুকুর বা নদীতে একা নয়। বর্ষা, বন্যা ও ঈদ-পূজার ছুটিতে বাড়তি সাবধান থাকুন।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF12-02",
+      "groupId": "G12",
+      "text": {
+        "bn": "রাস্তা পার হওয়ার নিয়ম শেখান, কিন্তু একা পার হতে দেবেন না।"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "SF12-03",
+      "groupId": "G12",
+      "text": {
+        "bn": "বাবা-মায়ের ফোন নম্বর মুখস্থ করানো শুরু করুন।"
+      },
+      "status": "draft"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F01-01",
+      "groupId": "G01",
+      "text": {
+        "bn": "জন্মের পরপরই শিশু মানুষের মুখের মতো আকৃতির দিকে বেশি তাকায় এবং চোখ দিয়ে অনুসরণ করে। কাছ থেকে আপনার মুখ দেখান, কথা বলুন।"
+      },
+      "summaryEn": "Newborns preferentially track face-like patterns; this preference declines during the second month.",
+      "reference": {
+        "citation": "Johnson MH, Dziurawiec S, Ellis H, Morton J (1991). Newborns' preferential tracking of face-like stimuli and its subsequent decline. Cognition, 40(1–2), 1–19.",
+        "doi": "10.1016/0010-0277(91)90045-6",
+        "url": "https://doi.org/10.1016/0010-0277(91)90045-6"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F01-02",
+      "groupId": "G01",
+      "text": {
+        "bn": "নবজাতক অনেক কণ্ঠের মধ্যে মায়ের কণ্ঠ আলাদা করে চিনতে পারে এবং সেটাই বেশি শুনতে চায়। সম্ভবত গর্ভে থাকতেই সে এই কণ্ঠ শুনে অভ্যস্ত হয়েছে।"
+      },
+      "summaryEn": "Newborns (within days of birth) prefer their own mother's voice over another woman's; prenatal exposure is the likely explanation.",
+      "reference": {
+        "citation": "DeCasper AJ, Fifer WP (1980). Of human bonding: Newborns prefer their mothers' voices. Science, 208(4448), 1174–1176.",
+        "doi": "10.1126/science.7375928",
+        "url": "https://doi.org/10.1126/science.7375928"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F01-03",
+      "groupId": "G01",
+      "text": {
+        "bn": "মাত্র ২ দিন বয়সী শিশুও অন্য ভাষার চেয়ে নিজের পরিবারের ভাষা বেশি শুনতে চায়। প্রথম দিন থেকেই শিশুর সাথে পরিবারের ভাষায় কথা বলুন।"
+      },
+      "summaryEn": "Two-day-old infants prefer their native language over a foreign language.",
+      "reference": {
+        "citation": "Moon C, Cooper RP, Fifer WP (1993). Two-day-olds prefer their native language. Infant Behavior and Development, 16(4), 495–500.",
+        "doi": "10.1016/0163-6383(93)80007-U",
+        "url": "https://doi.org/10.1016/0163-6383(93)80007-U"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F01-04",
+      "groupId": "G01",
+      "text": {
+        "bn": "জন্মের পর শিশুকে খালি গায়ে মায়ের বুকে রাখলে (ত্বকে ত্বক) বুকের দুধ খাওয়ানো সহজ হয় এবং বেশিদিন চালিয়ে যাওয়ার সম্ভাবনা বাড়ে।"
+      },
+      "summaryEn": "Cochrane review: early skin-to-skin contact increases breastfeeding at 1–4 months and breastfeeding duration.",
+      "reference": {
+        "citation": "Moore ER, Bergman N, Anderson GC, Medley N (2016). Early skin-to-skin contact for mothers and their healthy newborn infants. Cochrane Database of Systematic Reviews, CD003519.",
+        "doi": "10.1002/14651858.CD003519.pub4",
+        "url": "https://doi.org/10.1002/14651858.CD003519.pub4"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F02-01",
+      "groupId": "G02",
+      "text": {
+        "bn": "প্রথম ৬ সপ্তাহে শিশুরা গড়ে দিনে প্রায় ২ ঘণ্টা কাঁদে। ১০–১২ সপ্তাহে তা কমে দিনে এক ঘণ্টার মতো হয়। শিশু কাঁদে মানেই আপনি কিছু ভুল করছেন, তা নয়।"
+      },
+      "summaryEn": "Meta-analysis: fussing/crying averages about 2 hours/day in the first 6 weeks and falls to about 68 minutes/day by 10–12 weeks.",
+      "reference": {
+        "citation": "Wolke D, Bilgin A, Samara M (2017). Systematic review and meta-analysis: Fussing and crying durations and prevalence of colic in infants. The Journal of Pediatrics, 185, 55–61.",
+        "doi": "10.1016/j.jpeds.2017.02.020",
+        "url": "https://doi.org/10.1016/j.jpeds.2017.02.020"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F02-02",
+      "groupId": "G02",
+      "text": {
+        "bn": "আপনি হঠাৎ মুখ স্থির করে চুপ হয়ে গেলে শিশু হাসা কমিয়ে দেয়, অন্যদিকে তাকায়, অস্থির হয়। এই বয়সেই সে আপনার সাড়া আশা করে। আবার হাসি-কথা শুরু করলে বেশিরভাগ শিশু আবার সাড়া দেয়।"
+      },
+      "summaryEn": "Still-face meta-analysis: when a parent's face goes still, infants show less positive affect and gaze and more negative affect; partial recovery in the reunion phase.",
+      "reference": {
+        "citation": "Mesman J, van IJzendoorn MH, Bakermans-Kranenburg MJ (2009). The many faces of the Still-Face Paradigm: A review and meta-analysis. Developmental Review, 29(2), 120–162.",
+        "doi": "10.1016/j.dr.2009.02.001",
+        "url": "https://doi.org/10.1016/j.dr.2009.02.001"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F02-03",
+      "groupId": "G02",
+      "text": {
+        "bn": "জেগে থাকা অবস্থায় উপুড় হয়ে খেলা (টামি টাইম) মাথা তোলা, গড়িয়ে যাওয়া ও হামাগুড়ির দক্ষতার সাথে জড়িত। অল্প সময় দিয়ে শুরু করুন, আর সবসময় সামনে থাকুন।"
+      },
+      "summaryEn": "Systematic review: tummy time is positively associated with gross motor and total development, prone skills, rolling and crawling.",
+      "reference": {
+        "citation": "Hewitt L, Kerr E, Stanley RM, Okely AD (2020). Tummy time and infant health outcomes: A systematic review. Pediatrics, 145(6), e20192168.",
+        "doi": "10.1542/peds.2019-2168",
+        "url": "https://doi.org/10.1542/peds.2019-2168"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F02-04",
+      "groupId": "G02",
+      "text": {
+        "bn": "শিশুরা সাধারণ কথার চেয়ে টেনে টেনে, সুর করে বলা 'শিশুর সাথে কথা' বেশি পছন্দ করে। বিভিন্ন দেশের ৬৭টি গবেষণাগারে একসাথে পরীক্ষা করে এটা দেখা গেছে।"
+      },
+      "summaryEn": "ManyBabies 1 (67 labs): infants prefer infant-directed over adult-directed speech; the preference is stronger in older infants.",
+      "reference": {
+        "citation": "ManyBabies Consortium (2020). Quantifying sources of variability in infancy research using the infant-directed-speech preference. Advances in Methods and Practices in Psychological Science, 3(1), 24–52.",
+        "doi": "10.1177/2515245919900809",
+        "url": "https://doi.org/10.1177/2515245919900809"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F03-01",
+      "groupId": "G03",
+      "text": {
+        "bn": "সাড়ে ৪ মাস বয়সেই শিশু অন্য নামের চেয়ে নিজের নাম বেশি মন দিয়ে শোনে। তাকে নাম ধরে ডাকুন।"
+      },
+      "summaryEn": "4.5-month-olds listen longer to their own name than to other names with the same stress pattern.",
+      "reference": {
+        "citation": "Mandel DR, Jusczyk PW, Pisoni DB (1995). Infants' recognition of the sound patterns of their own names. Psychological Science, 6(5), 314–317.",
+        "doi": "10.1111/j.1467-9280.1995.tb00517.x",
+        "url": "https://doi.org/10.1111/j.1467-9280.1995.tb00517.x"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F03-02",
+      "groupId": "G03",
+      "text": {
+        "bn": "শিশু হাতের জিনিস মুখে দেয়, ঘুরিয়ে-ফিরিয়ে দেখে, আঙুল বোলায়। এভাবেই সে জিনিস চেনে। শুধু খেয়াল রাখুন, গিলে ফেলার মতো ছোট জিনিস যেন হাতের কাছে না থাকে।"
+      },
+      "summaryEn": "Between 2 and 5 months, infants explore objects by mouthing, looking and fingering, with exploration becoming increasingly visual and manual.",
+      "reference": {
+        "citation": "Rochat P (1989). Object manipulation and exploration in 2- to 5-month-old infants. Developmental Psychology, 25(6), 871–884.",
+        "doi": "10.1037/0012-1649.25.6.871",
+        "url": "https://doi.org/10.1037/0012-1649.25.6.871"
+      },
+      "status": "draft",
+      "reviewerNote": "DOI was built from the publisher's pattern, not copied from the paper. Open the link once to confirm it."
+    },
+    {
+      "id": "F03-03",
+      "groupId": "G03",
+      "text": {
+        "bn": "৫–৬ মাসের শিশু, যিনি আগে তার নিজের ভাষায় কথা বলেছেন, সেই মানুষের দিকে বেশি সময় তাকিয়ে থাকে। কে কোন ভাষায় কথা বলে, শিশু খুব ছোট থেকেই খেয়াল করে।"
+      },
+      "summaryEn": "5–6-month-olds look longer at a person who previously spoke their native language than at a foreign-language speaker.",
+      "reference": {
+        "citation": "Kinzler KD, Dupoux E, Spelke ES (2007). The native language of social cognition. PNAS, 104(30), 12577–12580.",
+        "doi": "10.1073/pnas.0705345104",
+        "url": "https://doi.org/10.1073/pnas.0705345104"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F03-04",
+      "groupId": "G03",
+      "text": {
+        "bn": "প্রথম এক বছরে শিশুর মস্তিষ্কের আয়তন দ্বিগুণেরও বেশি হয়। দ্বিতীয় বছরে বাড়ে আরও প্রায় ১৫%।"
+      },
+      "summaryEn": "MRI study: total brain volume increases 101% in the first year and 15% in the second.",
+      "reference": {
+        "citation": "Knickmeyer RC, et al. (2008). A structural MRI study of human brain development from birth to 2 years. Journal of Neuroscience, 28(47), 12176–12182.",
+        "doi": "10.1523/JNEUROSCI.3479-08.2008",
+        "url": "https://doi.org/10.1523/JNEUROSCI.3479-08.2008"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F04-01",
+      "groupId": "G04",
+      "text": {
+        "bn": "৬–৯ মাস বয়সেই শিশু পরিচিত খাবার ও শরীরের অঙ্গের নাম বুঝতে শুরু করে, কথা বলার অনেক আগেই। যা দেখছেন, তার নাম বলুন।"
+      },
+      "summaryEn": "6–9-month-olds understand many common nouns (foods, body parts).",
+      "reference": {
+        "citation": "Bergelson E, Swingley D (2012). At 6–9 months, human infants know the meanings of many common nouns. PNAS, 109(9), 3253–3258.",
+        "doi": "10.1073/pnas.1113380109",
+        "url": "https://doi.org/10.1073/pnas.1113380109"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F04-02",
+      "groupId": "G04",
+      "text": {
+        "bn": "৬ মাসের দিকে অনেক শিশু অপরিচিত মানুষ দেখলে ভয় পেতে শুরু করে। কারও ভয় বেশি, কারও কম, কারও তাড়াতাড়ি কমে যায়। সবই স্বাভাবিক। আত্মীয়দের কোলে জোর করে দেবেন না, শিশুকে সময় দিন।"
+      },
+      "summaryEn": "Stranger fear emerges around 6 months on average and children follow different trajectories (high/low, rising/falling). The last sentence is our advice, not a finding.",
+      "reference": {
+        "citation": "Brooker RJ, et al. (2013). The development of stranger fear in infancy and toddlerhood: Normative development, individual differences, antecedents, and outcomes. Developmental Science, 16(6), 864–878.",
+        "doi": "10.1111/desc.12058",
+        "url": "https://doi.org/10.1111/desc.12058"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F04-03",
+      "groupId": "G04",
+      "text": {
+        "bn": "শিশু আধো-আধো শব্দ (বা-বা, দা-দা) করলে সাথে সাথে হেসে, ছুঁয়ে বা কথা বলে সাড়া দিন। এমন সাড়া পেলে ৮ মাসের শিশুর আধো বুলি আরও পরিণত হয়েছে।"
+      },
+      "summaryEn": "When mothers responded contingently (smiles, touch) to 8-month-olds' babbling, the infants' vocalisations became more mature.",
+      "reference": {
+        "citation": "Goldstein MH, King AP, West MJ (2003). Social interaction shapes babbling: Testing parallels between birdsong and speech. PNAS, 100(13), 8030–8035.",
+        "doi": "10.1073/pnas.1332441100",
+        "url": "https://doi.org/10.1073/pnas.1332441100"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F04-04",
+      "groupId": "G04",
+      "text": {
+        "bn": "৬–৮ মাসের শিশু নিজের ভাষায় নেই এমন ধ্বনির পার্থক্যও শুনতে পারে। ১০–১২ মাসের মধ্যে এই ক্ষমতা কমে আসে, কান নিজের ভাষায় অভ্যস্ত হয়ে যায়।"
+      },
+      "summaryEn": "6–8-month-olds discriminate non-native speech contrasts (Hindi, Salish); by 10–12 months most no longer do.",
+      "reference": {
+        "citation": "Werker JF, Tees RC (1984). Cross-language speech perception: Evidence for perceptual reorganization during the first year of life. Infant Behavior and Development, 7(1), 49–63.",
+        "doi": "10.1016/S0163-6383(84)80022-3",
+        "url": "https://doi.org/10.1016/S0163-6383(84)80022-3"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F04-05",
+      "groupId": "G04",
+      "text": {
+        "bn": "হামাগুড়ি শুরুর স্বাভাবিক সময় অনেক লম্বা: প্রায় ৫ থেকে সাড়ে ১৩ মাস। বিশ্ব স্বাস্থ্য সংস্থার গবেষণায় প্রায় ৪% শিশু হামাগুড়ি না দিয়েই হাঁটা শিখেছে।"
+      },
+      "summaryEn": "WHO MGRS: window for hands-and-knees crawling 5.2–13.5 months; 4.3% of children never crawled.",
+      "reference": {
+        "citation": "WHO Multicentre Growth Reference Study Group (2006). WHO Motor Development Study: Windows of achievement for six gross motor development milestones. Acta Paediatrica Supplement, 450, 86–95.",
+        "doi": "10.1111/j.1651-2227.2006.tb02379.x",
+        "url": "https://doi.org/10.1111/j.1651-2227.2006.tb02379.x"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F05-01",
+      "groupId": "G05",
+      "text": {
+        "bn": "শিশু কিছু দেখালে বা শব্দ করলে বড়রা যত তাড়াতাড়ি এবং সেই বিষয় নিয়েই সাড়া দেন, শিশু তত আগে শব্দ শেখে।"
+      },
+      "summaryEn": "Prompt, contingent and appropriate parental responses predict earlier language milestones.",
+      "reference": {
+        "citation": "Tamis-LeMonda CS, Kuchirko Y, Song L (2014). Why is infant language learning facilitated by parental responsiveness? Current Directions in Psychological Science, 23(2), 121–126.",
+        "doi": "10.1177/0963721414522813",
+        "url": "https://doi.org/10.1177/0963721414522813"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F05-02",
+      "groupId": "G05",
+      "text": {
+        "bn": "৯ মাসের শিশুরা জীবন্ত মানুষের সাথে খেলতে খেলতে নতুন ভাষার ধ্বনি শিখেছে। কিন্তু একই জিনিস ভিডিও বা অডিওতে দেখে-শুনে শিখতে পারেনি। শেখার জন্য শিশুর দরকার মানুষ।"
+      },
+      "summaryEn": "9-month-old American infants learned Mandarin phonetic contrasts from live speakers but not from video or audio recordings of the same speakers.",
+      "reference": {
+        "citation": "Kuhl PK, Tsao FM, Liu HM (2003). Foreign-language experience in infancy: Effects of short-term exposure and social interaction on phonetic learning. PNAS, 100(15), 9096–9101.",
+        "doi": "10.1073/pnas.1532872100",
+        "url": "https://doi.org/10.1073/pnas.1532872100"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F05-03",
+      "groupId": "G05",
+      "text": {
+        "bn": "একা হাঁটা শুরুর স্বাভাবিক সময় প্রায় ৮ থেকে ১৮ মাস। অনেক শিশুই ১২ মাসের পরে হাঁটে। কোনো চিন্তা থাকলে ডাক্তারের সাথে কথা বলুন।"
+      },
+      "summaryEn": "WHO MGRS: window for walking alone 8.2–17.6 months.",
+      "reference": {
+        "citation": "WHO Multicentre Growth Reference Study Group (2006). WHO Motor Development Study: Windows of achievement for six gross motor development milestones. Acta Paediatrica Supplement, 450, 86–95.",
+        "doi": "10.1111/j.1651-2227.2006.tb02379.x",
+        "url": "https://doi.org/10.1111/j.1651-2227.2006.tb02379.x"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F05-04",
+      "groupId": "G05",
+      "text": {
+        "bn": "আঙুল দিয়ে দেখানো ভাষা শেখার সাথে জড়িত: যে শিশুরা বেশি আঙুল দিয়ে দেখায়, তারা সাধারণত পরে বেশি কথা বলে। শিশু কিছু দেখালে সেটার নাম বলুন।"
+      },
+      "summaryEn": "Meta-analysis: pointing is related to language (r = .52 concurrent, .35 longitudinal).",
+      "reference": {
+        "citation": "Colonnesi C, Stams GJJM, Koster I, Noom MJ (2010). The relation between pointing and language development: A meta-analysis. Developmental Review, 30(4), 352–366.",
+        "doi": "10.1016/j.dr.2010.10.001",
+        "url": "https://doi.org/10.1016/j.dr.2010.10.001"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F06-01",
+      "groupId": "G06",
+      "text": {
+        "bn": "হাঁটতে শেখা শিশু ঘণ্টায় গড়ে প্রায় ২,৩৬৮ পা হাঁটে আর ১৭ বার পড়ে যায়! পড়ে যাওয়া শেখারই অংশ। শুধু জায়গাটা নিরাপদ রাখুন।"
+      },
+      "summaryEn": "12–19-month-old walkers averaged 2,368 steps and 17 falls per hour of free play.",
+      "reference": {
+        "citation": "Adolph KE, et al. (2012). How do you learn to walk? Thousands of steps and dozens of falls per day. Psychological Science, 23(11), 1387–1394.",
+        "doi": "10.1177/0956797612446346",
+        "url": "https://doi.org/10.1177/0956797612446346"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F06-02",
+      "groupId": "G06",
+      "text": {
+        "bn": "১৪ মাসের শিশু শুধু নকল করে না, আপনি কেন কাজটা করছেন সেটাও বোঝার চেষ্টা করে। আপনার কথা ও আচরণ সে মন দিয়ে দেখে শেখে।"
+      },
+      "summaryEn": "Rational imitation: 14-month-olds copied an unusual action only when the adult had no obvious reason for it. The second sentence is a gentle generalisation.",
+      "reference": {
+        "citation": "Gergely G, Bekkering H, Király I (2002). Rational imitation in preverbal infants. Nature, 415(6873), 755.",
+        "doi": "10.1038/415755a",
+        "url": "https://doi.org/10.1038/415755a"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F06-03",
+      "groupId": "G06",
+      "text": {
+        "bn": "ছবির বই নিয়ে শিশুর সাথে কথা বলা, ছবি দেখিয়ে নাম বলা আর প্রশ্ন করা শিশুর ভাষার বিকাশে সাহায্য করে। পড়তে জানতে হবে না, ছবি নিয়ে গল্প করলেই হয়।"
+      },
+      "summaryEn": "Meta-analysis: shared picture-book reading interventions improve expressive and receptive language. The last sentence is our advice.",
+      "reference": {
+        "citation": "Dowdall N, et al. (2020). Shared picture book reading interventions for child language development: A systematic review and meta-analysis. Child Development, 91(2), e383–e399.",
+        "doi": "10.1111/cdev.13225",
+        "url": "https://doi.org/10.1111/cdev.13225"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F06-04",
+      "groupId": "G06",
+      "text": {
+        "bn": "১–২ বছরের শিশুরা টিভি বা ফোনের পর্দা থেকে যা শেখে, সামনাসামনি দেখালে তার চেয়ে অনেক বেশি শেখে।"
+      },
+      "summaryEn": "Review of the 'video deficit': infants and toddlers learn less from 2D screens than from live demonstrations.",
+      "reference": {
+        "citation": "Barr R (2010). Transfer of learning between 2D and 3D sources during infancy: Informing theory and practice. Developmental Review, 30(2), 128–154.",
+        "doi": "10.1016/j.dr.2010.03.001",
+        "url": "https://doi.org/10.1016/j.dr.2010.03.001"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F07-01",
+      "groupId": "G07",
+      "text": {
+        "bn": "১৮ মাসের শিশু কেউ না বললেও নিজে থেকে বড়দের সাহায্য করতে চায়, যেমন পড়ে যাওয়া জিনিস তুলে দেয়। ঘরের ছোট ছোট কাজে তাকে সঙ্গী করুন।"
+      },
+      "summaryEn": "18-month-olds spontaneously help adults (e.g. picking up a dropped object) without being asked or rewarded.",
+      "reference": {
+        "citation": "Warneken F, Tomasello M (2006). Altruistic helping in human infants and young chimpanzees. Science, 311(5765), 1301–1303.",
+        "doi": "10.1126/science.1121448",
+        "url": "https://doi.org/10.1126/science.1121448"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F07-02",
+      "groupId": "G07",
+      "text": {
+        "bn": "১৮ মাসের শিশু বুঝতে শুরু করে যে অন্যের পছন্দ তার নিজের পছন্দ থেকে আলাদা হতে পারে। তার প্রিয় খাবার আপনার প্রিয় না-ও হতে পারে!"
+      },
+      "summaryEn": "18-month-olds (but not 14-month-olds) offered an adult the food she liked, even when it differed from their own preference.",
+      "reference": {
+        "citation": "Repacholi BM, Gopnik A (1997). Early reasoning about desires: Evidence from 14- and 18-month-olds. Developmental Psychology, 33(1), 12–21.",
+        "doi": "10.1037/0012-1649.33.1.12",
+        "url": "https://doi.org/10.1037/0012-1649.33.1.12"
+      },
+      "status": "draft",
+      "reviewerNote": "DOI was built from the publisher's pattern, not copied from the paper. Open the link once to confirm it."
+    },
+    {
+      "id": "F07-03",
+      "groupId": "G07",
+      "text": {
+        "bn": "শিশু যেটার দিকে তাকিয়ে আছে বা যেটা নিয়ে খেলছে, সেটার নাম বললে সে শব্দ সহজে শেখে। তার মনোযোগ অন্যদিকে ঘুরিয়ে নাম শেখানোর চেয়ে এটা বেশি কাজে দেয়।"
+      },
+      "summaryEn": "Words used to follow the child's focus of attention were learned better than words used to redirect it.",
+      "reference": {
+        "citation": "Tomasello M, Farrar MJ (1986). Joint attention and early language. Child Development, 57(6), 1454–1463.",
+        "doi": "10.1111/j.1467-8624.1986.tb00470.x",
+        "url": "https://doi.org/10.1111/j.1467-8624.1986.tb00470.x"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F07-04",
+      "groupId": "G07",
+      "text": {
+        "bn": "দ্বিতীয় বছরে শিশু অন্যের কষ্ট দেখে চিন্তিত হতে শুরু করে। কেউ কাঁদলে সে তাকিয়ে থাকে, কাছে যায়, কখনো আদর করে বা নিজের খেলনা এগিয়ে দেয়।"
+      },
+      "summaryEn": "Concern for others (empathic concern, comforting, sharing) emerges and increases during the second year.",
+      "reference": {
+        "citation": "Zahn-Waxler C, Radke-Yarrow M, Wagner E, Chapman M (1992). Development of concern for others. Developmental Psychology, 28(1), 126–136.",
+        "doi": "10.1037/0012-1649.28.1.126",
+        "url": "https://doi.org/10.1037/0012-1649.28.1.126"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F08-01",
+      "groupId": "G08",
+      "text": {
+        "bn": "২০–২৪ মাসের প্রায় দুই-তৃতীয়াংশ শিশু আয়নায় নিজেকে চিনতে পারে। নাকে দাগ লাগানো থাকলে আয়না দেখে সে নিজের নাকে হাত দেয়।"
+      },
+      "summaryEn": "Mirror self-recognition (rouge test): about 65% of 20–24-month-olds.",
+      "reference": {
+        "citation": "Amsterdam B (1972). Mirror self-image reactions before age two. Developmental Psychobiology, 5(4), 297–305.",
+        "doi": "10.1002/dev.420050403",
+        "url": "https://doi.org/10.1002/dev.420050403"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F08-02",
+      "groupId": "G08",
+      "text": {
+        "bn": "শিশুকে উদ্দেশ্য করে সরাসরি বলা কথা তার শব্দভান্ডার বাড়ায়। পাশে বসে বড়দের কথা বা টিভির কথা শুনে একই উপকার পাওয়া যায়নি।"
+      },
+      "summaryEn": "Child-directed speech at 19 months predicted processing speed and vocabulary at 24 months; overheard speech did not.",
+      "reference": {
+        "citation": "Weisleder A, Fernald A (2013). Talking to children matters: Early language experience strengthens processing and builds vocabulary. Psychological Science, 24(11), 2143–2152.",
+        "doi": "10.1177/0956797613488145",
+        "url": "https://doi.org/10.1177/0956797613488145"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F08-03",
+      "groupId": "G08",
+      "text": {
+        "bn": "যে শিশুরা বেশি সময় পর্দা দেখে, গড়ে তাদের ভাষার দক্ষতা কম। কিন্তু বড়রা পাশে বসে একসাথে দেখলে আর কথা বললে শিশুদের ভাষা তুলনামূলক ভালো ছিল।"
+      },
+      "summaryEn": "Meta-analysis (associations, not proven causes): more screen time ↔ poorer language; co-viewing and educational content ↔ better language.",
+      "reference": {
+        "citation": "Madigan S, McArthur BA, Anhorn C, Eirich R, Christakis DA (2020). Associations between screen use and child language skills: A systematic review and meta-analysis. JAMA Pediatrics, 174(7), 665–675.",
+        "doi": "10.1001/jamapediatrics.2020.0327",
+        "url": "https://doi.org/10.1001/jamapediatrics.2020.0327"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F08-04",
+      "groupId": "G08",
+      "text": {
+        "bn": "১–২ বছরের শিশুর দিনে দুপুরের ঘুমসহ মোট ১১–১৪ ঘণ্টা ঘুম দরকার।"
+      },
+      "summaryEn": "AASM consensus: 11–14 hours per 24 hours (including naps) for ages 1–2.",
+      "reference": {
+        "citation": "Paruthi S, et al. (2016). Recommended amount of sleep for pediatric populations: A consensus statement of the American Academy of Sleep Medicine. Journal of Clinical Sleep Medicine, 12(6), 785–786.",
+        "doi": "10.5664/jcsm.5866",
+        "url": "https://doi.org/10.5664/jcsm.5866"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F09-01",
+      "groupId": "G09",
+      "text": {
+        "bn": "দুই ভাষা শেখা শিশুর প্রতিটি ভাষায় শব্দ কিছুটা কম মনে হতে পারে। কিন্তু দুই ভাষার শব্দ মিলিয়ে হিসাব করলে তারা এক ভাষা শেখা শিশুদের মতোই জানে।"
+      },
+      "summaryEn": "Bilingual toddlers may lag in each single language but their total (conceptual) vocabulary is comparable to monolinguals'.",
+      "reference": {
+        "citation": "Hoff E, et al. (2012). Dual language exposure and early bilingual development. Journal of Child Language, 39(1), 1–27.",
+        "doi": "10.1017/S0305000910000759",
+        "url": "https://doi.org/10.1017/S0305000910000759"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F09-02",
+      "groupId": "G09",
+      "text": {
+        "bn": "এই বয়সে জেদ করে কান্না-চিৎকার খুবই সাধারণ। একটি গবেষণায় ১৮–২৪ মাসের ৮৭% আর ৩০–৩৬ মাসের ৯১% শিশুর এমন হয়েছে, যা সাড়ে ৩ থেকে ৪ বছরে কমে ৫৯% হয়েছে।"
+      },
+      "summaryEn": "Parent reports on 335 children: tantrums in 87% at 18–24 months, 91% at 30–36 months, 59% at 42–48 months.",
+      "reference": {
+        "citation": "Potegal M, Davidson RJ (2003). Temper tantrums in young children: 1. Behavioral composition. Journal of Developmental & Behavioral Pediatrics, 24(3), 140–147.",
+        "doi": null,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Potegal+Davidson+2003+temper+tantrums+behavioral+composition"
+      },
+      "status": "draft",
+      "reviewerNote": "No DOI found; the link is a PubMed search."
+    },
+    {
+      "id": "F09-03",
+      "groupId": "G09",
+      "text": {
+        "bn": "খুব আগে জোর দিয়ে টয়লেট শেখানো শুরু করলে কাজ এগোয় না, বরং শেষ হতে বেশি সময় লাগে। একটি গবেষণায় ২৭ মাসের আগে জোর দিয়ে শুরু করায় আগে শেষ হয়নি।"
+      },
+      "summaryEn": "Prospective study: starting intensive toilet training before 27 months did not lead to earlier completion and took longer.",
+      "reference": {
+        "citation": "Blum NJ, Taubman B, Nemeth N (2003). Relationship between age at initiation of toilet training and duration of training: A prospective study. Pediatrics, 111(4), 810–814.",
+        "doi": "10.1542/peds.111.4.810",
+        "url": "https://doi.org/10.1542/peds.111.4.810"
+      },
+      "status": "draft",
+      "reviewerNote": "US study. Early toilet training is common in Bangladesh; please check the framing."
+    },
+    {
+      "id": "F10-01",
+      "groupId": "G10",
+      "text": {
+        "bn": "ছোট শিশুরা ঘণ্টায় গড়ে প্রায় ৭৬টি প্রশ্ন করে কিছু জানার জন্য! বয়সের সাথে 'কেন?' প্রশ্ন বাড়তে থাকে। প্রশ্নগুলো শেখার সুযোগ।"
+      },
+      "summaryEn": "Children aged 1–5 asked on average about 76 information-seeking questions per hour; the share of 'why'/explanation questions rises with age.",
+      "reference": {
+        "citation": "Chouinard MM (2007). Children's questions: A mechanism for cognitive development. Monographs of the Society for Research in Child Development, 72(1).",
+        "doi": "10.1111/j.1540-5834.2007.00412.x",
+        "url": "https://doi.org/10.1111/j.1540-5834.2007.00412.x"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F10-02",
+      "groupId": "G10",
+      "text": {
+        "bn": "যে পরিবারে ৩ বছরের শিশুর সাথে অনুভূতি নিয়ে কথা হয় ('ও কাঁদছে কেন? ও কষ্ট পেয়েছে'), সেই শিশুরা ৬ বছর বয়সে অন্যের অনুভূতি ভালো বুঝেছে।"
+      },
+      "summaryEn": "Family talk about feelings at 36 months predicted children's understanding of others' emotions at 6 years.",
+      "reference": {
+        "citation": "Dunn J, Brown J, Beardsall L (1991). Family talk about feeling states and children's later understanding of others' emotions. Developmental Psychology, 27(3), 448–455.",
+        "doi": "10.1037/0012-1649.27.3.448",
+        "url": "https://doi.org/10.1037/0012-1649.27.3.448"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F10-03",
+      "groupId": "G10",
+      "text": {
+        "bn": "কাল্পনিক বন্ধু থাকা খুবই সাধারণ: ৭ বছর বয়সের মধ্যে প্রায় ৬৫% শিশুর কখনো না কখনো কাল্পনিক বন্ধু ছিল। এটা কল্পনার খেলা, চিন্তার কিছু নয়।"
+      },
+      "summaryEn": "65% of children had had an imaginary companion by age 7.",
+      "reference": {
+        "citation": "Taylor M, Carlson SM, Maring BL, Gerow L, Charley CM (2004). The characteristics and correlates of fantasy in school-age children: Imaginary companions, impersonation, and social understanding. Developmental Psychology, 40(6), 1173–1187.",
+        "doi": "10.1037/0012-1649.40.6.1173",
+        "url": "https://doi.org/10.1037/0012-1649.40.6.1173"
+      },
+      "status": "draft",
+      "reviewerNote": "Some families may read this as something supernatural; please check the framing."
+    },
+    {
+      "id": "F11-01",
+      "groupId": "G11",
+      "text": {
+        "bn": "৩ বছরের শিশু ভাবে, সে যা জানে অন্যরাও তা-ই জানে। ৪–৫ বছরের দিকে সে বুঝতে শেখে যে অন্যের মনে ভুল ধারণাও থাকতে পারে।"
+      },
+      "summaryEn": "Meta-analysis: false-belief understanding develops between about 3 and 5 years.",
+      "reference": {
+        "citation": "Wellman HM, Cross D, Watson J (2001). Meta-analysis of theory-of-mind development: The truth about false belief. Child Development, 72(3), 655–684.",
+        "doi": "10.1111/1467-8624.00304",
+        "url": "https://doi.org/10.1111/1467-8624.00304"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F11-02",
+      "groupId": "G11",
+      "text": {
+        "bn": "৪ বছরের শিশু খেয়াল রাখে কে আগে সঠিক কথা বলেছে, আর নতুন কিছু শেখার সময় সেই মানুষকেই বেশি বিশ্বাস করে।"
+      },
+      "summaryEn": "4-year-olds (more consistently than 3-year-olds) prefer to learn from previously accurate speakers.",
+      "reference": {
+        "citation": "Koenig MA, Harris PL (2005). Preschoolers mistrust ignorant and inaccurate speakers. Child Development, 76(6), 1261–1277.",
+        "doi": "10.1111/j.1467-8624.2005.00849.x",
+        "url": "https://doi.org/10.1111/j.1467-8624.2005.00849.x"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F11-03",
+      "groupId": "G11",
+      "text": {
+        "bn": "শিশুর সাথে পুরনো ঘটনা নিয়ে খুঁটিনাটি গল্প করুন: 'মনে আছে, নানুবাড়িতে কী দেখেছিলাম? ওটা কী রঙের ছিল?' এতে শিশুর স্মৃতি আর গল্প বলার দক্ষতা বাড়ে।"
+      },
+      "summaryEn": "Training mothers in elaborative reminiscing improved children's autobiographical memory and narrative.",
+      "reference": {
+        "citation": "Reese E, Newcombe R (2007). Training mothers in elaborative reminiscing enhances children's autobiographical memory and narrative. Child Development, 78(4), 1153–1170.",
+        "doi": "10.1111/j.1467-8624.2007.01058.x",
+        "url": "https://doi.org/10.1111/j.1467-8624.2007.01058.x"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F11-04",
+      "groupId": "G11",
+      "text": {
+        "bn": "৩–৫ বছরের শিশুর দিনে দুপুরের ঘুমসহ মোট ১০–১৩ ঘণ্টা ঘুম দরকার।"
+      },
+      "summaryEn": "AASM consensus: 10–13 hours per 24 hours (including naps) for ages 3–5.",
+      "reference": {
+        "citation": "Paruthi S, et al. (2016). Recommended amount of sleep for pediatric populations: A consensus statement of the American Academy of Sleep Medicine. Journal of Clinical Sleep Medicine, 12(6), 785–786.",
+        "doi": "10.5664/jcsm.5866",
+        "url": "https://doi.org/10.5664/jcsm.5866"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F12-01",
+      "groupId": "G12",
+      "text": {
+        "bn": "খেলার ছলে, বড়দের একটু দিকনির্দেশনা নিয়ে শেখা শিশুদের প্রাথমিক গণিতে সরাসরি পড়ানোর চেয়ে বেশি কাজে দিয়েছে।"
+      },
+      "summaryEn": "Meta-analysis: guided play had a larger effect than direct instruction on early maths skills.",
+      "reference": {
+        "citation": "Skene K, et al. (2022). Can guidance during play enhance children's learning and development in educational contexts? A systematic review and meta-analysis. Child Development, 93(4), 1162–1180.",
+        "doi": "10.1111/cdev.13730",
+        "url": "https://doi.org/10.1111/cdev.13730"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F12-02",
+      "groupId": "G12",
+      "text": {
+        "bn": "ছড়া আর শব্দের খেলা ('মাছ-গাছ-কাছ') শিশুকে শব্দের ধ্বনি আলাদা করে শুনতে শেখায়। এই দক্ষতা পরে পড়তে শেখার সাথে জড়িত।"
+      },
+      "summaryEn": "Meta-analysis: phonological skills (phoneme awareness most strongly, rhyme awareness less) are related to learning to read.",
+      "reference": {
+        "citation": "Melby-Lervåg M, Lyster SAH, Hulme C (2012). Phonological skills and their role in learning to read: A meta-analytic review. Psychological Bulletin, 138(2), 322–352.",
+        "doi": "10.1037/a0026744",
+        "url": "https://doi.org/10.1037/a0026744"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F12-03",
+      "groupId": "G12",
+      "text": {
+        "bn": "৩–৪ বছরের বেশিরভাগ শিশু ভাগ করতে চায় না। এটা স্বাভাবিক। ন্যায্যতার বোধ ৩ থেকে ৮ বছরের মধ্যে ধীরে ধীরে গড়ে ওঠে।"
+      },
+      "summaryEn": "Most 3–4-year-olds behaved selfishly in sharing games; preference for equal sharing increased strongly between 3 and 8.",
+      "reference": {
+        "citation": "Fehr E, Bernhard H, Rockenbach B (2008). Egalitarianism in young children. Nature, 454(7208), 1079–1083.",
+        "doi": "10.1038/nature07155",
+        "url": "https://doi.org/10.1038/nature07155"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "F12-04",
+      "groupId": "G12",
+      "text": {
+        "bn": "নিজেকে সামলানোর ক্ষমতা, যেমন অপেক্ষা করা, পালা মানা, মন দিয়ে কাজ করা, স্কুলে গণিত আর পড়া শেখার সাথে জড়িত।"
+      },
+      "summaryEn": "Self-regulation (effortful control, inhibitory control) predicted kindergarten maths and literacy.",
+      "reference": {
+        "citation": "Blair C, Razza RP (2007). Relating effortful control, executive function, and false belief understanding to emerging math and literacy ability in kindergarten. Child Development, 78(2), 647–663.",
+        "doi": "10.1111/j.1467-8624.2007.01019.x",
+        "url": "https://doi.org/10.1111/j.1467-8624.2007.01019.x"
+      },
+      "status": "draft"
+    }
+  ],
+  "parentingReflections": [
+    {
+      "id": "P01",
+      "fromGroup": "G05",
+      "toGroup": "G12",
+      "title": {
+        "bn": "সেরা নয়, প্রিয়"
+      },
+      "text": {
+        "bn": "সন্তানকে 'সবার চেয়ে সেরা', 'অন্য বাচ্চাদের চেয়ে আলাদা' বলে বড় করলে সে নিজেকে অন্যদের চেয়ে বড় ভাবতে শেখে। গবেষণায় এই 'অন্যদের চেয়ে ভালো' ভাবটা পরে অহংকারী মনোভাবের সাথে জড়িত পাওয়া গেছে। আর 'তুমি যেমন, তেমনই তোমাকে ভালোবাসি', এই উষ্ণতা জড়িত সুস্থ আত্মসম্মানের সাথে। শিশুর দরকার আপনার ভালোবাসা, তুলনায় জেতা নয়।"
+      },
+      "summaryEn": "Parental overvaluation (seeing the child as more special than others) predicted later narcissism in 7–11-year-olds; parental warmth predicted self-esteem.",
+      "reference": {
+        "citation": "Brummelman E, Thomaes S, Nelemans SA, Orobio de Castro B, Overbeek G, Bushman BJ (2015). Origins of narcissism in children. PNAS, 112(12), 3659–3662.",
+        "doi": "10.1073/pnas.1420870112",
+        "url": "https://doi.org/10.1073/pnas.1420870112"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "P02",
+      "fromGroup": "G06",
+      "toGroup": "G12",
+      "title": {
+        "bn": "চেষ্টার প্রশংসা করুন"
+      },
+      "text": {
+        "bn": "'তুমি কত বুদ্ধিমান!' না বলে বলুন, 'তুমি অনেক চেষ্টা করেছ', 'অন্যভাবে চেষ্টা করে পারলে তো!' ১–৩ বছর বয়সে যে শিশুরা চেষ্টার প্রশংসা বেশি শুনেছে, ৭–৮ বছর বয়সে তারা বেশি বিশ্বাস করেছে যে চেষ্টা করলে পারা যায়, আর কঠিন কাজ বেশি পছন্দ করেছে।"
+      },
+      "summaryEn": "Parents' process praise at 14–38 months predicted children's incremental mindset and preference for challenge at 7–8 years.",
+      "reference": {
+        "citation": "Gunderson EA, et al. (2013). Parent praise to 1- to 3-year-olds predicts children's motivational frameworks 5 years later. Child Development, 84(5), 1526–1541.",
+        "doi": "10.1111/cdev.12064",
+        "url": "https://doi.org/10.1111/cdev.12064"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "P03",
+      "fromGroup": "G10",
+      "toGroup": "G12",
+      "title": {
+        "bn": "'বুদ্ধিমান' তকমার ভার"
+      },
+      "text": {
+        "bn": "বড় শিশুদের নিয়ে একটি গবেষণায়, যাদের 'তুমি খুব বুদ্ধিমান' বলে প্রশংসা করা হয়েছিল, কঠিন কাজে ব্যর্থ হওয়ার পর তারা হাল ছেড়ে দিয়েছে বেশি, কাজটা কম উপভোগ করেছে। চেষ্টার জন্য প্রশংসা পাওয়া শিশুরা ভুলের পরেও লেগে ছিল। শিশু যেন ভাবে, ভুল করা শেখার অংশ, লজ্জার নয়।"
+      },
+      "summaryEn": "Fifth graders praised for intelligence showed less persistence, enjoyment and performance after failure than children praised for effort.",
+      "reference": {
+        "citation": "Mueller CM, Dweck CS (1998). Praise for intelligence can undermine children's motivation and performance. Journal of Personality and Social Psychology, 75(1), 33–52.",
+        "doi": "10.1037/0022-3514.75.1.33",
+        "url": "https://doi.org/10.1037/0022-3514.75.1.33"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "P04",
+      "fromGroup": "G09",
+      "toGroup": "G12",
+      "title": {
+        "bn": "সত্যি করে প্রশংসা করুন"
+      },
+      "text": {
+        "bn": "'অসাধারণ! তুমি সবার চেয়ে সুন্দর আঁকো!' এমন বাড়িয়ে বলা প্রশংসা আত্মবিশ্বাস কম এমন শিশুদের কঠিন কাজ এড়িয়ে যেতে শিখিয়েছে, কারণ তারা ভয় পেয়েছে পরের বার এই মান রাখতে পারবে না। যা দেখছেন তা-ই বলুন: 'তুমি অনেক রং ব্যবহার করেছ!', 'এখানে তুমি একটা গাছ এঁকেছ।'"
+      },
+      "summaryEn": "Inflated praise led children (8–13) with low self-esteem to avoid challenges.",
+      "reference": {
+        "citation": "Brummelman E, Thomaes S, Orobio de Castro B, Overbeek G, Bushman BJ (2014). \"That's not just beautiful—that's incredibly beautiful!\": The adverse impact of inflated praise on children with low self-esteem. Psychological Science, 25(3), 728–735.",
+        "doi": "10.1177/0956797613514251",
+        "url": "https://doi.org/10.1177/0956797613514251"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "P05",
+      "fromGroup": "G06",
+      "toGroup": "G12",
+      "title": {
+        "bn": "ভালোবাসা শর্তহীন"
+      },
+      "text": {
+        "bn": "'ভালো হয়ে থাকলে আদর করব', 'মেহমানদের সামনে ছড়া না বললে তোমার সাথে কথা নেই'। ভালোবাসা যখন শর্তের ওপর নির্ভর করে, শিশু হয়তো কথা শোনে, কিন্তু ভেতরে চাপ আর অভিমান জমে, আর নিজের ওপর ভরসা নড়বড়ে হয়ে যায়। শিশু যেন জানে, পারুক বা না পারুক, আপনার ভালোবাসা একই থাকে।"
+      },
+      "summaryEn": "Parents' conditional regard was linked to compulsive (internally pressured) compliance, resentment toward parents and fluctuating self-worth.",
+      "reference": {
+        "citation": "Assor A, Roth G, Deci EL (2004). The emotional costs of parents' conditional regard: A self-determination theory analysis. Journal of Personality, 72(1), 47–88.",
+        "doi": "10.1111/j.0022-3506.2004.00256.x",
+        "url": "https://doi.org/10.1111/j.0022-3506.2004.00256.x"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "P06",
+      "fromGroup": "G07",
+      "toGroup": "G12",
+      "title": {
+        "bn": "লজ্জা দিয়ে নয়"
+      },
+      "text": {
+        "bn": "'তোমার জন্য আমার মাথা হেঁট হলো', 'এমন করলে আর ভালোবাসব না'। অপরাধবোধ, লজ্জা বা ভালোবাসা কেড়ে নেওয়ার ভয় দেখিয়ে শিশুকে নিয়ন্ত্রণ করাকে গবেষকরা বলেন 'মানসিক নিয়ন্ত্রণ'। এটা শিশুর মন খারাপ আর উদ্বেগের সাথে জড়িত। আচরণ শুধরে দিন, শিশুকে ছোট করবেন না।"
+      },
+      "summaryEn": "Parental psychological control (guilt induction, love withdrawal, shaming) was linked especially to children's internalising problems such as depression.",
+      "reference": {
+        "citation": "Barber BK (1996). Parental psychological control: Revisiting a neglected construct. Child Development, 67(6), 3296–3319.",
+        "doi": "10.2307/1131780",
+        "url": "https://doi.org/10.2307/1131780"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "P07",
+      "fromGroup": "G05",
+      "toGroup": "G12",
+      "title": {
+        "bn": "মারধর কাজ করে না"
+      },
+      "text": {
+        "bn": "১ লাখ ৬০ হাজারের বেশি শিশুর তথ্য বিশ্লেষণ করে দেখা গেছে, চড়-থাপ্পড় শিশুকে বেশি বাধ্য করে না। বরং ১৭টির মধ্যে ১৩টি ক্ষতিকর ফলের সাথে মারধরের সম্পর্ক পাওয়া গেছে, যেমন আক্রমণাত্মক আচরণ, মানসিক সমস্যা আর বাবা-মায়ের সাথে দূরত্ব। রাগ উঠলে আগে নিজে একটু সরে গিয়ে শান্ত হোন।"
+      },
+      "summaryEn": "Meta-analysis (~160,000 children): spanking was associated with 13 of 17 detrimental outcomes and not with improved compliance.",
+      "reference": {
+        "citation": "Gershoff ET, Grogan-Kaylor A (2016). Spanking and child outcomes: Old controversies and new meta-analyses. Journal of Family Psychology, 30(4), 453–469.",
+        "doi": "10.1037/fam0000191",
+        "url": "https://doi.org/10.1037/fam0000191"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "P08",
+      "fromGroup": "G07",
+      "toGroup": "G12",
+      "title": {
+        "bn": "অনুভূতির নাম দিন"
+      },
+      "text": {
+        "bn": "শিশু কাঁদলে বা রাগ করলে 'চুপ!', 'এতে কাঁদার কী আছে?' না বলে বলুন, 'তুমি রাগ করেছ, কারণ খেলনাটা নিয়ে গেছে।' যে বাবা-মা শিশুর অনুভূতি খেয়াল করেন, মেনে নেন এবং সামলাতে সাহায্য করেন, তাদের শিশুরা পরে নিজের আবেগ ভালো সামলাতে পেরেছে। অনুভূতি মেনে নেওয়া মানে সব আচরণ মেনে নেওয়া নয়।"
+      },
+      "summaryEn": "Emotion-coaching parents (aware of, accepting and helping with children's emotions) had children with better emotion regulation (ages 5–8).",
+      "reference": {
+        "citation": "Gottman JM, Katz LF, Hooven C (1996). Parental meta-emotion philosophy and the emotional life of families: Theoretical models and preliminary data. Journal of Family Psychology, 10(3), 243–268.",
+        "doi": "10.1037/0893-3200.10.3.243",
+        "url": "https://doi.org/10.1037/0893-3200.10.3.243"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "P09",
+      "fromGroup": "G05",
+      "toGroup": "G10",
+      "title": {
+        "bn": "নিজে করতে দিন"
+      },
+      "text": {
+        "bn": "ধাঁধা মেলানো, জুতা পরা, নিজে খাওয়া: শিশু নিজে চেষ্টা করুক। আপনি পাশে থেকে একটু ইশারা দিন, কিন্তু কাজটা নিজে করে দেবেন না। যে মায়েরা শিশুর নিজের চেষ্টাকে বেশি সমর্থন করেছেন, পরে তাদের শিশুদের মনোযোগ আর নিজেকে সামলানোর দক্ষতা ভালো হয়েছে। সাফল্যটা শিশুর নিজের হোক।"
+      },
+      "summaryEn": "Maternal autonomy support at 12–15 months predicted children's executive functioning at 18 and 26 months.",
+      "reference": {
+        "citation": "Bernier A, Carlson SM, Whipple N (2010). From external regulation to self-regulation: Early parenting precursors of young children's executive functioning. Child Development, 81(1), 326–339.",
+        "doi": "10.1111/j.1467-8624.2009.01397.x",
+        "url": "https://doi.org/10.1111/j.1467-8624.2009.01397.x"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "P10",
+      "fromGroup": "G01",
+      "toGroup": "G12",
+      "title": {
+        "bn": "ফোনটা একটু সরিয়ে রাখুন"
+      },
+      "text": {
+        "bn": "খেলা, খাওয়া বা কথার মাঝে বারবার ফোন দেখাকে গবেষকরা বলেন 'টেকনোফারেন্স'। যেসব পরিবারে এটা বেশি, সেখানে শিশুদের জেদ, অস্থিরতা আর মন খারাপ বেশি দেখা গেছে। দিনে কিছু সময় ঠিক করুন, যখন ফোন থাকবে দূরে আর মনোযোগ থাকবে শিশুর দিকে।"
+      },
+      "summaryEn": "Parents' technology interruptions in parent–child interactions were associated with more child externalising and internalising behaviour (associations).",
+      "reference": {
+        "citation": "McDaniel BT, Radesky JS (2018). Technoference: Parent distraction with technology and associations with child behavior problems. Child Development, 89(1), 100–109.",
+        "doi": "10.1111/cdev.12822",
+        "url": "https://doi.org/10.1111/cdev.12822"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "P11",
+      "fromGroup": "G05",
+      "toGroup": "G08",
+      "title": {
+        "bn": "ভিডিও শিশুকে 'বুদ্ধিমান' বানায় না"
+      },
+      "text": {
+        "bn": "শিশুদের জন্য বানানো 'শিক্ষামূলক' ভিডিও এক মাস দেখেও ১২–১৮ মাসের শিশুরা নতুন শব্দ শেখেনি। সবচেয়ে বেশি শিখেছে বাবা-মায়ের সাথে প্রতিদিনের খেলায়। আর যে বাবা-মা ভিডিওটা পছন্দ করতেন, তারা ভেবেছেন শিশু অনেক শিখেছে। শিশুকে 'এগিয়ে রাখার' চাপ নেবেন না; আপনার সময়ই যথেষ্ট।"
+      },
+      "summaryEn": "12–18-month-olds learned no more words from a month of a popular baby DVD than controls; learning was highest with parent teaching; parents who liked the DVD overestimated learning.",
+      "reference": {
+        "citation": "DeLoache JS, et al. (2010). Do babies learn from baby media? Psychological Science, 21(11), 1570–1574.",
+        "doi": "10.1177/0956797610384145",
+        "url": "https://doi.org/10.1177/0956797610384145"
+      },
+      "status": "draft"
+    }
+  ],
+  "cards": {
+    "standard": {
+      "title": {
+        "bn": "একজন শিশু-ডাক্তারের সাথে কথা বলুন"
+      },
+      "body": {
+        "bn": "আপনি জানিয়েছেন, {name} এখনো এই কাজগুলো করছে না: {list}। বেশিরভাগ শিশু এই বয়সের মধ্যে এগুলো করে, তবে প্রতিটি শিশু আলাদা। এটি রোগ নির্ণয় নয়। তবু অপেক্ষা না করে পরের সুযোগেই একজন শিশু-ডাক্তারকে এই তালিকাটি দেখান। দরকার হলে তাড়াতাড়ি সাহায্য পেলে শিশুর সবচেয়ে বেশি উপকার হয়।"
+      },
+      "actions": [
+        {
+          "id": "doctor_list",
+          "label": {
+            "bn": "ডাক্তারকে দেখানোর তালিকা"
+          }
+        },
+        {
+          "id": "where_to_go",
+          "label": {
+            "bn": "কোথায় যাব?"
+          }
+        },
+        {
+          "id": "keep_playing",
+          "label": {
+            "bn": "এই খেলাগুলো চালিয়ে যান"
+          }
+        },
+        {
+          "id": "talked_to_doctor",
+          "label": {
+            "bn": "ডাক্তারের সাথে কথা বলেছি"
+          }
+        }
+      ],
+      "status": "draft"
+    },
+    "lostSkills": {
+      "title": {
+        "bn": "আগে পারত, এখন পারছে না?"
+      },
+      "body": {
+        "bn": "শিশু আগে পারত এমন কিছু (কথা, হাসি, চোখে চোখ রাখা, হাঁটা) এখন আর না করলে দেরি না করে কয়েক দিনের মধ্যে একজন শিশু-ডাক্তারের সাথে কথা বলুন।"
+      },
+      "status": "draft"
+    },
+    "emergency": {
+      "title": {
+        "bn": "এখনই হাসপাতালে যান যদি শিশুর:"
+      },
+      "signs": [
+        {
+          "bn": "খিঁচুনি হয়"
+        },
+        {
+          "bn": "শ্বাস নিতে কষ্ট হয় বা বুক দেবে যায়"
+        },
+        {
+          "bn": "বুকের দুধ বা কিছুই খেতে পারছে না, বা যা খায় সব বমি করে দিচ্ছে"
+        },
+        {
+          "bn": "খুব নিস্তেজ, বা জাগানো যাচ্ছে না"
+        },
+        {
+          "bn": "পানিতে ডুবেছিল (ভালো মনে হলেও), কেরোসিন বা বিষ খেয়েছে, পুড়ে গেছে, বা মাথায় আঘাত পেয়েছে"
+        }
+      ],
+      "footer": {
+        "bn": "এই অ্যাপ এখন সাহায্য করতে পারবে না।"
+      },
+      "callLabel": {
+        "bn": "৯৯৯-এ কল করুন"
+      },
+      "callNumber": "999",
+      "reviewerNote": "First four signs follow WHO/UNICEF IMCI general danger signs; wording needs a Bangladeshi paediatrician's sign-off.",
+      "status": "draft"
+    }
+  },
+  "strings": {
+    "consent_title": {
+      "bn": "এই অ্যাপ সম্পর্কে জরুরি কথা"
+    },
+    "consent_intro": {
+      "bn": "এই অ্যাপ আপনাকে আপনার শিশুর বেড়ে ওঠা খেয়াল করতে ও তার সাথে খেলতে সাহায্য করে।"
+    },
+    "consent_points": [
+      {
+        "bn": "এটি কোনো রোগ নির্ণয়ের পরীক্ষা নয়, এবং ডাক্তারের বিকল্প নয়।"
+      },
+      {
+        "bn": "প্রতিটি শিশু আলাদা। কেউ কিছু আগে, কেউ কিছু পরে শেখে।"
+      },
+      {
+        "bn": "আপনিই আপনার শিশুকে সবচেয়ে ভালো চেনেন। শিশুর ব্যাপারে সব সিদ্ধান্ত আপনার।"
+      },
+      {
+        "bn": "কোনো বিষয়ে প্রশ্ন বা দুশ্চিন্তা থাকলে শিশু-ডাক্তারের সাথে কথা বলুন। অপেক্ষা করবেন না।"
+      },
+      {
+        "bn": "শিশু অসুস্থ হলে এই অ্যাপ নয়, সরাসরি ডাক্তার বা হাসপাতালে যান।"
+      }
+    ],
+    "consent_accept": {
+      "bn": "আমি বুঝেছি"
+    },
+    "milestone_footer": {
+      "bn": "এটি রোগ নির্ণয় নয়। সিদ্ধান্ত আপনার। প্রশ্ন থাকলে ডাক্তারের সাথে কথা বলুন।"
+    },
+    "answer_yes": {
+      "bn": "হ্যাঁ, করে"
+    },
+    "answer_not_sure": {
+      "bn": "নিশ্চিত নই"
+    },
+    "answer_not_yet": {
+      "bn": "এখনো না"
+    },
+    "answer_not_applicable": {
+      "bn": "প্রযোজ্য নয়"
+    },
+    "answer_lost": {
+      "bn": "এখন আর করে না"
+    },
+    "concern_button": {
+      "bn": "আমার একটা দুশ্চিন্তা আছে"
+    },
+    "doctor_check_suggestion": {
+      "bn": "এই বয়সে একবার শিশু-ডাক্তারকে শিশুর বেড়ে ওঠা নিয়ে জিজ্ঞেস করা ভালো।"
+    },
+    "onboarding_dob": {
+      "bn": "শিশুর জন্ম তারিখ"
+    },
+    "onboarding_born_early": {
+      "bn": "শিশু কি নির্ধারিত সময়ের আগে জন্মেছিল?"
+    },
+    "onboarding_born_early_no": {
+      "bn": "না, সময়মতো (৩৭ সপ্তাহ বা পরে)"
+    },
+    "onboarding_born_early_yes": {
+      "bn": "হ্যাঁ, আগে জন্মেছে"
+    },
+    "onboarding_born_early_unknown": {
+      "bn": "জানি না"
+    },
+    "onboarding_due_date": {
+      "bn": "নির্ধারিত তারিখ"
+    },
+    "onboarding_unknown_note": {
+      "bn": "ডাক্তার বা হাসপাতালের কাগজে দেখে পরে যেকোনো সময় পরিবর্তন করতে পারবেন।"
+    },
+    "before_due_date": {
+      "bn": "শিশুর নির্ধারিত জন্মতারিখ আসতে আরও {weeks} সপ্তাহ বাকি। এখন আরাম, উষ্ণতা আর আপনার কোলই সবচেয়ে জরুরি।"
+    },
+    "age_line": {
+      "bn": "জন্ম থেকে বয়স: {actual} · সংশোধিত বয়স: {corrected}"
+    },
+    "corrected_age_info": {
+      "bn": "আপনার শিশু আগে জন্মেছে, তাই সে যে কয়েক সপ্তাহ মায়ের পেটে কম ছিল, সেই সময়টুকু বাদ দিয়ে হিসাব করা হচ্ছে। একে সংশোধিত বয়স বলে। ২ বছর পর্যন্ত বেড়ে ওঠার ধাপ এই বয়স দিয়ে দেখা হয়। টিকা দিতে হবে জন্ম তারিখ অনুযায়ী। আগে জন্মানো শিশুর ডাক্তারি ফলো-আপ নিয়মিত চালিয়ে যান।"
+    },
+    "corrected_age_extend_toggle": {
+      "bn": "ডাক্তারের পরামর্শে সংশোধিত বয়স চালু রাখুন"
+    },
+    "busy_day": {
+      "bn": "আজ ব্যস্ত দিন"
+    },
+    "task_done": {
+      "bn": "করেছি"
+    },
+    "task_done_by": {
+      "bn": "কে করেছেন?"
+    },
+    "task_done_by_options": [
+      {
+        "bn": "মা"
+      },
+      {
+        "bn": "বাবা"
+      },
+      {
+        "bn": "দাদি-নানি"
+      },
+      {
+        "bn": "অন্য"
+      }
+    ],
+    "task_anyone": {
+      "bn": "যে কেউ করতে পারেন: মা, বাবা, দাদি, ভাই-বোন"
+    },
+    "weekly_summary": {
+      "bn": "এই সপ্তাহে আপনারা {count}টি খেলা খেলেছেন"
+    },
+    "facts_title": {
+      "bn": "আপনি কি জানেন?"
+    },
+    "reflections_title": {
+      "bn": "অভিভাবকের জন্য ভাবনা"
+    },
+    "show_another": {
+      "bn": "আরেকটি দেখুন"
+    },
+    "show_all": {
+      "bn": "সবগুলো দেখুন"
+    },
+    "source_label": {
+      "bn": "সূত্র"
+    },
+    "source_open": {
+      "bn": "গবেষণাপত্রটি খুলুন"
+    },
+    "source_language_note": {
+      "bn": "গবেষণাপত্রগুলো ইংরেজিতে লেখা। কিছু পড়তে ইন্টারনেট লাগবে।"
+    },
+    "facts_average_note": {
+      "bn": "গবেষণার ফল অনেক শিশুর গড় হিসাব। আপনার শিশু তার নিজের গতিতে বড় হবে।"
+    }
+  },
+  "helpPlaces": [
+    {
+      "id": "local_doctor",
+      "name": {
+        "en": "Nearest child doctor, Upazila Health Complex or district hospital"
+      },
+      "enabled": true,
+      "status": "draft"
+    },
+    {
+      "id": "shishu_bikash_kendra",
+      "name": {
+        "bn": "শিশু বিকাশ কেন্দ্র"
+      },
+      "enabled": false,
+      "status": "verify",
+      "reviewerNote": "Confirm current services (Sept 2025 report of planned specialist cuts) and add the centre list."
+    },
+    {
+      "id": "shastho_batayon",
+      "name": {
+        "en": "Shastho Batayon"
+      },
+      "phone": "16263",
+      "enabled": false,
+      "status": "verify",
+      "reviewerNote": "Faced closure as of Feb 2026. Confirm it is running before enabling."
+    },
+    {
+      "id": "emergency",
+      "name": {
+        "en": "Emergency"
+      },
+      "phone": "999",
+      "enabled": true,
+      "status": "draft"
+    }
+  ]
+}
