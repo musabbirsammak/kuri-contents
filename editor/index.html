@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuri content editor</title>
+<style>
+  :root {
+    --green: #1F5C43; --leaf: #2E7D5B; --rose: #E2645A; --petal: #F4A08C;
+    --cream: #FBF6EE; --paper: #FFFFFF; --ink: #14201A; --muted: #4A5A52; --line: #E4DACB;
+    --bn: "Noto Sans Bengali", "Nirmala UI", "Hind Siliguri", "Baloo Da 2", "Vrinda", system-ui, sans-serif;
+    --ui: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { margin: 0; font-family: var(--ui); color: var(--ink); background: var(--cream); font-size: 14px; }
+  code, .mono { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 12.5px; }
+  .bn { font-family: var(--bn); }
+  button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); padding: 6px 12px; }
+  button:hover { border-color: var(--leaf); }
+  button:disabled { opacity: .5; cursor: default; }
+  button.primary { background: var(--leaf); border-color: var(--leaf); color: #fff; }
+  button.primary:hover { background: var(--green); }
+  button.ghost { background: transparent; }
+  button.danger { color: #9B2C21; }
+  button.small, .small { font-size: 12.5px; }
+  button.small { padding: 4px 10px; }
+  input[type=text], input[type=number], input[type=search], input:not([type]), select, textarea {
+    font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px;
+  }
+  textarea { width: 100%; resize: vertical; line-height: 1.6; font-family: var(--bn); font-size: 15px; overflow: hidden; }
+  textarea[lang=en] { font-family: var(--ui); font-size: 14px; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid rgba(46,125,91,.35); border-color: var(--leaf); }
+
+  /* top bar */
+  .topbar { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 12px; padding: 10px 18px; background: var(--green); color: #fff; }
+  .brand { display: flex; align-items: center; gap: 8px; font-weight: 600; white-space: nowrap; }
+  .brand .bn { font-size: 18px; }
+  .file { font-size: 12.5px; opacity: .85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; }
+  .dirty { font-size: 12.5px; color: #FFD9CF; white-space: nowrap; }
+  .topbar .spacer { flex: 1; }
+  .topbar input[type=search] { width: 280px; max-width: 30vw; border-color: transparent; }
+  .topbar button { border-color: rgba(255,255,255,.4); background: transparent; color: #fff; }
+  .topbar button.primary { background: var(--cream); color: var(--green); border-color: var(--cream); }
+  .topbar button.primary:disabled { opacity: .55; }
+
+  /* layout */
+  .layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); min-height: calc(100vh - 54px); }
+  nav { border-right: 1px solid var(--line); padding: 14px 10px; background: #F6F0E5; position: sticky; top: 54px; height: calc(100vh - 54px); overflow-y: auto; }
+  nav h3 { font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 16px 8px 6px; }
+  nav button { display: flex; width: 100%; align-items: center; gap: 8px; text-align: left; border: 0; background: transparent; padding: 7px 8px; border-radius: 8px; }
+  nav button:hover { background: rgba(46,125,91,.08); }
+  nav button.active { background: var(--paper); box-shadow: 0 0 0 1px var(--line); font-weight: 600; }
+  nav .gname { flex: 1; font-family: var(--bn); }
+  nav .count { font-size: 11px; background: #FDEBD7; color: #7A4A12; border-radius: 10px; padding: 1px 7px; }
+  nav .count.done { background: #DCEFE4; color: var(--green); }
+  main { padding: 22px 28px 80px; }
+  .inner { max-width: 960px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  h1 .gid { font-family: ui-monospace, Consolas, monospace; font-size: 15px; color: var(--muted); font-weight: 500; }
+  h2 { font-size: 16px; margin: 26px 0 10px; }
+  .muted { color: var(--muted); }
+
+  /* tabs + filters */
+  .tabs { display: flex; gap: 4px; margin: 16px 0 12px; border-bottom: 1px solid var(--line); }
+  .tabs button { border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: transparent; padding: 8px 12px; color: var(--muted); }
+  .tabs button.active { color: var(--green); border-bottom-color: var(--leaf); font-weight: 600; }
+  .filters { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .filters label { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
+  .filters .spacer { flex: 1; }
+  .add { display: inline-flex; gap: 6px; align-items: center; }
+
+  /* item cards */
+  .item { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .item.retired { opacity: .6; }
+  .item.flash { animation: flash 1.4s ease-out; }
+  @keyframes flash { 0% { box-shadow: 0 0 0 4px rgba(226,100,90,.55); } 100% { box-shadow: 0 0 0 0 rgba(226,100,90,0); } }
+  .item-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+  .item-head .id { font-weight: 600; font-size: 13.5px; }
+  .item-head .spacer { flex: 1; }
+  .badge { font-size: 11px; border-radius: 10px; padding: 2px 8px; background: #EEE; color: #444; }
+  .badge.draft { background: #FDEBD7; color: #7A4A12; }
+  .badge.reviewed { background: #DCEFE4; color: var(--green); }
+  .badge.verify { background: #FBE3E0; color: #8A2C22; }
+  .badge.retired { background: #E6E6E6; color: #555; }
+  .field { margin: 10px 0 0; }
+  .label { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .field.inline, label.inline { display: inline-flex; align-items: center; gap: 6px; }
+  .row { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; }
+  .row > .field { min-width: 200px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--line); border-radius: 16px; padding: 4px 10px; background: #FAF7F1; font-size: 13px; }
+  .chip.linked { background: #EAF4EE; }
+  .chip .x { border: 0; background: transparent; padding: 0 2px; font-size: 15px; line-height: 1; }
+  details { margin-top: 10px; border: 1px solid var(--line); border-radius: 10px; padding: 6px 10px; background: #FCFAF6; }
+  summary { cursor: pointer; font-size: 12.5px; color: var(--muted); padding: 2px 0; }
+  .ms-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 14px; margin: 8px 0; }
+  .ms-opt { display: flex; gap: 6px; align-items: flex-start; font-size: 13.5px; line-height: 1.5; }
+  .ms-opt input { margin-top: 4px; }
+  .others { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-top: 1px dashed var(--line); padding-top: 8px; margin-top: 4px; }
+  .others input { min-width: 320px; flex: 1; font-size: 13px; }
+  .linkbtn { border: 0; background: transparent; padding: 0 4px; color: var(--leaf); text-decoration: underline; }
+
+  /* generic editor */
+  fieldset.group { border: 1px solid var(--line); border-radius: 12px; padding: 8px 14px 14px; margin: 12px 0; background: var(--paper); }
+  fieldset.group fieldset.group { background: #FCFAF6; }
+  legend { font-weight: 600; font-size: 13px; padding: 0 6px; }
+  .field.ro code { color: var(--muted); }
+  .list-row { display: flex; gap: 8px; align-items: flex-start; margin-top: 6px; }
+  .note { background: #FFF8EC; border: 1px solid #F1DDB5; border-radius: 10px; padding: 10px 14px; margin: 12px 0; }
+
+  /* tables */
+  table { border-collapse: collapse; width: 100%; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+  th { font-size: 12px; color: var(--muted); font-weight: 600; background: #FAF7F1; }
+  tr.click { cursor: pointer; }
+  tr.click:hover td { background: #F4FAF6; }
+  td.num { font-variant-numeric: tabular-nums; }
+
+  /* empty state, toast, dialog */
+  .empty { max-width: 620px; margin: 60px auto; text-align: center; }
+  .empty h1 { font-size: 26px; }
+  .empty p { color: var(--muted); line-height: 1.6; }
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 10px; font-size: 13.5px; opacity: 0; transition: opacity .2s; pointer-events: none; z-index: 20; }
+  .toast.show { opacity: 1; }
+  dialog { border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; max-width: 640px; width: 90vw; }
+  dialog::backdrop { background: rgba(20,32,26,.35); }
+  dialog ul { padding-left: 18px; max-height: 50vh; overflow-y: auto; }
+  dialog li { margin: 4px 0; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <svg viewBox="0 0 200 200" width="26" height="26" aria-hidden="true">
+      <path d="M30 92 A70 70 0 0 0 170 92 A70 40 0 0 1 30 92 Z" fill="#FBF6EE"/>
+      <path d="M94 164 A6 6 0 0 1 106 164 L106 178 A6 6 0 0 1 94 178 Z" fill="#FBF6EE"/>
+      <path d="M100 22 C119 42 130 64 130 88 A30 30 0 0 1 70 88 C70 64 81 42 100 22 Z" fill="#F07A6A"/>
+      <path d="M100 22 C119 42 130 64 130 88 A30 30 0 0 1 100 118 C90 96 88 56 100 22 Z" fill="#F8B4A2"/>
+    </svg>
+    <span class="bn">কুঁড়ি</span><span>content editor</span>
+  </div>
+  <span class="file" id="fileName"></span>
+  <span class="dirty" id="dirty" hidden>● Unsaved changes</span>
+  <span class="spacer"></span>
+  <input type="search" id="search" placeholder="Search text, ID, note or reference…" aria-label="Search" disabled>
+  <button id="openBtn">Open content.json</button>
+  <button id="saveBtn" class="primary" disabled title="Ctrl+S">Save</button>
+</header>
+<div class="layout">
+  <nav id="sidebar" aria-label="Sections"></nav>
+  <main id="main"></main>
+</div>
+<input type="file" id="fileInput" accept=".json,application/json" hidden>
+<datalist id="all-milestones"></datalist>
+<dialog id="errorsDialog">
+  <h2 style="margin-top:0">Can't save yet</h2>
+  <p class="muted">Fix these first. Click an item to jump to it.</p>
+  <ul id="errorsList"></ul>
+  <div style="text-align:right"><button id="errorsClose">Close</button></div>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+"use strict";
+/* ------------------------------------------------------------------ state */
+let data = null;          // the parsed content.json, edited in place
+let original = null;      // snapshot at open time (for placeholder checks)
+let fileHandle = null;    // File System Access handle (Chrome/Edge), else null
+let fileName = "";
+let dirty = false;
+let createdIds = new Set();  // items added since the file was opened (may be deleted)
+let view = { section: "overview", groupId: "G01", tab: "tasks" };
+let filters = { status: "all", notesOnly: false, unmappedOnly: false, showRetired: false, group: "all" };
+const canSaveInPlace = "showOpenFilePicker" in window;
+
+const KINDS = {
+  tasks:      { key: "tasks",      label: "Tasks",       one: "task" },
+  milestones: { key: "milestones", label: "Milestones",  one: "milestone" },
+  safety:     { key: "safetyTips", label: "Safety tips", one: "safety tip" },
+  facts:      { key: "facts",      label: "Facts",       one: "fact" },
+  reflections: { key: "parentingReflections", label: "Parenting reflections", one: "reflection", shared: true },
+};
+const GROUP_KINDS = Object.keys(KINDS).filter((k) => !KINDS[k].shared);
+const STATUS = ["draft", "reviewed"];
+const READONLY = new Set(["id", "order", "startMonths", "endMonths", "checkpointMonths",
+  "doctorCheckSuggestion", "when", "callNumber", "schemaVersion", "source", "groupId", "domain", "builtFrom"]);
+
+/* ---------------------------------------------------------------- helpers */
+const $ = (s) => document.querySelector(s);
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null || v === false) continue;
+    if (k === "class") el.className = v;
+    else if (k === "text") el.textContent = v;
+    else if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
+    else if (["checked", "value", "disabled", "hidden"].includes(k)) el[k] = v;
+    else el.setAttribute(k, v === true ? "" : v);
+  }
+  for (const c of kids.flat()) {
+    if (c == null || c === false) continue;
+    el.append(c instanceof Node ? c : document.createTextNode(String(c)));
+  }
+  return el;
+}
+const pad2 = (n) => String(n).padStart(2, "0");
+const uniq = (a) => [...new Set(a)];
+const humanize = (k) => String(k).replace(/_/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, (c) => c.toUpperCase());
+const groupById = (id) => data.ageGroups.find((g) => g.id === id);
+const msById = (id) => data.milestones.find((m) => m.id === id);
+const groupNum = (g) => parseInt(g.id.slice(1), 10);
+function fmtAge(m) {
+  if (m < 24) return `${m} months`;
+  const y = m / 12;
+  return `${Number.isInteger(y) ? y : y.toFixed(1)} years`;
+}
+function groupLabel(id) { const g = groupById(id); return g ? `${g.id} · ${g.name.bn}` : id; }
+
+let sizeQueue = [];
+function autosize(t) { if (t.hidden) return; t.style.height = "auto"; t.style.height = t.scrollHeight + 2 + "px"; }
+function flushAutosize() { const q = sizeQueue; sizeQueue = []; requestAnimationFrame(() => q.forEach(autosize)); }
+function ta(value, oninput, opts = {}) {
+  const t = h("textarea", { rows: opts.rows || 2, placeholder: opts.placeholder || "", lang: opts.lang || "bn" });
+  t.value = value ?? "";
+  t.addEventListener("input", () => { autosize(t); oninput(t.value); });
+  sizeQueue.push(t);
+  return t;
+}
+function select(options, value, onchange) {
+  const s = h("select", { onchange: () => onchange(s.value) },
+    options.map((o) => Array.isArray(o) ? h("option", { value: o[0], text: o[1] }) : h("option", { value: o, text: o })));
+  s.value = value;
+  return s;
+}
+function field(label, control) { return h("div", { class: "field" }, h("div", { class: "label", text: label }), control); }
+
+function toast(msg) {
+  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toast.timer); toast.timer = setTimeout(() => t.classList.remove("show"), 2600);
+}
+function setDirty(v) {
+  dirty = v;
+  $("#dirty").hidden = !v;
+  $("#saveBtn").disabled = !data;
+  document.title = (v ? "● " : "") + "Kuri content editor";
+}
+function mark() { if (!dirty) setDirty(true); }
+
+/* ------------------------------------------------------------- open/save */
+async function openFile() {
+  if (dirty && !confirm("You have unsaved changes. Open another file and lose them?")) return;
+  if (canSaveInPlace) {
+    try {
+      const [handle] = await window.showOpenFilePicker({ types: [{ description: "JSON", accept: { "application/json": [".json"] } }] });
+      const file = await handle.getFile();
+      load(await file.text(), file.name, handle);
+    } catch (e) { if (e.name !== "AbortError") alert("Could not open the file: " + e.message); }
+  } else {
+    $("#fileInput").click();
+  }
+}
+$("#fileInput").addEventListener("change", async () => {
+  const f = $("#fileInput").files[0];
+  if (f) load(await f.text(), f.name, null);
+  $("#fileInput").value = "";
+});
+
+function load(text, name, handle) {
+  let d;
+  try { d = JSON.parse(text); } catch (e) { alert("This file is not valid JSON:\n" + e.message); return; }
+  if (!Array.isArray(d.tasks) || !Array.isArray(d.milestones) || !Array.isArray(d.ageGroups)) {
+    alert("This doesn't look like the Kuri content.json (no tasks, milestones or ageGroups)."); return;
+  }
+  for (const k of Object.values(KINDS)) if (!Array.isArray(d[k.key])) d[k.key] = [];
+  data = d; original = JSON.parse(text); fileHandle = handle; fileName = name;
+  createdIds = new Set();
+  view = { section: "overview", groupId: d.ageGroups[0].id, tab: "tasks" };
+  $("#fileName").textContent = name + (handle ? "" : " (save will download a copy)");
+  $("#search").disabled = false; $("#search").value = "";
+  setDirty(false);
+  rebuildDatalist();
+  renderAll();
+}
+
+async function save() {
+  if (!data) return;
+  const errs = validate();
+  if (errs.length) { showErrors(errs); return; }
+  const text = JSON.stringify(data, null, 2) + "\n";
+  if (fileHandle) {
+    try {
+      const w = await fileHandle.createWritable();
+      await w.write(text); await w.close();
+      setDirty(false); toast("Saved " + fileName);
+    } catch (e) { alert("Could not save: " + e.message); }
+  } else {
+    const a = h("a", { href: URL.createObjectURL(new Blob([text], { type: "application/json" })), download: fileName || "content.json" });
+    document.body.append(a); a.click(); a.remove();
+    setDirty(false); toast("Downloaded. Replace content/content.json with this file.");
+  }
+}
+
+/* ------------------------------------------------------------- validation */
+function isLang(v) {
+  if (!v || typeof v !== "object" || Array.isArray(v)) return false;
+  const ks = Object.keys(v);
+  return ks.length > 0 && ks.every((k) => (k === "bn" || k === "en") && typeof v[k] === "string");
+}
+function collectLang(v, path, out) {
+  if (isLang(v)) { for (const k in v) out.set(path + "." + k, v[k]); return; }
+  if (Array.isArray(v)) v.forEach((x, i) => collectLang(x, `${path}[${i}]`, out));
+  else if (v && typeof v === "object") for (const k in v) collectLang(v[k], path ? path + "." + k : k, out);
+}
+const placeholders = (s) => (s.match(/\{\w+\}/g) || []).sort().join(" ");
+
+function validate() {
+  const errs = [];
+  const seen = new Set();
+  const ID_RE = { tasks: /^T\d\d-\d\d$/, milestones: /^M\d\d-[SLCM]\d+$/, safety: /^SF\d\d-\d\d$/,
+    facts: /^F\d\d-\d\d$/, reflections: /^P\d\d$/ };
+  for (const kind of Object.keys(KINDS)) {
+    for (const x of data[KINDS[kind].key]) {
+      const go = () => jumpTo(x.id);
+      if (seen.has(x.id)) errs.push({ msg: `${x.id}: the same ID is used twice`, go });
+      seen.add(x.id);
+      if (!ID_RE[kind].test(x.id)) errs.push({ msg: `${x.id}: ID doesn't follow the pattern for a ${KINDS[kind].one}`, go });
+      if (KINDS[kind].shared) {
+        const a = groupById(x.fromGroup), b = groupById(x.toGroup);
+        if (!a || !b) errs.push({ msg: `${x.id}: choose the age groups it is shown for`, go });
+        else if (a.order > b.order) errs.push({ msg: `${x.id}: the "from" age group comes after the "to" age group`, go });
+      } else if (!groupById(x.groupId)) errs.push({ msg: `${x.id}: unknown age group ${x.groupId}`, go });
+      if (!x.text || !x.text.bn || !x.text.bn.trim()) errs.push({ msg: `${x.id}: Bengali text is empty`, go });
+    }
+  }
+  for (const kind of ["facts", "reflections"]) {
+    for (const x of data[KINDS[kind].key]) {
+      const go = () => jumpTo(x.id);
+      const r = x.reference || {};
+      if (kind === "reflections" && (!x.title || !x.title.bn || !x.title.bn.trim())) errs.push({ msg: `${x.id}: title is empty`, go });
+      if (!r.citation || !r.citation.trim()) errs.push({ msg: `${x.id}: the reference has no citation`, go });
+      if (!/^https?:\/\/\S+$/.test(r.url || "")) errs.push({ msg: `${x.id}: the reference needs a link starting with https://`, go });
+      if (r.doi && !/^10\.\d{4,9}\/\S+$/.test(r.doi)) errs.push({ msg: `${x.id}: the DOI should look like 10.1234/abcd`, go });
+    }
+  }
+  const msIds = new Set(data.milestones.map((m) => m.id));
+  const domIds = new Set(data.domains.map((d) => d.id));
+  const routineIds = new Set(data.routines.map((r) => r.id));
+  for (const t of data.tasks) {
+    const go = () => jumpTo(t.id);
+    if (!t.domains.length) errs.push({ msg: `${t.id}: pick at least one domain`, go });
+    for (const d of t.domains) if (!domIds.has(d)) errs.push({ msg: `${t.id}: unknown domain ${d}`, go });
+    if (!routineIds.has(t.routine)) errs.push({ msg: `${t.id}: unknown routine ${t.routine}`, go });
+    for (const m of t.milestoneIds) if (!msIds.has(m)) errs.push({ msg: `${t.id}: linked milestone ${m} doesn't exist`, go });
+    if (t.safety && !t.safety.bn.trim()) errs.push({ msg: `${t.id}: safety line is empty (untick "Safety line" if there is none)`, go });
+  }
+  // shared sections: no empty text, placeholders kept
+  const sections = [["cards", "Cards"], ["strings", "App text"], ["helpPlaces", "Help places"], ["domains", "Labels"], ["routines", "Labels"]];
+  for (const [key, label] of sections) {
+    const now = new Map(), before = new Map();
+    collectLang(data[key], key, now); collectLang(original[key], key, before);
+    const go = () => { view.section = key === "domains" || key === "routines" ? "labels" : key; clearSearch(); renderAll(); };
+    for (const [path, val] of now) {
+      if (!val.trim()) errs.push({ msg: `${label}: ${path} is empty`, go });
+      else if (before.has(path) && placeholders(before.get(path)) !== placeholders(val))
+        errs.push({ msg: `${label}: ${path} must keep ${placeholders(before.get(path)) || "no {placeholders}"} exactly`, go });
+    }
+  }
+  for (const g of data.ageGroups) {
+    const now = new Map(); collectLang(g, g.id, now);
+    for (const [path, val] of now) if (!val.trim())
+      errs.push({ msg: `${path} is empty`, go: () => { view = { section: "group", groupId: g.id, tab: "settings" }; clearSearch(); renderAll(); } });
+  }
+  return errs;
+}
+function showErrors(errs) {
+  const list = $("#errorsList");
+  list.replaceChildren(...errs.map((e) => h("li", {}, h("button", { class: "linkbtn", text: e.msg, onclick: () => { $("#errorsDialog").close(); e.go(); } }))));
+  $("#errorsDialog").showModal();
+}
+$("#errorsClose").addEventListener("click", () => $("#errorsDialog").close());
+
+/* ------------------------------------------------------------ navigation */
+function clearSearch() { $("#search").value = ""; }
+function go(section, groupId) {
+  view.section = section;
+  if (groupId) view.groupId = groupId;
+  clearSearch(); renderAll(); window.scrollTo(0, 0);
+}
+function findItem(id) {
+  for (const kind of Object.keys(KINDS)) {
+    const x = data[KINDS[kind].key].find((i) => i.id === id);
+    if (x) return { kind, x };
+  }
+  return null;
+}
+function jumpTo(id) {
+  const f = findItem(id); if (!f) return;
+  if (KINDS[f.kind].shared) view.section = "reflections";
+  else view = { section: "group", groupId: f.x.groupId, tab: f.kind };
+  filters = { status: "all", notesOnly: false, unmappedOnly: false, showRetired: filters.showRetired || !!f.x.retired, group: "all" };
+  clearSearch(); renderAll();
+  requestAnimationFrame(() => {
+    const el = document.getElementById("item-" + id);
+    if (!el) return;
+    el.scrollIntoView({ block: "center" });
+    el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
+    const t = el.querySelector("textarea"); if (t) t.focus({ preventScroll: true });
+  });
+}
+
+/* --------------------------------------------------------------- sidebar */
+function renderSidebar() {
+  const nav = $("#sidebar");
+  if (!data) { nav.replaceChildren(); return; }
+  const btn = (label, section, opts = {}) => h("button", {
+    class: view.section === section && (!opts.groupId || view.groupId === opts.groupId) && !$("#search").value ? "active" : "",
+    onclick: () => go(section, opts.groupId),
+  }, ...(opts.kids || [label]));
+  const notReviewed = (x) => !x.retired && x.status !== "reviewed";
+  const open = (g) => GROUP_KINDS.flatMap((k) => data[KINDS[k].key]).filter((x) => x.groupId === g.id && notReviewed(x)).length;
+  const countBadge = (n) => h("span", { class: "count" + (n ? "" : " done"), title: n ? `${n} not reviewed yet` : "All reviewed", text: n || "✓" });
+  const nRefl = data.parentingReflections.filter(notReviewed).length;
+  nav.replaceChildren(
+    btn("Overview", "overview"),
+    h("h3", { text: "Age groups" }),
+    ...data.ageGroups.map((g) => {
+      const n = open(g);
+      return btn("", "group", { groupId: g.id, kids: [
+        h("code", { text: g.id }), h("span", { class: "gname", text: g.name.bn }),
+        countBadge(n),
+      ] });
+    }),
+    h("h3", { text: "Shared" }),
+    btn("", "reflections", { kids: [h("span", { style: "flex:1", text: "Parenting reflections" }), countBadge(nRefl)] }),
+    btn("Cards", "cards"), btn("App text", "strings"), btn("Help places", "helpPlaces"), btn("Labels", "labels"),
+  );
+}
+
+/* ------------------------------------------------------------ main views */
+function renderAll() { renderSidebar(); renderMain(); }
+function renderMain() {
+  const main = $("#main");
+  const inner = h("div", { class: "inner" });
+  if (!data) { main.replaceChildren(emptyState()); return; }
+  const q = $("#search").value.trim();
+  if (q) renderSearch(inner, q);
+  else if (view.section === "overview") renderOverview(inner);
+  else if (view.section === "group") renderGroup(inner);
+  else if (view.section === "labels") renderLabels(inner);
+  else if (view.section === "reflections") renderReflections(inner);
+  else renderShared(inner, view.section);
+  main.replaceChildren(inner);
+  flushAutosize();
+}
+
+function emptyState() {
+  return h("div", { class: "empty" },
+    h("h1", { text: "Kuri content editor" }),
+    h("p", { text: "Open content/content.json from your copy of the repository. Edit, press Save, then commit and push with git." }),
+    canSaveInPlace
+      ? h("p", { text: "Save writes straight back to the file you opened." })
+      : h("p", { class: "note", text: "This browser can't write back to the file, so Save will download a new content.json. Replace content/content.json with it. Use Chrome or Edge to save in place." }),
+    h("button", { class: "primary", text: "Open content.json", onclick: openFile }),
+  );
+}
+
+/* overview */
+function renderOverview(root) {
+  root.append(h("h1", { text: "Overview" }));
+  const ver = h("input", { type: "number", min: 1, value: data.contentVersion, style: "width:90px",
+    onchange: () => { const n = parseInt(ver.value, 10); if (n > 0) { data.contentVersion = n; mark(); } else ver.value = data.contentVersion; } });
+  root.append(h("div", { class: "row" },
+    field("Content version", h("div", {}, ver, h("span", { class: "muted small", text: "  Raise by 1 for each release that goes into the app." }))),
+    field("Schema version", h("code", { text: String(data.schemaVersion) })),
+  ));
+
+  const stat = (arr) => {
+    const live = arr.filter((x) => !x.retired);
+    return [live.length, live.filter((x) => x.status === "reviewed").length, live.filter((x) => x.status !== "reviewed").length,
+      live.filter((x) => x.reviewerNote).length, arr.length - live.length];
+  };
+  root.append(h("h2", { text: "Review progress" }), h("table", {},
+    h("tr", {}, ["", "Items", "Reviewed", "Not reviewed", "With reviewer note", "Retired"].map((t) => h("th", { text: t }))),
+    ...Object.values(KINDS).map((k) => h("tr", {}, h("td", { text: k.label }), ...stat(data[k.key]).map((n) => h("td", { class: "num", text: n })))),
+  ));
+  const unmapped = data.tasks.filter((t) => !t.retired && !t.milestoneIds.length).length;
+  root.append(h("p", { class: "muted", text: `${unmapped} of ${data.tasks.filter((t) => !t.retired).length} tasks have no linked milestones yet.` }));
+
+  const cell = (arr, g) => {
+    const live = arr.filter((x) => x.groupId === g.id && !x.retired);
+    return `${live.filter((x) => x.status === "reviewed").length} / ${live.length}`;
+  };
+  root.append(h("h2", { text: "By age group (reviewed / total)" }), h("table", {},
+    h("tr", {}, ["Group", "Ages", ...GROUP_KINDS.map((k) => KINDS[k].label)].map((t) => h("th", { text: t }))),
+    ...data.ageGroups.map((g) => h("tr", { class: "click", onclick: () => go("group", g.id) },
+      h("td", {}, h("code", { text: g.id }), " ", h("span", { class: "bn", text: g.name.bn })),
+      h("td", { text: `${fmtAge(g.startMonths)} – ${fmtAge(g.endMonths)}` }),
+      ...GROUP_KINDS.map((k) => h("td", { class: "num", text: cell(data[KINDS[k].key], g) })))),
+  ));
+}
+
+/* one age group */
+function passes(x, kind) {
+  if (!filters.showRetired && x.retired) return false;
+  if (filters.status !== "all" && x.status !== filters.status) return false;
+  if (filters.notesOnly && !x.reviewerNote) return false;
+  if (filters.unmappedOnly && kind === "tasks" && x.milestoneIds.length) return false;
+  if (kind === "reflections" && filters.group !== "all") {
+    const o = groupById(filters.group).order, a = groupById(x.fromGroup), b = groupById(x.toGroup);
+    if (!a || !b || o < a.order || o > b.order) return false;
+  }
+  return true;
+}
+function renderGroup(root) {
+  const g = groupById(view.groupId);
+  root.append(
+    h("h1", {}, h("span", { class: "gid", text: g.id }), " ", h("span", { class: "bn", text: g.name.bn })),
+    h("div", { class: "muted", text: `${fmtAge(g.startMonths)} – ${fmtAge(g.endMonths)} · checklist at ${fmtAge(g.checkpointMonths)}` }),
+  );
+  const count = (kind) => data[KINDS[kind].key].filter((x) => x.groupId === g.id && !x.retired).length;
+  const tabs = [...GROUP_KINDS.map((k) => [k, `${KINDS[k].label} (${count(k)})`]), ["settings", "Group settings"]];
+  root.append(h("div", { class: "tabs", role: "tablist" }, tabs.map(([k, label]) =>
+    h("button", { role: "tab", class: view.tab === k ? "active" : "", text: label, onclick: () => { view.tab = k; renderMain(); } }))));
+
+  if (view.tab === "settings") {
+    root.append(h("p", { class: "muted", text: "Ages and IDs are fixed. You can edit the group name and its notes." }));
+    const box = h("div");
+    for (const k of Object.keys(g)) gen(box, g, k, humanize(k));
+    root.append(box);
+    return;
+  }
+  const kind = view.tab;
+  const all = data[KINDS[kind].key].filter((x) => x.groupId === g.id);
+  const shown = all.filter((x) => passes(x, kind));
+  root.append(filterBar(kind, g, shown.length, all.length));
+  if (!shown.length) root.append(h("p", { class: "muted", text: "Nothing matches these filters." }));
+  for (const x of shown) root.append(card(kind, x, false));
+}
+function filterBar(kind, g, shown, total) {
+  const cb = (key, label) => {
+    const c = h("input", { type: "checkbox", checked: filters[key], onchange: () => { filters[key] = c.checked; renderMain(); } });
+    return h("label", {}, c, label);
+  };
+  return h("div", { class: "filters" },
+    h("label", {}, "Status ", select([["all", "All"], ["draft", "Draft"], ["reviewed", "Reviewed"]], filters.status, (v) => { filters.status = v; renderMain(); })),
+    cb("notesOnly", "Has reviewer note"),
+    kind === "tasks" ? cb("unmappedOnly", "No linked milestones") : null,
+    kind === "reflections" ? h("label", {}, "Shown for ", select([["all", "All age groups"], ...data.ageGroups.map((x) => [x.id, `${x.id} · ${x.name.bn}`])],
+      filters.group, (v) => { filters.group = v; renderMain(); })) : null,
+    cb("showRetired", "Show retired"),
+    h("span", { class: "muted small", text: `Showing ${shown} of ${total}` }),
+    h("span", { class: "spacer" }),
+    addControl(kind, g),
+  );
+}
+
+/* adding items */
+function insertAfterLast(arr, obj, ...preds) {
+  for (const p of preds) {
+    let idx = -1; arr.forEach((x, i) => { if (p(x)) idx = i; });
+    if (idx !== -1) { arr.splice(idx + 1, 0, obj); return; }
+  }
+  arr.push(obj);
+}
+function nextNum(arr, prefix) {
+  return Math.max(0, ...arr.filter((x) => x.id.startsWith(prefix)).map((x) => parseInt(x.id.slice(prefix.length), 10) || 0)) + 1;
+}
+function addControl(kind, g) {
+  if (kind === "reflections") return h("button", { class: "primary small", text: "+ Add reflection", onclick: () => {
+    const groups = data.ageGroups;
+    const p = { id: "P" + pad2(nextNum(data.parentingReflections, "P")), fromGroup: groups[0].id, toGroup: groups[groups.length - 1].id,
+      title: { bn: "" }, text: { bn: "" }, summaryEn: "", reference: { citation: "", doi: null, url: "" }, status: "draft" };
+    data.parentingReflections.push(p);
+    added(p.id);
+  } });
+  const n = pad2(groupNum(g));
+  if (kind === "facts") return h("button", { class: "primary small", text: "+ Add fact", onclick: () => {
+    const prefix = `F${n}-`;
+    const f = { id: prefix + pad2(nextNum(data.facts, prefix)), groupId: g.id, text: { bn: "" }, summaryEn: "",
+      reference: { citation: "", doi: null, url: "" }, status: "draft" };
+    insertAfterLast(data.facts, f, (x) => x.groupId === g.id);
+    added(f.id);
+  } });
+  if (kind === "tasks") return h("button", { class: "primary small", text: "+ Add task", onclick: () => {
+    const prefix = `T${n}-`;
+    const t = { id: prefix + pad2(nextNum(data.tasks, prefix)), groupId: g.id, text: { bn: "" }, safety: null,
+      domains: [], routine: "anytime", milestoneIds: [], status: "draft" };
+    insertAfterLast(data.tasks, t, (x) => x.groupId === g.id);
+    added(t.id);
+  } });
+  if (kind === "safety") return h("button", { class: "primary small", text: "+ Add safety tip", onclick: () => {
+    const prefix = `SF${n}-`;
+    const s = { id: prefix + pad2(nextNum(data.safetyTips, prefix)), groupId: g.id, text: { bn: "" }, status: "draft" };
+    insertAfterLast(data.safetyTips, s, (x) => x.groupId === g.id);
+    added(s.id);
+  } });
+  const dom = select(data.domains.map((d) => [d.id, `${d.id} · ${d.name.en}`]), "S", () => {});
+  return h("span", { class: "add" }, dom, h("button", { class: "primary small", text: "+ Add milestone", onclick: () => {
+    const prefix = `M${pad2(g.checkpointMonths)}-${dom.value}`;
+    const m = { id: prefix + nextNum(data.milestones, prefix), groupId: g.id, checkpointMonths: g.checkpointMonths,
+      domain: dom.value, text: { bn: "" }, allowNotApplicable: false, source: "Kuri team", status: "draft" };
+    insertAfterLast(data.milestones, m, (x) => x.groupId === g.id && x.domain === m.domain, (x) => x.groupId === g.id);
+    rebuildDatalist();
+    added(m.id);
+  } }));
+}
+function added(id) { createdIds.add(id); mark(); jumpTo(id); renderSidebar(); }
+function removeItem(kind, x) {
+  const arr = data[KINDS[kind].key];
+  arr.splice(arr.indexOf(x), 1);
+  if (kind === "milestones") { for (const t of data.tasks) t.milestoneIds = t.milestoneIds.filter((id) => id !== x.id); rebuildDatalist(); }
+  createdIds.delete(x.id);
+}
+function rebuildDatalist() {
+  $("#all-milestones").replaceChildren(...data.milestones.map((m) => h("option", { value: m.id, label: m.text.bn.slice(0, 80) })));
+}
+
+/* item cards */
+function card(kind, x, showGroup) {
+  const el = h("article", { class: "item" + (x.retired ? " retired" : ""), id: "item-" + x.id });
+  el.append(itemHead(kind, x, el, showGroup));
+  if (kind === "tasks") taskBody(el, x);
+  else if (kind === "milestones") milestoneBody(el, x);
+  else if (kind === "facts") factBody(el, x);
+  else if (kind === "reflections") reflectionBody(el, x);
+  else el.append(field("Safety tip", ta(x.text.bn, (v) => { x.text.bn = v; mark(); })));
+  el.append(field("Reviewer note", ta(x.reviewerNote || "", (v) => {
+    if (v.trim()) x.reviewerNote = v; else delete x.reviewerNote; mark();
+  }, { rows: 1, lang: "en", placeholder: "Optional: a question or comment for the reviewer" })));
+  return el;
+}
+function itemHead(kind, x, el, showGroup) {
+  const badge = h("span", { class: "badge " + x.status, text: x.status });
+  const status = select(uniq([...STATUS, x.status]), x.status, (v) => {
+    x.status = v; badge.className = "badge " + v; badge.textContent = v; mark(); renderSidebar();
+  });
+  let life;
+  if (createdIds.has(x.id)) {
+    life = h("button", { class: "ghost small danger", text: "Delete", onclick: () => {
+      if (!confirm(`Delete ${x.id}? It was added in this session, so its ID can be reused.`)) return;
+      removeItem(kind, x); mark(); renderAll();
+    } });
+  } else {
+    life = h("button", { class: "ghost small", text: x.retired ? "Restore" : "Retire",
+      title: "Retired items stay in the file so their ID is never reused, but the app hides them.",
+      onclick: () => { if (x.retired) delete x.retired; else x.retired = true; mark(); renderAll(); } });
+  }
+  return h("div", { class: "item-head" },
+    h("code", { class: "id", text: x.id }),
+    showGroup ? h("button", { class: "linkbtn small", text: KINDS[kind].shared ? `${x.fromGroup} – ${x.toGroup}` : groupLabel(x.groupId), onclick: () => jumpTo(x.id) }) : null,
+    badge,
+    x.retired ? h("span", { class: "badge retired", text: "retired" }) : null,
+    createdIds.has(x.id) ? h("span", { class: "badge verify", text: "new" }) : null,
+    h("span", { class: "spacer" }),
+    h("label", { class: "small muted" }, "Status ", status),
+    life,
+  );
+}
+function taskBody(el, t) {
+  el.append(field("Task text", ta(t.text.bn, (v) => { t.text.bn = v; mark(); })));
+
+  const order = data.domains.map((d) => d.id);
+  const doms = h("div", { class: "chips" }, data.domains.map((d) => {
+    const c = h("input", { type: "checkbox", checked: t.domains.includes(d.id), onchange: () => {
+      const s = new Set(t.domains); c.checked ? s.add(d.id) : s.delete(d.id);
+      t.domains = order.filter((id) => s.has(id)); mark();
+    } });
+    return h("label", { class: "chip" }, c, `${d.id} · ${d.name.en}`);
+  }));
+  const routine = select(data.routines.map((r) => [r.id, `${r.name.bn}  (${r.id})`]), t.routine, (v) => { t.routine = v; mark(); });
+  el.append(h("div", { class: "row" }, field("Domains", doms), field("Routine moment", routine)));
+
+  let lastSafety = t.safety ? t.safety.bn : "";
+  const safeTa = ta(lastSafety, (v) => { if (t.safety) { t.safety.bn = v; lastSafety = v; mark(); } },
+    { rows: 1, placeholder: "Safety line shown with this task" });
+  safeTa.hidden = !t.safety;
+  const safeCb = h("input", { type: "checkbox", checked: !!t.safety, onchange: () => {
+    if (safeCb.checked) { t.safety = { bn: lastSafety }; safeTa.hidden = false; autosize(safeTa); safeTa.focus(); }
+    else { t.safety = null; safeTa.hidden = true; }
+    mark();
+  } });
+  el.append(h("div", { class: "field" }, h("label", { class: "inline label" }, safeCb, "Safety line"), safeTa));
+  el.append(milestonePicker(t));
+}
+function milestonePicker(t) {
+  const title = h("span");
+  const own = data.milestones.filter((m) => m.groupId === t.groupId && (!m.retired || t.milestoneIds.includes(m.id)));
+  const ownIds = new Set(own.map((m) => m.id));
+  const othersBox = h("div", { class: "chips" });
+  const allOrder = () => data.milestones.map((m) => m.id);
+  const refresh = () => {
+    title.textContent = `Linked milestones (${t.milestoneIds.length})`;
+    othersBox.replaceChildren(...t.milestoneIds.filter((id) => !ownIds.has(id)).map((id) => {
+      const m = msById(id);
+      return h("span", { class: "chip linked", title: m ? m.text.bn : "missing" }, h("code", { text: id }),
+        h("button", { class: "x", title: "Unlink", "aria-label": "Unlink " + id, text: "×", onclick: () => toggle(id, false) }));
+    }));
+  };
+  const toggle = (id, on) => {
+    const s = new Set(t.milestoneIds); on ? s.add(id) : s.delete(id);
+    t.milestoneIds = allOrder().filter((x) => s.has(x)); mark(); refresh();
+  };
+  const grid = h("div", { class: "ms-grid" }, own.map((m) => {
+    const c = h("input", { type: "checkbox", checked: t.milestoneIds.includes(m.id), onchange: () => toggle(m.id, c.checked) });
+    return h("label", { class: "ms-opt" }, c, h("span", {}, h("code", { text: m.id + " " }), h("span", { class: "bn", text: m.text.bn })));
+  }));
+  const add = h("input", { list: "all-milestones", placeholder: "Link a milestone from another age group: type its ID", "aria-label": "Milestone ID" });
+  add.addEventListener("change", () => {
+    const id = add.value.trim();
+    if (!id) return;
+    if (msById(id)) { toggle(id, true); add.value = ""; } else alert("There is no milestone with ID " + id);
+  });
+  refresh();
+  return h("details", {}, h("summary", {}, title), grid, h("div", { class: "others" }, othersBox, add));
+}
+function milestoneBody(el, m) {
+  el.append(field("Milestone text", ta(m.text.bn, (v) => { m.text.bn = v; mark(); })));
+  const dom = data.domains.find((d) => d.id === m.domain);
+  const na = h("input", { type: "checkbox", checked: !!m.allowNotApplicable, onchange: () => { m.allowNotApplicable = na.checked; mark(); } });
+  const linked = data.tasks.filter((t) => t.milestoneIds.includes(m.id));
+  el.append(h("div", { class: "row" },
+    field("Domain", h("span", { text: dom ? `${dom.id} · ${dom.name.en}` : m.domain })),
+    field("Checklist age", h("span", { text: fmtAge(m.checkpointMonths) })),
+    field("Source", h("span", { text: m.source || "—" })),
+    field("Answers", h("label", { class: "inline" }, na, "Allow “প্রযোজ্য নয়” (culture-dependent item)")),
+  ));
+  el.append(field("Supported by tasks", linked.length
+    ? h("div", { class: "chips" }, linked.map((t) => h("button", { class: "chip", text: t.id, title: t.text.bn, onclick: () => jumpTo(t.id) })))
+    : h("span", { class: "muted small", text: "None yet. Link tasks from the Tasks tab." })));
+}
+
+/* facts and parenting reflections */
+function referenceEditor(x) {
+  const r = x.reference || (x.reference = { citation: "", doi: null, url: "" });
+  const link = h("a", { class: "small", target: "_blank", rel: "noopener noreferrer", text: "Open the paper ↗" });
+  const sync = () => { const ok = /^https?:\/\/\S+$/.test(r.url || ""); link.hidden = !ok; if (ok) link.href = r.url; };
+  const url = h("input", { type: "text", value: r.url || "", placeholder: "https://doi.org/…", style: "width:100%",
+    oninput: () => { r.url = url.value.trim(); sync(); mark(); } });
+  const doi = h("input", { type: "text", value: r.doi || "", placeholder: "10.1234/abcd", style: "width:100%",
+    oninput: () => {
+      const old = r.doi, v = doi.value.trim();
+      r.doi = v || null;
+      if (!r.url || (old && r.url === "https://doi.org/" + old)) { r.url = v ? "https://doi.org/" + v : ""; url.value = r.url; }
+      sync(); mark();
+    } });
+  sync();
+  return h("fieldset", { class: "group" }, h("legend", { text: "Reference" }),
+    field("Citation", ta(r.citation, (v) => { r.citation = v; mark(); }, { rows: 1, lang: "en", placeholder: "Authors (year). Title. Journal, volume(issue), pages." })),
+    h("div", { class: "row" },
+      h("div", { class: "field", style: "flex:1" }, h("div", { class: "label", text: "DOI (optional)" }), doi),
+      h("div", { class: "field", style: "flex:2" }, h("div", { class: "label", text: "Link" }), url)),
+    h("div", { class: "field" }, link));
+}
+function summaryField(x) {
+  return field("English summary for reviewers (not shown in the app)",
+    ta(x.summaryEn || "", (v) => { x.summaryEn = v; mark(); }, { rows: 1, lang: "en", placeholder: "What the paper found, in one or two sentences" }));
+}
+function factBody(el, f) {
+  el.append(field("Fact", ta(f.text.bn, (v) => { f.text.bn = v; mark(); })), summaryField(f), referenceEditor(f));
+}
+function reflectionBody(el, p) {
+  const groups = data.ageGroups.map((g) => [g.id, `${g.id} · ${g.name.bn}`]);
+  el.append(
+    h("div", { class: "row" },
+      field("Shown from age group", select(groups, p.fromGroup, (v) => { p.fromGroup = v; mark(); })),
+      field("to age group", select(groups, p.toGroup, (v) => { p.toGroup = v; mark(); }))),
+    field("Title", ta(p.title.bn, (v) => { p.title.bn = v; mark(); }, { rows: 1 })),
+    field("Text", ta(p.text.bn, (v) => { p.text.bn = v; mark(); })),
+    summaryField(p), referenceEditor(p));
+}
+function renderReflections(root) {
+  root.append(h("h1", { text: "Parenting reflections" }),
+    h("p", { class: "muted", text: "Short, kind thoughts for parents, each backed by a study. Each one is shown for a range of age groups. Keep the tone warm: invite reflection, never blame." }));
+  const all = data.parentingReflections;
+  const shown = all.filter((x) => passes(x, "reflections"));
+  root.append(filterBar("reflections", null, shown.length, all.length));
+  if (!shown.length) root.append(h("p", { class: "muted", text: "Nothing matches these filters." }));
+  for (const x of shown) root.append(card("reflections", x, false));
+}
+
+/* search */
+function renderSearch(root, q) {
+  const ql = q.toLowerCase();
+  const hit = (x) => x.id.toLowerCase().includes(ql) || (x.text && x.text.bn.includes(q)) ||
+    (x.safety && x.safety.bn.includes(q)) || (x.title && x.title.bn.includes(q)) ||
+    [x.reviewerNote, x.summaryEn, x.reference && x.reference.citation, x.reference && x.reference.doi]
+      .some((s) => (s || "").toLowerCase().includes(ql));
+  root.append(h("h1", { text: `Search: “${q}”` }));
+  let total = 0;
+  for (const kind of Object.keys(KINDS)) {
+    const found = data[KINDS[kind].key].filter(hit);
+    total += found.length;
+    if (!found.length) continue;
+    root.append(h("h2", { text: `${KINDS[kind].label} (${found.length})` }));
+    for (const x of found.slice(0, 100)) root.append(card(kind, x, true));
+    if (found.length > 100) root.append(h("p", { class: "muted", text: `Showing the first 100. Narrow your search to see the rest.` }));
+  }
+  if (!total) root.append(h("p", { class: "muted", text: "Nothing matches. (Search doesn't cover cards and app text.)" }));
+}
+
+/* shared sections (generic editor) */
+function gen(parent, obj, key, label) {
+  const v = obj[key];
+  if (isLang(v)) {
+    const box = h("div", { class: "field" }, h("div", { class: "label", text: label }));
+    for (const lk of Object.keys(v)) box.append(ta(v[lk], (val) => { v[lk] = val; mark(); },
+      { rows: 1, lang: lk, placeholder: lk === "en" ? "English" : "বাংলা" }));
+    parent.append(box); return;
+  }
+  if (Array.isArray(v)) {
+    const box = h("fieldset", { class: "group" }, h("legend", { text: label }));
+    if (v.length && v.every(isLang) && v.every((x) => "bn" in x)) {
+      const list = h("div");
+      const draw = () => {
+        list.replaceChildren(...v.map((item, i) => h("div", { class: "list-row" },
+          ta(item.bn, (val) => { item.bn = val; mark(); }, { rows: 1 }),
+          h("button", { class: "ghost small", text: "Remove", onclick: () => { if (confirm("Remove this line?")) { v.splice(i, 1); mark(); draw(); } } }))));
+        flushAutosize();
+      };
+      draw();
+      box.append(list, h("button", { class: "ghost small", style: "margin-top:8px", text: "+ Add line", onclick: () => { v.push({ bn: "" }); mark(); draw(); } }));
+    } else if (!v.length) {
+      box.append(h("span", { class: "muted small", text: "Empty" }));
+    } else {
+      v.forEach((item, i) => {
+        if (item && typeof item === "object" && !isLang(item)) {
+          const sub = h("fieldset", { class: "group" }, h("legend", { text: item.id ? String(item.id) : `#${i + 1}` }));
+          for (const k of Object.keys(item)) gen(sub, item, k, humanize(k));
+          box.append(sub);
+        } else gen(box, v, i, `#${i + 1}`);
+      });
+    }
+    parent.append(box); return;
+  }
+  if (v && typeof v === "object") {
+    const box = h("fieldset", { class: "group" }, h("legend", { text: label }));
+    for (const k of Object.keys(v)) gen(box, v, k, humanize(k));
+    parent.append(box); return;
+  }
+  if (READONLY.has(key) || typeof v === "number" || v === null) {
+    parent.append(h("div", { class: "field ro" }, h("div", { class: "label", text: label }), h("code", { text: v === null ? "—" : String(v) })));
+    return;
+  }
+  if (typeof v === "boolean") {
+    const c = h("input", { type: "checkbox", checked: v, onchange: () => { obj[key] = c.checked; mark(); } });
+    parent.append(h("div", { class: "field" }, h("label", { class: "inline" }, c, label)));
+    return;
+  }
+  if (key === "status") {
+    parent.append(field(label, select(uniq(["draft", "verify", "reviewed", v]), v, (val) => { obj[key] = val; mark(); })));
+    return;
+  }
+  if (key === "reviewerNote") {
+    parent.append(field(label, ta(v, (val) => { obj[key] = val; mark(); }, { rows: 1, lang: "en" })));
+    return;
+  }
+  const inp = h("input", { type: "text", value: v, style: "width:100%", oninput: () => { obj[key] = inp.value; mark(); } });
+  parent.append(field(label, inp));
+}
+function renderShared(root, section) {
+  const titles = { cards: "Cards", strings: "App text", helpPlaces: "Help places" };
+  root.append(h("h1", { text: titles[section] }));
+  root.append(h("div", { class: "note small" },
+    "Keep words in curly braces, like ", h("code", { text: "{name}" }), ", exactly as they are. The app replaces them. ",
+    section === "helpPlaces" ? "Places with “Enabled” unticked are hidden in the app until someone confirms they're still running." : ""));
+  const box = h("div");
+  const v = data[section];
+  if (Array.isArray(v)) v.forEach((item) => {
+    const sub = h("fieldset", { class: "group" }, h("legend", { text: item.id }));
+    for (const k of Object.keys(item)) gen(sub, item, k, humanize(k));
+    box.append(sub);
+  });
+  else for (const k of Object.keys(v)) gen(box, v, k, section === "strings" ? k : humanize(k));
+  root.append(box);
+}
+function renderLabels(root) {
+  root.append(h("h1", { text: "Labels" }),
+    h("p", { class: "muted", text: "Names of the development domains and routine moments, shown on task cards. IDs are fixed." }));
+  const box = h("div");
+  gen(box, data, "domains", "Domains");
+  gen(box, data, "routines", "Routine moments");
+  root.append(box);
+}
+
+/* ---------------------------------------------------------------- wiring */
+$("#openBtn").addEventListener("click", openFile);
+$("#saveBtn").addEventListener("click", save);
+let searchTimer;
+$("#search").addEventListener("input", () => { clearTimeout(searchTimer); searchTimer = setTimeout(renderAll, 200); });
+document.addEventListener("keydown", (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") { e.preventDefault(); save(); }
+});
+window.addEventListener("beforeunload", (e) => { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
+renderAll();
+</script>
+</body>
+</html>
