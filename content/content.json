@@ -5590,6 +5590,42 @@
     },
     "restore_confirm": {
       "bn": "ফিরিয়ে আনুন"
+    },
+    "nav_story": {
+      "bn": "গল্প"
+    },
+    "story_title": {
+      "bn": "{name}-এর বেড়ে ওঠার গল্প"
+    },
+    "story_so_far": {
+      "bn": "এ পর্যন্ত"
+    },
+    "story_games_total": {
+      "bn": "একসাথে {count}টি খেলা খেলেছেন"
+    },
+    "story_skills_total": {
+      "bn": "{count}টি নতুন কাজ শিখেছে"
+    },
+    "story_who_played": {
+      "bn": "কে কতবার খেলেছেন"
+    },
+    "story_who_unknown": {
+      "bn": "বলা হয়নি"
+    },
+    "story_count_times": {
+      "bn": "{count} বার"
+    },
+    "story_firsts_title": {
+      "bn": "নতুন যা শিখেছে"
+    },
+    "story_firsts_note": {
+      "bn": "তারিখগুলো সেই দিনের, যেদিন বেড়ে ওঠার তালিকায় 'হ্যাঁ, করে' দিয়েছেন।"
+    },
+    "story_first_line": {
+      "bn": "{date} · বয়স {age}"
+    },
+    "story_empty": {
+      "bn": "এখনো কিছু নেই। প্রতিদিনের খেলা আর বেড়ে ওঠার তালিকা থেকে এই গল্প তৈরি হবে।"
     }
   },
   "helpPlaces": [
