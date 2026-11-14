@@ -5710,6 +5710,61 @@
       "callNumber": "999",
       "reviewerNote": "First four signs follow WHO/UNICEF IMCI general danger signs; wording needs a Bangladeshi paediatrician's sign-off.",
       "status": "draft"
+    },
+    "welcome": {
+      "title": {
+        "bn": "কেন কুঁড়ি?"
+      },
+      "reasons": [
+        {
+          "text": {
+            "bn": "জীবনের প্রথম কয়েক বছরে মস্তিষ্ক সবচেয়ে দ্রুত বাড়ে। প্রথম বছরেই তার আয়তন দ্বিগুণের বেশি হয়।"
+          },
+          "summaryEn": "MRI study: total brain volume increases 101% in the first year of life.",
+          "reference": {
+            "citation": "Knickmeyer RC, et al. (2008). A structural MRI study of human brain development from birth to 2 years. Journal of Neuroscience, 28(47), 12176–12182.",
+            "doi": "10.1523/JNEUROSCI.3479-08.2008",
+            "url": "https://doi.org/10.1523/JNEUROSCI.3479-08.2008"
+          }
+        },
+        {
+          "text": {
+            "bn": "৩৩টি দেশের ১০২টি গবেষণায় দেখা গেছে, বাবা-মা শিশুর সাথে খেলা, কথা বলা আর সাড়া দেওয়ার সহজ উপায় শিখলে শিশুর চিন্তা, ভাষা, নড়াচড়া ও আবেগের বিকাশ ভালো হয়। আমাদের মতো দেশে এর প্রভাব আরও বেশি।"
+          },
+          "summaryEn": "Meta-analysis of 102 RCTs in 33 countries: parenting interventions in the first 3 years improved cognitive, language, motor and socioemotional development; effects on cognitive, language and motor development were larger in low- and middle-income countries.",
+          "reference": {
+            "citation": "Jeong J, Franchett EE, Ramos de Oliveira CV, Rehmani K, Yousafzai AK (2021). Parenting interventions to promote early child development in the first three years of life: A global systematic review and meta-analysis. PLOS Medicine, 18(5), e1003602.",
+            "doi": "10.1371/journal.pmed.1003602",
+            "url": "https://doi.org/10.1371/journal.pmed.1003602"
+          }
+        },
+        {
+          "text": {
+            "bn": "বাংলাদেশেও গবেষণায় দেখা গেছে, মায়েরা শিশুর সাথে খেলার সহজ উপায় শিখলে শিশুর বিকাশ ভালো হয়।"
+          },
+          "summaryEn": "Cluster-randomised trial in Bangladeshi government community clinics: play sessions for mothers and children run by health workers improved child development.",
+          "reference": {
+            "citation": "Hamadani JD, Mehrin SF, Tofail F, Hasan MI, Huda SN, Baker-Henningham H, Ridout D, Grantham-McGregor S (2019). Integrating an early childhood development programme into Bangladeshi primary health-care services: an open-label, cluster-randomised controlled trial. The Lancet Global Health, 7(3), e366–e375.",
+            "doi": "10.1016/S2214-109X(18)30535-7",
+            "url": "https://doi.org/10.1016/S2214-109X(18)30535-7"
+          }
+        },
+        {
+          "text": {
+            "bn": "বেড়ে ওঠার ধাপ খেয়াল রাখলে কোনো দেরি থাকলে তা আগে ধরা পড়ে। যত আগে সাহায্য শুরু হয়, শিশুর তত বেশি উপকার হয়।"
+          },
+          "summaryEn": "The CDC/AAP milestone checklists (used in this app) exist to identify developmental delays early so that support can start early and improve outcomes.",
+          "reference": {
+            "citation": "Zubler JM, et al. (2022). Evidence-informed milestones for developmental surveillance tools. Pediatrics, 149(3), e2021052138.",
+            "doi": "10.1542/peds.2021-052138",
+            "url": "https://doi.org/10.1542/peds.2021-052138"
+          }
+        }
+      ],
+      "closing": {
+        "bn": "কুঁড়ি এই খেলা ও কথাগুলো প্রতিদিন মনে করিয়ে দেয়, আর বেড়ে ওঠার ধাপ খেয়াল রাখতে সাহায্য করে।"
+      },
+      "status": "draft"
     }
   },
   "strings": {

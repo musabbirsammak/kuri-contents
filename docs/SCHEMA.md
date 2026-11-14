@@ -128,6 +128,7 @@ Used by facts and parenting reflections.
 | `standard` | Calm "talk to a doctor" card. `body` uses `{name}` and `{list}`. `actions[]` are its buttons. |
 | `lostSkills` | Shown when a milestone once answered "হ্যাঁ" is later answered "এখন আর করে না". |
 | `emergency` | Always one tap away. `signs[]`, `footer`, `callLabel`, `callNumber`. |
+| `welcome` | "কেন কুঁড়ি?" on the first screen. `title`, `reasons[]` (each `text`, `summaryEn`, `reference`, see facts), `closing`. Say only what the studies found: they tested parenting programmes, not this app. |
 
 ## `strings`
 
