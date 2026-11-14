@@ -60,6 +60,7 @@ Tasks, milestones, safety tips, facts and parenting reflections share these fiel
 | `startMonths`, `endMonths` | Age window in months (corrected age for babies born early, until 24 months) |
 | `checkpointMonths` | Age of the checklist at the end of the window |
 | `doctorCheckSuggestion` | `null`, `"general"`, `"autism"` or `"general_and_autism"`: show the one-time "ask a doctor about a development check" suggestion at this checkpoint |
+| `summary` | `{bn}` (optional): what many children do at this age and which play helps most. Shown on the Today screen. |
 | `notes[]` | Extra messages: `id`, `when` (`doctor_card`, `doctor_card_preterm`, `on_request`), `text` |
 
 ## `tasks[]`
@@ -68,6 +69,7 @@ ID pattern: `T<group>-<n>`, for example `T04-01`.
 
 | Field | Meaning |
 |---|---|
+| `why` | `{bn}` (optional): why this play helps, what the child practises. Shown under the task. |
 | `safety` | `{bn}` or `null`: safety line shown with the task |
 | `domains` | One or more domain IDs |
 | `routine` | A routine ID |

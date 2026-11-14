@@ -524,7 +524,7 @@ function renderGroup(root) {
     h("button", { role: "tab", class: view.tab === k ? "active" : "", text: label, onclick: () => { view.tab = k; renderMain(); } }))));
 
   if (view.tab === "settings") {
-    root.append(h("p", { class: "muted", text: "Ages and IDs are fixed. You can edit the group name and its notes." }));
+    root.append(h("p", { class: "muted", text: "Ages and IDs are fixed. You can edit the group name, summary and notes." }));
     const box = h("div");
     for (const k of Object.keys(g)) gen(box, g, k, humanize(k));
     root.append(box);
@@ -584,7 +584,7 @@ function addControl(kind, g) {
   } });
   if (kind === "tasks") return h("button", { class: "primary small", text: "+ Add task", onclick: () => {
     const prefix = `T${n}-`;
-    const t = { id: prefix + pad2(nextNum(data.tasks, prefix)), groupId: g.id, text: { bn: "" }, safety: null,
+    const t = { id: prefix + pad2(nextNum(data.tasks, prefix)), groupId: g.id, text: { bn: "" }, why: { bn: "" }, safety: null,
       domains: [], routine: "anytime", milestoneIds: [], status: "draft" };
     insertAfterLast(data.tasks, t, (x) => x.groupId === g.id);
     added(t.id);
@@ -659,6 +659,8 @@ function itemHead(kind, x, el, showGroup) {
 }
 function taskBody(el, t) {
   el.append(field("Task text", ta(t.text.bn, (v) => { t.text.bn = v; mark(); })));
+  el.append(field("Why this play: what the child practises and gains (shown under the task)",
+    ta(t.why ? t.why.bn : "", (v) => { if (!t.why) t.why = { bn: "" }; t.why.bn = v; mark(); }, { rows: 1 })));
 
   const order = data.domains.map((d) => d.id);
   const doms = h("div", { class: "chips" }, data.domains.map((d) => {
